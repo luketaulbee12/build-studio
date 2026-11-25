@@ -50,6 +50,27 @@ def _wall_dir(p, cells):
     return out[0] if len(out) == 1 else None
 
 
+_ROLES = None
+
+
+def learned_trim(main, role, min_share=0.15, min_buildings=20):
+    """The block real builders most often use for `role` with this wall block, if it's a clear habit."""
+    global _ROLES
+    if _ROLES is None:
+        import json
+        from pathlib import Path
+        f = Path(__file__).resolve().parent.parent / "data" / "learned_roles.json"
+        _ROLES = json.loads(f.read_text())["walls"] if f.exists() else {}
+    w = _ROLES.get(main, {})
+    e = w.get(role)
+    if not e or w.get("n", 0) < min_buildings:  # too few real examples to call it a habit
+        return None
+    for blk, share in e["choices"]:
+        if blk != main and share >= min_share:
+            return blk
+    return None
+
+
 def trim_block(main, contrast=(12.0, 40.0)):
     """A block builders pair with `main` that contrasts with it (palette data), or None."""
     import variety
@@ -72,7 +93,8 @@ def trim_block(main, contrast=(12.0, 40.0)):
     return best[1] if best else None
 
 
-def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True, base=True, match_density=False):
+def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True, base=True, match_density=False,
+          learned=True):
     cells = set(shape_of)
     global _OUTSIDE
     _OUTSIDE = _outside(cells)
@@ -166,7 +188,15 @@ def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True,
             if placed:
                 notes.append(f"doorway on the {d} wall")
 
-    trim = trim_block(main) if (corners or base) else None
+    if learned:
+        # what real builders do with this wall block (data/learned_roles.json, mined from ~2,000 buildings):
+        # trim a role only when a different block is a clear habit for it
+        corner_trim, base_trim = learned_trim(main, "corner"), learned_trim(main, "base")
+        corners, base = corners and corner_trim is not None, base and base_trim is not None
+        trim = corner_trim or base_trim
+    else:
+        trim = trim_block(main) if (corners or base) else None
+        corner_trim = base_trim = trim
     if trim:
         n_c = n_b = 0
         if corners:
@@ -198,14 +228,15 @@ def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True,
                         run += 1
                         q = (q[0], q[1] + dy, q[2])
                 if run >= 3:
-                    out[p] = trim
+                    out[p] = corner_trim
                     n_c += 1
         if base:
             for d, ws in walls.items():
                 for p in ws:
                     if p[1] == y0 and out.get(p) == main:
-                        out[p] = trim
+                        out[p] = base_trim
                         n_b += 1
-        notes.append(f"trim {trim}: {n_c} corner blocks, {n_b} base blocks")
+        notes.append(f"trim: {n_c} corner blocks ({corner_trim if corners else '-'}), "
+                     f"{n_b} base blocks ({base_trim if base else '-'})")
     log("  detail: " + ("; ".join(notes) if notes else "nothing added"))
     return out

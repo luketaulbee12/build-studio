@@ -94,6 +94,7 @@ def main():
     ap.add_argument("--tops", type=int, default=0, help="1 = even out ragged tops no roof plane explains")
     ap.add_argument("--bridge", type=int, default=1, help="1 = fill one-block gaps in thin sheets")
     ap.add_argument("--windens", type=int, default=0, help="1 = generated windows match the photo's window density")
+    ap.add_argument("--learned", type=int, default=0, help="1 = corner/base trim from habits learned from real builds")
     ap.add_argument("--doors", type=int, default=1, help="1 = put real doors in doorways")
     ap.add_argument("--detail", type=int, default=1, help="1 = add windows on unseen walls, a door, corner/base trim")
     ap.add_argument("--snap", type=int, default=-1, help="1 = face colours snap to the picture's own main colours, 0 = never, -1 = automatically for Minecraft screenshots")
@@ -293,7 +294,7 @@ def main():
                 mat[q] = body_main
     if a.detail:
         import detail
-        mat = detail.apply(shape_of, mat, part, match_density=bool(a.windens))
+        mat = detail.apply(shape_of, mat, part, match_density=bool(a.windens), learned=bool(a.learned))
     base_mat = dict(mat)
     if a.variety > 0:
         import variety

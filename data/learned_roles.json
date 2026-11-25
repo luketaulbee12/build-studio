@@ -1,0 +1,11159 @@
+{
+ "buildings": 5945,
+ "walls": {
+  "oak_log": {
+   "n": 520,
+   "corner": {
+    "choices": [
+     [
+      "oak_log",
+      0.788
+     ],
+     [
+      "cobblestone",
+      0.052
+     ],
+     [
+      "stone_bricks",
+      0.042
+     ],
+     [
+      "oak_planks",
+      0.032
+     ],
+     [
+      "white_wool",
+      0.012
+     ],
+     [
+      "chiseled_stone_bricks",
+      0.012
+     ]
+    ],
+    "seen": 401,
+    "differs": 0.212
+   },
+   "frame": {
+    "choices": [
+     [
+      "oak_log",
+      0.33
+     ],
+     [
+      "white_wool",
+      0.16
+     ],
+     [
+      "oak_planks",
+      0.14
+     ],
+     [
+      "cobblestone",
+      0.066
+     ],
+     [
+      "spruce_planks",
+      0.057
+     ],
+     [
+      "stone_bricks",
+      0.043
+     ]
+    ],
+    "seen": 351,
+    "differs": 0.67
+   },
+   "base": {
+    "choices": [
+     [
+      "cobblestone",
+      0.271
+     ],
+     [
+      "oak_log",
+      0.248
+     ],
+     [
+      "stone_bricks",
+      0.176
+     ],
+     [
+      "smooth_stone",
+      0.062
+     ],
+     [
+      "oak_planks",
+      0.042
+     ],
+     [
+      "birch_planks",
+      0.023
+     ]
+    ],
+    "seen": 306,
+    "differs": 0.752
+   },
+   "roof": {
+    "choices": [
+     [
+      "oak_stairs",
+      0.362
+     ],
+     [
+      "spruce_stairs",
+      0.221
+     ],
+     [
+      "oak_slab",
+      0.08
+     ],
+     [
+      "spruce_slab",
+      0.073
+     ],
+     [
+      "stone_brick_stairs",
+      0.056
+     ],
+     [
+      "cobblestone_stairs",
+      0.036
+     ]
+    ],
+    "seen": 412,
+    "differs": 1.0
+   }
+  },
+  "oak_planks": {
+   "n": 483,
+   "corner": {
+    "choices": [
+     [
+      "oak_planks",
+      0.369
+     ],
+     [
+      "oak_log",
+      0.329
+     ],
+     [
+      "spruce_log",
+      0.099
+     ],
+     [
+      "stone_bricks",
+      0.032
+     ],
+     [
+      "bricks",
+      0.021
+     ],
+     [
+      "cobblestone",
+      0.021
+     ]
+    ],
+    "seen": 374,
+    "differs": 0.631
+   },
+   "frame": {
+    "choices": [
+     [
+      "oak_planks",
+      0.591
+     ],
+     [
+      "oak_log",
+      0.076
+     ],
+     [
+      "white_wool",
+      0.076
+     ],
+     [
+      "spruce_log",
+      0.065
+     ],
+     [
+      "cobblestone",
+      0.035
+     ],
+     [
+      "stone_bricks",
+      0.03
+     ]
+    ],
+    "seen": 369,
+    "differs": 0.409
+   },
+   "base": {
+    "choices": [
+     [
+      "oak_planks",
+      0.346
+     ],
+     [
+      "cobblestone",
+      0.189
+     ],
+     [
+      "stone_bricks",
+      0.122
+     ],
+     [
+      "birch_planks",
+      0.052
+     ],
+     [
+      "oak_log",
+      0.041
+     ],
+     [
+      "spruce_planks",
+      0.032
+     ]
+    ],
+    "seen": 344,
+    "differs": 0.654
+   },
+   "roof": {
+    "choices": [
+     [
+      "oak_stairs",
+      0.465
+     ],
+     [
+      "oak_slab",
+      0.114
+     ],
+     [
+      "spruce_stairs",
+      0.09
+     ],
+     [
+      "spruce_slab",
+      0.053
+     ],
+     [
+      "cobblestone_stairs",
+      0.036
+     ],
+     [
+      "smooth_stone_slab",
+      0.031
+     ]
+    ],
+    "seen": 413,
+    "differs": 1.0
+   }
+  },
+  "spruce_planks": {
+   "n": 462,
+   "corner": {
+    "choices": [
+     [
+      "spruce_planks",
+      0.318
+     ],
+     [
+      "oak_log",
+      0.203
+     ],
+     [
+      "spruce_log",
+      0.196
+     ],
+     [
+      "dark_oak_log",
+      0.042
+     ],
+     [
+      "cobblestone",
+      0.035
+     ],
+     [
+      "jungle_planks",
+      0.029
+     ]
+    ],
+    "seen": 311,
+    "differs": 0.682
+   },
+   "frame": {
+    "choices": [
+     [
+      "spruce_planks",
+      0.535
+     ],
+     [
+      "cobblestone",
+      0.062
+     ],
+     [
+      "white_wool",
+      0.045
+     ],
+     [
+      "oak_log",
+      0.039
+     ],
+     [
+      "birch_planks",
+      0.034
+     ],
+     [
+      "spruce_log",
+      0.031
+     ]
+    ],
+    "seen": 355,
+    "differs": 0.465
+   },
+   "base": {
+    "choices": [
+     [
+      "spruce_planks",
+      0.247
+     ],
+     [
+      "cobblestone",
+      0.188
+     ],
+     [
+      "stone_bricks",
+      0.122
+     ],
+     [
+      "spruce_log",
+      0.056
+     ],
+     [
+      "oak_log",
+      0.047
+     ],
+     [
+      "oak_planks",
+      0.034
+     ]
+    ],
+    "seen": 320,
+    "differs": 0.753
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_stairs",
+      0.365
+     ],
+     [
+      "spruce_slab",
+      0.188
+     ],
+     [
+      "oak_stairs",
+      0.062
+     ],
+     [
+      "oak_slab",
+      0.047
+     ],
+     [
+      "dark_oak_slab",
+      0.039
+     ],
+     [
+      "cobblestone_stairs",
+      0.036
+     ]
+    ],
+    "seen": 384,
+    "differs": 1.0
+   }
+  },
+  "cobblestone": {
+   "n": 411,
+   "corner": {
+    "choices": [
+     [
+      "cobblestone",
+      0.379
+     ],
+     [
+      "oak_log",
+      0.227
+     ],
+     [
+      "spruce_log",
+      0.117
+     ],
+     [
+      "stone_bricks",
+      0.098
+     ],
+     [
+      "oak_planks",
+      0.025
+     ],
+     [
+      "bricks",
+      0.022
+     ]
+    ],
+    "seen": 317,
+    "differs": 0.621
+   },
+   "frame": {
+    "choices": [
+     [
+      "cobblestone",
+      0.494
+     ],
+     [
+      "oak_planks",
+      0.081
+     ],
+     [
+      "oak_log",
+      0.068
+     ],
+     [
+      "spruce_planks",
+      0.065
+     ],
+     [
+      "white_wool",
+      0.045
+     ],
+     [
+      "stone_bricks",
+      0.042
+     ]
+    ],
+    "seen": 308,
+    "differs": 0.506
+   },
+   "base": {
+    "choices": [
+     [
+      "cobblestone",
+      0.569
+     ],
+     [
+      "stone_bricks",
+      0.086
+     ],
+     [
+      "oak_planks",
+      0.06
+     ],
+     [
+      "sandstone",
+      0.045
+     ],
+     [
+      "smooth_stone",
+      0.041
+     ],
+     [
+      "oak_log",
+      0.037
+     ]
+    ],
+    "seen": 267,
+    "differs": 0.431
+   },
+   "roof": {
+    "choices": [
+     [
+      "oak_stairs",
+      0.321
+     ],
+     [
+      "cobblestone_stairs",
+      0.128
+     ],
+     [
+      "spruce_stairs",
+      0.111
+     ],
+     [
+      "cobblestone_slab",
+      0.079
+     ],
+     [
+      "smooth_stone_slab",
+      0.076
+     ],
+     [
+      "spruce_slab",
+      0.07
+     ]
+    ],
+    "seen": 343,
+    "differs": 1.0
+   }
+  },
+  "spruce_log": {
+   "n": 384,
+   "corner": {
+    "choices": [
+     [
+      "spruce_log",
+      0.77
+     ],
+     [
+      "stone_bricks",
+      0.036
+     ],
+     [
+      "cobblestone",
+      0.033
+     ],
+     [
+      "oak_log",
+      0.029
+     ],
+     [
+      "spruce_planks",
+      0.026
+     ],
+     [
+      "white_wool",
+      0.015
+     ]
+    ],
+    "seen": 274,
+    "differs": 0.23
+   },
+   "frame": {
+    "choices": [
+     [
+      "spruce_log",
+      0.213
+     ],
+     [
+      "cobblestone",
+      0.173
+     ],
+     [
+      "spruce_planks",
+      0.126
+     ],
+     [
+      "oak_planks",
+      0.116
+     ],
+     [
+      "white_wool",
+      0.096
+     ],
+     [
+      "sandstone",
+      0.05
+     ]
+    ],
+    "seen": 301,
+    "differs": 0.787
+   },
+   "base": {
+    "choices": [
+     [
+      "cobblestone",
+      0.322
+     ],
+     [
+      "spruce_log",
+      0.226
+     ],
+     [
+      "stone_bricks",
+      0.151
+     ],
+     [
+      "oak_planks",
+      0.075
+     ],
+     [
+      "spruce_planks",
+      0.05
+     ],
+     [
+      "bricks",
+      0.038
+     ]
+    ],
+    "seen": 239,
+    "differs": 0.774
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_stairs",
+      0.32
+     ],
+     [
+      "oak_stairs",
+      0.224
+     ],
+     [
+      "spruce_slab",
+      0.068
+     ],
+     [
+      "dark_oak_stairs",
+      0.054
+     ],
+     [
+      "cobblestone_stairs",
+      0.051
+     ],
+     [
+      "oak_slab",
+      0.041
+     ]
+    ],
+    "seen": 294,
+    "differs": 1.0
+   }
+  },
+  "stone_bricks": {
+   "n": 345,
+   "corner": {
+    "choices": [
+     [
+      "stone_bricks",
+      0.52
+     ],
+     [
+      "oak_log",
+      0.137
+     ],
+     [
+      "spruce_log",
+      0.09
+     ],
+     [
+      "cobblestone",
+      0.031
+     ],
+     [
+      "bricks",
+      0.027
+     ],
+     [
+      "dark_oak_log",
+      0.023
+     ]
+    ],
+    "seen": 256,
+    "differs": 0.48
+   },
+   "frame": {
+    "choices": [
+     [
+      "stone_bricks",
+      0.489
+     ],
+     [
+      "cobblestone",
+      0.068
+     ],
+     [
+      "oak_planks",
+      0.056
+     ],
+     [
+      "oak_log",
+      0.049
+     ],
+     [
+      "spruce_planks",
+      0.045
+     ],
+     [
+      "white_wool",
+      0.045
+     ]
+    ],
+    "seen": 266,
+    "differs": 0.511
+   },
+   "base": {
+    "choices": [
+     [
+      "stone_bricks",
+      0.423
+     ],
+     [
+      "cobblestone",
+      0.101
+     ],
+     [
+      "smooth_stone",
+      0.097
+     ],
+     [
+      "sandstone",
+      0.066
+     ],
+     [
+      "spruce_planks",
+      0.031
+     ],
+     [
+      "oak_planks",
+      0.031
+     ]
+    ],
+    "seen": 227,
+    "differs": 0.577
+   },
+   "roof": {
+    "choices": [
+     [
+      "stone_brick_stairs",
+      0.242
+     ],
+     [
+      "oak_stairs",
+      0.108
+     ],
+     [
+      "spruce_stairs",
+      0.105
+     ],
+     [
+      "stone_brick_slab",
+      0.094
+     ],
+     [
+      "smooth_stone_slab",
+      0.079
+     ],
+     [
+      "spruce_slab",
+      0.076
+     ]
+    ],
+    "seen": 277,
+    "differs": 1.0
+   }
+  },
+  "quartz_block": {
+   "n": 240,
+   "corner": {
+    "choices": [
+     [
+      "quartz_block",
+      0.659
+     ],
+     [
+      "quartz_pillar",
+      0.035
+     ],
+     [
+      "birch_planks",
+      0.029
+     ],
+     [
+      "spruce_log",
+      0.023
+     ],
+     [
+      "smooth_stone",
+      0.023
+     ],
+     [
+      "bricks",
+      0.017
+     ]
+    ],
+    "seen": 173,
+    "differs": 0.341
+   },
+   "frame": {
+    "choices": [
+     [
+      "quartz_block",
+      0.732
+     ],
+     [
+      "spruce_planks",
+      0.038
+     ],
+     [
+      "birch_planks",
+      0.028
+     ],
+     [
+      "bricks",
+      0.019
+     ],
+     [
+      "gray_concrete",
+      0.014
+     ],
+     [
+      "lapis_block",
+      0.014
+     ]
+    ],
+    "seen": 213,
+    "differs": 0.268
+   },
+   "base": {
+    "choices": [
+     [
+      "quartz_block",
+      0.378
+     ],
+     [
+      "smooth_stone",
+      0.09
+     ],
+     [
+      "polished_andesite",
+      0.053
+     ],
+     [
+      "red_terracotta",
+      0.048
+     ],
+     [
+      "white_terracotta",
+      0.043
+     ],
+     [
+      "sandstone",
+      0.037
+     ]
+    ],
+    "seen": 188,
+    "differs": 0.622
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.443
+     ],
+     [
+      "quartz_stairs",
+      0.158
+     ],
+     [
+      "brick_slab",
+      0.094
+     ],
+     [
+      "smooth_stone_slab",
+      0.064
+     ],
+     [
+      "stone_brick_stairs",
+      0.034
+     ],
+     [
+      "dark_oak_slab",
+      0.03
+     ]
+    ],
+    "seen": 203,
+    "differs": 1.0
+   }
+  },
+  "birch_planks": {
+   "n": 228,
+   "corner": {
+    "choices": [
+     [
+      "birch_planks",
+      0.567
+     ],
+     [
+      "oak_log",
+      0.075
+     ],
+     [
+      "spruce_log",
+      0.065
+     ],
+     [
+      "birch_log",
+      0.065
+     ],
+     [
+      "spruce_planks",
+      0.025
+     ],
+     [
+      "cobblestone",
+      0.02
+     ]
+    ],
+    "seen": 201,
+    "differs": 0.433
+   },
+   "frame": {
+    "choices": [
+     [
+      "birch_planks",
+      0.696
+     ],
+     [
+      "spruce_planks",
+      0.072
+     ],
+     [
+      "spruce_log",
+      0.052
+     ],
+     [
+      "oak_planks",
+      0.026
+     ],
+     [
+      "cobblestone",
+      0.015
+     ],
+     [
+      "birch_log",
+      0.015
+     ]
+    ],
+    "seen": 194,
+    "differs": 0.304
+   },
+   "base": {
+    "choices": [
+     [
+      "birch_planks",
+      0.409
+     ],
+     [
+      "cobblestone",
+      0.066
+     ],
+     [
+      "oak_log",
+      0.061
+     ],
+     [
+      "spruce_planks",
+      0.039
+     ],
+     [
+      "oak_planks",
+      0.033
+     ],
+     [
+      "spruce_log",
+      0.033
+     ]
+    ],
+    "seen": 181,
+    "differs": 0.591
+   },
+   "roof": {
+    "choices": [
+     [
+      "birch_stairs",
+      0.124
+     ],
+     [
+      "spruce_stairs",
+      0.112
+     ],
+     [
+      "birch_slab",
+      0.106
+     ],
+     [
+      "jungle_stairs",
+      0.088
+     ],
+     [
+      "smooth_stone_slab",
+      0.082
+     ],
+     [
+      "spruce_slab",
+      0.065
+     ]
+    ],
+    "seen": 170,
+    "differs": 1.0
+   }
+  },
+  "dark_oak_planks": {
+   "n": 204,
+   "corner": {
+    "choices": [
+     [
+      "dark_oak_planks",
+      0.401
+     ],
+     [
+      "dark_oak_log",
+      0.154
+     ],
+     [
+      "acacia_log",
+      0.043
+     ],
+     [
+      "spruce_planks",
+      0.037
+     ],
+     [
+      "oak_planks",
+      0.037
+     ],
+     [
+      "spruce_log",
+      0.031
+     ]
+    ],
+    "seen": 162,
+    "differs": 0.599
+   },
+   "frame": {
+    "choices": [
+     [
+      "dark_oak_planks",
+      0.547
+     ],
+     [
+      "stone_bricks",
+      0.064
+     ],
+     [
+      "yellow_terracotta",
+      0.058
+     ],
+     [
+      "spruce_planks",
+      0.047
+     ],
+     [
+      "oak_planks",
+      0.041
+     ],
+     [
+      "acacia_log",
+      0.041
+     ]
+    ],
+    "seen": 172,
+    "differs": 0.453
+   },
+   "base": {
+    "choices": [
+     [
+      "dark_oak_planks",
+      0.356
+     ],
+     [
+      "spruce_planks",
+      0.104
+     ],
+     [
+      "cobblestone",
+      0.08
+     ],
+     [
+      "yellow_terracotta",
+      0.055
+     ],
+     [
+      "oak_planks",
+      0.049
+     ],
+     [
+      "birch_planks",
+      0.037
+     ]
+    ],
+    "seen": 163,
+    "differs": 0.644
+   },
+   "roof": {
+    "choices": [
+     [
+      "dark_oak_slab",
+      0.278
+     ],
+     [
+      "dark_oak_stairs",
+      0.245
+     ],
+     [
+      "cobblestone_stairs",
+      0.086
+     ],
+     [
+      "birch_stairs",
+      0.053
+     ],
+     [
+      "spruce_slab",
+      0.046
+     ],
+     [
+      "stone_brick_slab",
+      0.046
+     ]
+    ],
+    "seen": 151,
+    "differs": 1.0
+   }
+  },
+  "bricks": {
+   "n": 204,
+   "corner": {
+    "choices": [
+     [
+      "bricks",
+      0.56
+     ],
+     [
+      "spruce_log",
+      0.065
+     ],
+     [
+      "oak_log",
+      0.054
+     ],
+     [
+      "smooth_stone",
+      0.048
+     ],
+     [
+      "stone_bricks",
+      0.048
+     ],
+     [
+      "dark_oak_log",
+      0.042
+     ]
+    ],
+    "seen": 168,
+    "differs": 0.44
+   },
+   "frame": {
+    "choices": [
+     [
+      "bricks",
+      0.672
+     ],
+     [
+      "spruce_planks",
+      0.056
+     ],
+     [
+      "stone_bricks",
+      0.033
+     ],
+     [
+      "white_wool",
+      0.028
+     ],
+     [
+      "dark_oak_planks",
+      0.017
+     ],
+     [
+      "smooth_stone",
+      0.017
+     ]
+    ],
+    "seen": 180,
+    "differs": 0.328
+   },
+   "base": {
+    "choices": [
+     [
+      "bricks",
+      0.299
+     ],
+     [
+      "stone_bricks",
+      0.159
+     ],
+     [
+      "cobblestone",
+      0.153
+     ],
+     [
+      "spruce_planks",
+      0.045
+     ],
+     [
+      "oak_planks",
+      0.038
+     ],
+     [
+      "dark_oak_planks",
+      0.032
+     ]
+    ],
+    "seen": 157,
+    "differs": 0.701
+   },
+   "roof": {
+    "choices": [
+     [
+      "brick_slab",
+      0.192
+     ],
+     [
+      "brick_stairs",
+      0.141
+     ],
+     [
+      "oak_stairs",
+      0.096
+     ],
+     [
+      "smooth_stone_slab",
+      0.085
+     ],
+     [
+      "stone_brick_stairs",
+      0.073
+     ],
+     [
+      "spruce_stairs",
+      0.062
+     ]
+    ],
+    "seen": 177,
+    "differs": 1.0
+   }
+  },
+  "sandstone": {
+   "n": 192,
+   "corner": {
+    "choices": [
+     [
+      "sandstone",
+      0.69
+     ],
+     [
+      "spruce_log",
+      0.094
+     ],
+     [
+      "smooth_sandstone",
+      0.041
+     ],
+     [
+      "oak_log",
+      0.023
+     ],
+     [
+      "smooth_stone",
+      0.023
+     ],
+     [
+      "polished_andesite",
+      0.012
+     ]
+    ],
+    "seen": 171,
+    "differs": 0.31
+   },
+   "frame": {
+    "choices": [
+     [
+      "sandstone",
+      0.673
+     ],
+     [
+      "smooth_sandstone",
+      0.035
+     ],
+     [
+      "white_wool",
+      0.027
+     ],
+     [
+      "cobblestone",
+      0.027
+     ],
+     [
+      "spruce_planks",
+      0.027
+     ],
+     [
+      "birch_planks",
+      0.018
+     ]
+    ],
+    "seen": 113,
+    "differs": 0.327
+   },
+   "base": {
+    "choices": [
+     [
+      "sandstone",
+      0.556
+     ],
+     [
+      "cobblestone",
+      0.111
+     ],
+     [
+      "oak_planks",
+      0.042
+     ],
+     [
+      "smooth_stone",
+      0.042
+     ],
+     [
+      "birch_planks",
+      0.028
+     ],
+     [
+      "acacia_planks",
+      0.021
+     ]
+    ],
+    "seen": 144,
+    "differs": 0.444
+   },
+   "roof": {
+    "choices": [
+     [
+      "sandstone_slab",
+      0.214
+     ],
+     [
+      "sandstone_stairs",
+      0.169
+     ],
+     [
+      "oak_stairs",
+      0.136
+     ],
+     [
+      "brick_slab",
+      0.104
+     ],
+     [
+      "oak_slab",
+      0.091
+     ],
+     [
+      "smooth_stone_slab",
+      0.071
+     ]
+    ],
+    "seen": 154,
+    "differs": 1.0
+   }
+  },
+  "white_wool": {
+   "n": 184,
+   "corner": {
+    "choices": [
+     [
+      "white_wool",
+      0.473
+     ],
+     [
+      "spruce_log",
+      0.115
+     ],
+     [
+      "oak_log",
+      0.099
+     ],
+     [
+      "oak_planks",
+      0.053
+     ],
+     [
+      "sandstone",
+      0.046
+     ],
+     [
+      "dark_oak_log",
+      0.046
+     ]
+    ],
+    "seen": 131,
+    "differs": 0.527
+   },
+   "frame": {
+    "choices": [
+     [
+      "white_wool",
+      0.609
+     ],
+     [
+      "oak_planks",
+      0.073
+     ],
+     [
+      "oak_log",
+      0.046
+     ],
+     [
+      "red_wool",
+      0.04
+     ],
+     [
+      "sandstone",
+      0.033
+     ],
+     [
+      "smooth_stone",
+      0.026
+     ]
+    ],
+    "seen": 151,
+    "differs": 0.391
+   },
+   "base": {
+    "choices": [
+     [
+      "white_wool",
+      0.203
+     ],
+     [
+      "black_wool",
+      0.122
+     ],
+     [
+      "cobblestone",
+      0.098
+     ],
+     [
+      "smooth_stone",
+      0.089
+     ],
+     [
+      "stone_bricks",
+      0.081
+     ],
+     [
+      "glowstone",
+      0.081
+     ]
+    ],
+    "seen": 123,
+    "differs": 0.797
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.259
+     ],
+     [
+      "oak_stairs",
+      0.196
+     ],
+     [
+      "quartz_slab",
+      0.12
+     ],
+     [
+      "quartz_stairs",
+      0.089
+     ],
+     [
+      "spruce_slab",
+      0.057
+     ],
+     [
+      "oak_slab",
+      0.044
+     ]
+    ],
+    "seen": 158,
+    "differs": 1.0
+   }
+  },
+  "acacia_planks": {
+   "n": 103,
+   "corner": {
+    "choices": [
+     [
+      "acacia_planks",
+      0.489
+     ],
+     [
+      "oak_log",
+      0.133
+     ],
+     [
+      "acacia_log",
+      0.089
+     ],
+     [
+      "birch_planks",
+      0.067
+     ],
+     [
+      "jungle_log",
+      0.033
+     ],
+     [
+      "cobblestone",
+      0.033
+     ]
+    ],
+    "seen": 90,
+    "differs": 0.511
+   },
+   "frame": {
+    "choices": [
+     [
+      "acacia_planks",
+      0.579
+     ],
+     [
+      "birch_planks",
+      0.158
+     ],
+     [
+      "jungle_planks",
+      0.063
+     ],
+     [
+      "polished_andesite",
+      0.032
+     ],
+     [
+      "jungle_log",
+      0.011
+     ],
+     [
+      "pink_wool",
+      0.011
+     ]
+    ],
+    "seen": 95,
+    "differs": 0.421
+   },
+   "base": {
+    "choices": [
+     [
+      "acacia_planks",
+      0.353
+     ],
+     [
+      "cobblestone",
+      0.224
+     ],
+     [
+      "oak_planks",
+      0.059
+     ],
+     [
+      "jungle_planks",
+      0.035
+     ],
+     [
+      "birch_planks",
+      0.035
+     ],
+     [
+      "jungle_log",
+      0.024
+     ]
+    ],
+    "seen": 85,
+    "differs": 0.647
+   },
+   "roof": {
+    "choices": [
+     [
+      "acacia_stairs",
+      0.145
+     ],
+     [
+      "acacia_slab",
+      0.132
+     ],
+     [
+      "spruce_slab",
+      0.132
+     ],
+     [
+      "cobblestone_slab",
+      0.066
+     ],
+     [
+      "dark_oak_stairs",
+      0.053
+     ],
+     [
+      "spruce_stairs",
+      0.053
+     ]
+    ],
+    "seen": 76,
+    "differs": 1.0
+   }
+  },
+  "smooth_stone": {
+   "n": 91,
+   "corner": {
+    "choices": [
+     [
+      "smooth_stone",
+      0.382
+     ],
+     [
+      "spruce_log",
+      0.127
+     ],
+     [
+      "quartz_block",
+      0.109
+     ],
+     [
+      "bricks",
+      0.055
+     ],
+     [
+      "spruce_planks",
+      0.036
+     ],
+     [
+      "sandstone",
+      0.036
+     ]
+    ],
+    "seen": 55,
+    "differs": 0.618
+   },
+   "frame": {
+    "choices": [
+     [
+      "smooth_stone",
+      0.519
+     ],
+     [
+      "white_wool",
+      0.065
+     ],
+     [
+      "spruce_log",
+      0.065
+     ],
+     [
+      "quartz_block",
+      0.052
+     ],
+     [
+      "cobblestone",
+      0.039
+     ],
+     [
+      "black_wool",
+      0.039
+     ]
+    ],
+    "seen": 77,
+    "differs": 0.481
+   },
+   "base": {
+    "choices": [
+     [
+      "smooth_stone",
+      0.655
+     ],
+     [
+      "oak_log",
+      0.069
+     ],
+     [
+      "quartz_block",
+      0.052
+     ],
+     [
+      "birch_planks",
+      0.052
+     ],
+     [
+      "gold_block",
+      0.034
+     ],
+     [
+      "sandstone",
+      0.034
+     ]
+    ],
+    "seen": 58,
+    "differs": 0.345
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.648
+     ],
+     [
+      "stone_brick_slab",
+      0.07
+     ],
+     [
+      "stone_brick_stairs",
+      0.056
+     ],
+     [
+      "oak_stairs",
+      0.042
+     ],
+     [
+      "quartz_slab",
+      0.042
+     ],
+     [
+      "spruce_slab",
+      0.028
+     ]
+    ],
+    "seen": 71,
+    "differs": 1.0
+   }
+  },
+  "jungle_planks": {
+   "n": 84,
+   "corner": {
+    "choices": [
+     [
+      "jungle_planks",
+      0.515
+     ],
+     [
+      "jungle_log",
+      0.136
+     ],
+     [
+      "cobblestone",
+      0.061
+     ],
+     [
+      "spruce_log",
+      0.061
+     ],
+     [
+      "oak_log",
+      0.061
+     ],
+     [
+      "acacia_planks",
+      0.03
+     ]
+    ],
+    "seen": 66,
+    "differs": 0.485
+   },
+   "frame": {
+    "choices": [
+     [
+      "jungle_planks",
+      0.65
+     ],
+     [
+      "acacia_planks",
+      0.05
+     ],
+     [
+      "white_wool",
+      0.05
+     ],
+     [
+      "cobblestone",
+      0.033
+     ],
+     [
+      "stone_bricks",
+      0.033
+     ],
+     [
+      "jungle_log",
+      0.033
+     ]
+    ],
+    "seen": 60,
+    "differs": 0.35
+   },
+   "base": {
+    "choices": [
+     [
+      "jungle_planks",
+      0.469
+     ],
+     [
+      "cobblestone",
+      0.094
+     ],
+     [
+      "spruce_log",
+      0.047
+     ],
+     [
+      "smooth_stone",
+      0.047
+     ],
+     [
+      "acacia_planks",
+      0.031
+     ],
+     [
+      "dark_oak_planks",
+      0.031
+     ]
+    ],
+    "seen": 64,
+    "differs": 0.531
+   },
+   "roof": {
+    "choices": [
+     [
+      "jungle_stairs",
+      0.259
+     ],
+     [
+      "jungle_slab",
+      0.138
+     ],
+     [
+      "spruce_stairs",
+      0.103
+     ],
+     [
+      "spruce_slab",
+      0.069
+     ],
+     [
+      "oak_stairs",
+      0.069
+     ],
+     [
+      "stone_brick_stairs",
+      0.052
+     ]
+    ],
+    "seen": 58,
+    "differs": 1.0
+   }
+  },
+  "black_wool": {
+   "n": 73,
+   "corner": {
+    "choices": [
+     [
+      "black_wool",
+      0.362
+     ],
+     [
+      "spruce_log",
+      0.191
+     ],
+     [
+      "yellow_wool",
+      0.085
+     ],
+     [
+      "oak_log",
+      0.064
+     ],
+     [
+      "red_wool",
+      0.043
+     ],
+     [
+      "gray_wool",
+      0.043
+     ]
+    ],
+    "seen": 47,
+    "differs": 0.638
+   },
+   "frame": {
+    "choices": [
+     [
+      "black_wool",
+      0.347
+     ],
+     [
+      "spruce_planks",
+      0.184
+     ],
+     [
+      "white_wool",
+      0.122
+     ],
+     [
+      "birch_planks",
+      0.102
+     ],
+     [
+      "green_terracotta",
+      0.061
+     ],
+     [
+      "smooth_stone",
+      0.041
+     ]
+    ],
+    "seen": 49,
+    "differs": 0.653
+   },
+   "base": {
+    "choices": [
+     [
+      "black_wool",
+      0.385
+     ],
+     [
+      "cobblestone",
+      0.154
+     ],
+     [
+      "stone_bricks",
+      0.115
+     ],
+     [
+      "birch_planks",
+      0.077
+     ],
+     [
+      "white_wool",
+      0.058
+     ],
+     [
+      "glowstone",
+      0.038
+     ]
+    ],
+    "seen": 52,
+    "differs": 0.615
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.286
+     ],
+     [
+      "spruce_stairs",
+      0.184
+     ],
+     [
+      "cobblestone_slab",
+      0.122
+     ],
+     [
+      "quartz_slab",
+      0.082
+     ],
+     [
+      "birch_stairs",
+      0.082
+     ],
+     [
+      "oak_slab",
+      0.041
+     ]
+    ],
+    "seen": 49,
+    "differs": 1.0
+   }
+  },
+  "smooth_sandstone": {
+   "n": 70,
+   "corner": {
+    "choices": [
+     [
+      "smooth_sandstone",
+      0.448
+     ],
+     [
+      "cut_sandstone",
+      0.259
+     ],
+     [
+      "sandstone",
+      0.086
+     ],
+     [
+      "black_wool",
+      0.034
+     ],
+     [
+      "orange_terracotta",
+      0.034
+     ],
+     [
+      "smooth_stone",
+      0.034
+     ]
+    ],
+    "seen": 58,
+    "differs": 0.552
+   },
+   "frame": {
+    "choices": [
+     [
+      "smooth_sandstone",
+      0.741
+     ],
+     [
+      "spruce_planks",
+      0.111
+     ],
+     [
+      "lime_wool",
+      0.037
+     ],
+     [
+      "black_wool",
+      0.037
+     ],
+     [
+      "iron_block",
+      0.037
+     ],
+     [
+      "tuff",
+      0.037
+     ]
+    ],
+    "seen": 27,
+    "differs": 0.259
+   },
+   "base": {
+    "choices": [
+     [
+      "sandstone",
+      0.222
+     ],
+     [
+      "smooth_sandstone",
+      0.222
+     ],
+     [
+      "black_wool",
+      0.111
+     ],
+     [
+      "chiseled_stone_bricks",
+      0.056
+     ],
+     [
+      "quartz_block",
+      0.056
+     ],
+     [
+      "gray_wool",
+      0.056
+     ]
+    ],
+    "seen": 36,
+    "differs": 0.778
+   },
+   "roof": {
+    "choices": [
+     [
+      "sandstone_slab",
+      0.377
+     ],
+     [
+      "smooth_sandstone_slab",
+      0.262
+     ],
+     [
+      "brick_slab",
+      0.049
+     ],
+     [
+      "smooth_stone_slab",
+      0.049
+     ],
+     [
+      "cobblestone_slab",
+      0.033
+     ],
+     [
+      "stone_brick_slab",
+      0.033
+     ]
+    ],
+    "seen": 61,
+    "differs": 1.0
+   }
+  },
+  "polished_andesite": {
+   "n": 63,
+   "corner": {
+    "choices": [
+     [
+      "polished_andesite",
+      0.7
+     ],
+     [
+      "spruce_log",
+      0.075
+     ],
+     [
+      "polished_granite",
+      0.05
+     ],
+     [
+      "yellow_wool",
+      0.025
+     ],
+     [
+      "chiseled_quartz_block",
+      0.025
+     ],
+     [
+      "bricks",
+      0.025
+     ]
+    ],
+    "seen": 40,
+    "differs": 0.3
+   },
+   "frame": {
+    "choices": [
+     [
+      "polished_andesite",
+      0.588
+     ],
+     [
+      "oak_planks",
+      0.039
+     ],
+     [
+      "sandstone",
+      0.039
+     ],
+     [
+      "cobblestone",
+      0.039
+     ],
+     [
+      "black_wool",
+      0.039
+     ],
+     [
+      "yellow_wool",
+      0.02
+     ]
+    ],
+    "seen": 51,
+    "differs": 0.412
+   },
+   "base": {
+    "choices": [
+     [
+      "polished_andesite",
+      0.609
+     ],
+     [
+      "cobblestone",
+      0.065
+     ],
+     [
+      "smooth_stone",
+      0.065
+     ],
+     [
+      "oak_planks",
+      0.043
+     ],
+     [
+      "cyan_terracotta",
+      0.043
+     ],
+     [
+      "gray_wool",
+      0.043
+     ]
+    ],
+    "seen": 46,
+    "differs": 0.391
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.319
+     ],
+     [
+      "stone_brick_slab",
+      0.191
+     ],
+     [
+      "stone_brick_stairs",
+      0.149
+     ],
+     [
+      "spruce_stairs",
+      0.064
+     ],
+     [
+      "quartz_stairs",
+      0.043
+     ],
+     [
+      "purpur_stairs",
+      0.021
+     ]
+    ],
+    "seen": 47,
+    "differs": 1.0
+   }
+  },
+  "iron_block": {
+   "n": 57,
+   "corner": {
+    "choices": [
+     [
+      "iron_block",
+      0.694
+     ],
+     [
+      "obsidian",
+      0.056
+     ],
+     [
+      "gold_block",
+      0.028
+     ],
+     [
+      "polished_andesite",
+      0.028
+     ],
+     [
+      "black_wool",
+      0.028
+     ],
+     [
+      "cobblestone",
+      0.028
+     ]
+    ],
+    "seen": 36,
+    "differs": 0.306
+   },
+   "frame": {
+    "choices": [
+     [
+      "iron_block",
+      0.737
+     ],
+     [
+      "smooth_stone",
+      0.053
+     ],
+     [
+      "gold_block",
+      0.026
+     ],
+     [
+      "dark_oak_planks",
+      0.026
+     ],
+     [
+      "polished_andesite",
+      0.026
+     ],
+     [
+      "red_wool",
+      0.026
+     ]
+    ],
+    "seen": 38,
+    "differs": 0.263
+   },
+   "base": {
+    "choices": [
+     [
+      "iron_block",
+      0.348
+     ],
+     [
+      "smooth_stone",
+      0.174
+     ],
+     [
+      "sandstone",
+      0.109
+     ],
+     [
+      "black_wool",
+      0.087
+     ],
+     [
+      "stone_bricks",
+      0.065
+     ],
+     [
+      "cobblestone",
+      0.043
+     ]
+    ],
+    "seen": 46,
+    "differs": 0.652
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.61
+     ],
+     [
+      "stone_brick_stairs",
+      0.22
+     ],
+     [
+      "quartz_stairs",
+      0.049
+     ],
+     [
+      "quartz_slab",
+      0.049
+     ],
+     [
+      "sandstone_slab",
+      0.024
+     ],
+     [
+      "cobblestone_stairs",
+      0.024
+     ]
+    ],
+    "seen": 41,
+    "differs": 1.0
+   }
+  },
+  "red_terracotta": {
+   "n": 57,
+   "corner": {
+    "choices": [
+     [
+      "red_terracotta",
+      0.471
+     ],
+     [
+      "stone_bricks",
+      0.147
+     ],
+     [
+      "cobblestone",
+      0.088
+     ],
+     [
+      "quartz_block",
+      0.059
+     ],
+     [
+      "dark_oak_log",
+      0.059
+     ],
+     [
+      "smooth_stone",
+      0.029
+     ]
+    ],
+    "seen": 34,
+    "differs": 0.529
+   },
+   "frame": {
+    "choices": [
+     [
+      "red_terracotta",
+      0.364
+     ],
+     [
+      "stone_bricks",
+      0.227
+     ],
+     [
+      "terracotta",
+      0.045
+     ],
+     [
+      "spruce_planks",
+      0.045
+     ],
+     [
+      "quartz_block",
+      0.045
+     ],
+     [
+      "white_terracotta",
+      0.045
+     ]
+    ],
+    "seen": 44,
+    "differs": 0.636
+   },
+   "base": {
+    "choices": [
+     [
+      "red_terracotta",
+      0.289
+     ],
+     [
+      "cobblestone",
+      0.222
+     ],
+     [
+      "stone_bricks",
+      0.156
+     ],
+     [
+      "quartz_block",
+      0.067
+     ],
+     [
+      "spruce_planks",
+      0.044
+     ],
+     [
+      "bricks",
+      0.044
+     ]
+    ],
+    "seen": 45,
+    "differs": 0.711
+   },
+   "roof": {
+    "choices": [
+     [
+      "cobblestone_slab",
+      0.188
+     ],
+     [
+      "smooth_stone_slab",
+      0.125
+     ],
+     [
+      "quartz_slab",
+      0.125
+     ],
+     [
+      "cobblestone_stairs",
+      0.104
+     ],
+     [
+      "quartz_stairs",
+      0.062
+     ],
+     [
+      "spruce_stairs",
+      0.062
+     ]
+    ],
+    "seen": 48,
+    "differs": 1.0
+   }
+  },
+  "nether_bricks": {
+   "n": 54,
+   "corner": {
+    "choices": [
+     [
+      "nether_bricks",
+      0.341
+     ],
+     [
+      "dark_oak_log",
+      0.159
+     ],
+     [
+      "stone_bricks",
+      0.114
+     ],
+     [
+      "spruce_log",
+      0.068
+     ],
+     [
+      "oak_planks",
+      0.045
+     ],
+     [
+      "oak_log",
+      0.045
+     ]
+    ],
+    "seen": 44,
+    "differs": 0.659
+   },
+   "frame": {
+    "choices": [
+     [
+      "nether_bricks",
+      0.286
+     ],
+     [
+      "oak_planks",
+      0.095
+     ],
+     [
+      "stone_bricks",
+      0.071
+     ],
+     [
+      "dark_oak_log",
+      0.071
+     ],
+     [
+      "spruce_log",
+      0.071
+     ],
+     [
+      "bricks",
+      0.048
+     ]
+    ],
+    "seen": 42,
+    "differs": 0.714
+   },
+   "base": {
+    "choices": [
+     [
+      "nether_bricks",
+      0.293
+     ],
+     [
+      "stone_bricks",
+      0.171
+     ],
+     [
+      "spruce_planks",
+      0.098
+     ],
+     [
+      "cobblestone",
+      0.098
+     ],
+     [
+      "bricks",
+      0.049
+     ],
+     [
+      "oak_planks",
+      0.024
+     ]
+    ],
+    "seen": 41,
+    "differs": 0.707
+   },
+   "roof": {
+    "choices": [
+     [
+      "nether_brick_stairs",
+      0.4
+     ],
+     [
+      "nether_brick_slab",
+      0.22
+     ],
+     [
+      "jungle_stairs",
+      0.08
+     ],
+     [
+      "red_sandstone_stairs",
+      0.04
+     ],
+     [
+      "stone_brick_stairs",
+      0.04
+     ],
+     [
+      "spruce_slab",
+      0.04
+     ]
+    ],
+    "seen": 50,
+    "differs": 1.0
+   }
+  },
+  "gray_wool": {
+   "n": 50,
+   "corner": {
+    "choices": [
+     [
+      "gray_wool",
+      0.407
+     ],
+     [
+      "quartz_block",
+      0.111
+     ],
+     [
+      "white_wool",
+      0.074
+     ],
+     [
+      "brown_terracotta",
+      0.074
+     ],
+     [
+      "pink_wool",
+      0.037
+     ],
+     [
+      "green_wool",
+      0.037
+     ]
+    ],
+    "seen": 27,
+    "differs": 0.593
+   },
+   "frame": {
+    "choices": [
+     [
+      "gray_wool",
+      0.371
+     ],
+     [
+      "quartz_block",
+      0.114
+     ],
+     [
+      "oak_planks",
+      0.086
+     ],
+     [
+      "green_terracotta",
+      0.057
+     ],
+     [
+      "pink_wool",
+      0.029
+     ],
+     [
+      "white_wool",
+      0.029
+     ]
+    ],
+    "seen": 35,
+    "differs": 0.629
+   },
+   "base": {
+    "choices": [
+     [
+      "gray_wool",
+      0.382
+     ],
+     [
+      "black_wool",
+      0.147
+     ],
+     [
+      "quartz_block",
+      0.088
+     ],
+     [
+      "oak_planks",
+      0.088
+     ],
+     [
+      "glowstone",
+      0.059
+     ],
+     [
+      "green_wool",
+      0.029
+     ]
+    ],
+    "seen": 34,
+    "differs": 0.618
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.378
+     ],
+     [
+      "stone_brick_stairs",
+      0.108
+     ],
+     [
+      "quartz_slab",
+      0.108
+     ],
+     [
+      "stone_brick_slab",
+      0.108
+     ],
+     [
+      "quartz_stairs",
+      0.081
+     ],
+     [
+      "spruce_slab",
+      0.081
+     ]
+    ],
+    "seen": 37,
+    "differs": 1.0
+   }
+  },
+  "dark_oak_log": {
+   "n": 47,
+   "corner": {
+    "choices": [
+     [
+      "dark_oak_log",
+      0.75
+     ],
+     [
+      "acacia_log",
+      0.062
+     ],
+     [
+      "stone_bricks",
+      0.062
+     ],
+     [
+      "nether_bricks",
+      0.031
+     ],
+     [
+      "terracotta",
+      0.031
+     ],
+     [
+      "cobblestone",
+      0.031
+     ]
+    ],
+    "seen": 32,
+    "differs": 0.25
+   },
+   "frame": {
+    "choices": [
+     [
+      "dark_oak_log",
+      0.324
+     ],
+     [
+      "oak_planks",
+      0.118
+     ],
+     [
+      "spruce_planks",
+      0.088
+     ],
+     [
+      "dark_oak_planks",
+      0.088
+     ],
+     [
+      "stone_bricks",
+      0.059
+     ],
+     [
+      "cobblestone",
+      0.059
+     ]
+    ],
+    "seen": 34,
+    "differs": 0.676
+   },
+   "base": {
+    "choices": [
+     [
+      "dark_oak_log",
+      0.294
+     ],
+     [
+      "birch_planks",
+      0.088
+     ],
+     [
+      "stone_bricks",
+      0.088
+     ],
+     [
+      "cobblestone",
+      0.059
+     ],
+     [
+      "spruce_planks",
+      0.059
+     ],
+     [
+      "polished_diorite",
+      0.059
+     ]
+    ],
+    "seen": 34,
+    "differs": 0.706
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_stairs",
+      0.167
+     ],
+     [
+      "dark_oak_stairs",
+      0.133
+     ],
+     [
+      "spruce_slab",
+      0.133
+     ],
+     [
+      "nether_brick_slab",
+      0.133
+     ],
+     [
+      "oak_stairs",
+      0.1
+     ],
+     [
+      "acacia_stairs",
+      0.067
+     ]
+    ],
+    "seen": 30,
+    "differs": 1.0
+   }
+  },
+  "red_wool": {
+   "n": 46,
+   "corner": {
+    "choices": [
+     [
+      "red_wool",
+      0.37
+     ],
+     [
+      "white_wool",
+      0.111
+     ],
+     [
+      "black_wool",
+      0.074
+     ],
+     [
+      "cobblestone",
+      0.074
+     ],
+     [
+      "quartz_block",
+      0.074
+     ],
+     [
+      "birch_planks",
+      0.037
+     ]
+    ],
+    "seen": 27,
+    "differs": 0.63
+   },
+   "frame": {
+    "choices": [
+     [
+      "red_wool",
+      0.564
+     ],
+     [
+      "white_wool",
+      0.103
+     ],
+     [
+      "blue_wool",
+      0.077
+     ],
+     [
+      "stone_bricks",
+      0.051
+     ],
+     [
+      "quartz_block",
+      0.051
+     ],
+     [
+      "black_wool",
+      0.026
+     ]
+    ],
+    "seen": 39,
+    "differs": 0.436
+   },
+   "base": {
+    "choices": [
+     [
+      "red_wool",
+      0.394
+     ],
+     [
+      "black_wool",
+      0.152
+     ],
+     [
+      "white_wool",
+      0.091
+     ],
+     [
+      "bricks",
+      0.061
+     ],
+     [
+      "iron_block",
+      0.061
+     ],
+     [
+      "cyan_terracotta",
+      0.061
+     ]
+    ],
+    "seen": 33,
+    "differs": 0.606
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.257
+     ],
+     [
+      "quartz_stairs",
+      0.2
+     ],
+     [
+      "quartz_slab",
+      0.114
+     ],
+     [
+      "cobblestone_stairs",
+      0.086
+     ],
+     [
+      "nether_brick_slab",
+      0.057
+     ],
+     [
+      "stone_brick_stairs",
+      0.057
+     ]
+    ],
+    "seen": 35,
+    "differs": 1.0
+   }
+  },
+  "cyan_terracotta": {
+   "n": 46,
+   "corner": {
+    "choices": [
+     [
+      "cyan_terracotta",
+      0.737
+     ],
+     [
+      "quartz_block",
+      0.079
+     ],
+     [
+      "stone_bricks",
+      0.026
+     ],
+     [
+      "smooth_stone",
+      0.026
+     ],
+     [
+      "gray_wool",
+      0.026
+     ],
+     [
+      "black_wool",
+      0.026
+     ]
+    ],
+    "seen": 38,
+    "differs": 0.263
+   },
+   "frame": {
+    "choices": [
+     [
+      "cyan_terracotta",
+      0.625
+     ],
+     [
+      "gray_wool",
+      0.05
+     ],
+     [
+      "quartz_block",
+      0.05
+     ],
+     [
+      "glowstone",
+      0.05
+     ],
+     [
+      "purple_terracotta",
+      0.025
+     ],
+     [
+      "orange_wool",
+      0.025
+     ]
+    ],
+    "seen": 40,
+    "differs": 0.375
+   },
+   "base": {
+    "choices": [
+     [
+      "cyan_terracotta",
+      0.344
+     ],
+     [
+      "smooth_stone",
+      0.156
+     ],
+     [
+      "quartz_block",
+      0.156
+     ],
+     [
+      "black_wool",
+      0.062
+     ],
+     [
+      "purple_terracotta",
+      0.031
+     ],
+     [
+      "polished_andesite",
+      0.031
+     ]
+    ],
+    "seen": 32,
+    "differs": 0.656
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.222
+     ],
+     [
+      "stone_brick_slab",
+      0.167
+     ],
+     [
+      "quartz_slab",
+      0.139
+     ],
+     [
+      "quartz_stairs",
+      0.083
+     ],
+     [
+      "stone_brick_stairs",
+      0.083
+     ],
+     [
+      "spruce_stairs",
+      0.083
+     ]
+    ],
+    "seen": 36,
+    "differs": 1.0
+   }
+  },
+  "yellow_terracotta": {
+   "n": 43,
+   "corner": {
+    "choices": [
+     [
+      "yellow_terracotta",
+      0.677
+     ],
+     [
+      "quartz_block",
+      0.065
+     ],
+     [
+      "birch_planks",
+      0.065
+     ],
+     [
+      "black_terracotta",
+      0.032
+     ],
+     [
+      "cyan_terracotta",
+      0.032
+     ],
+     [
+      "spruce_log",
+      0.032
+     ]
+    ],
+    "seen": 31,
+    "differs": 0.323
+   },
+   "frame": {
+    "choices": [
+     [
+      "yellow_terracotta",
+      0.778
+     ],
+     [
+      "quartz_block",
+      0.056
+     ],
+     [
+      "acacia_log",
+      0.056
+     ],
+     [
+      "black_terracotta",
+      0.028
+     ],
+     [
+      "black_wool",
+      0.028
+     ],
+     [
+      "spruce_planks",
+      0.028
+     ]
+    ],
+    "seen": 36,
+    "differs": 0.222
+   },
+   "base": {
+    "choices": [
+     [
+      "yellow_terracotta",
+      0.297
+     ],
+     [
+      "chiseled_stone_bricks",
+      0.108
+     ],
+     [
+      "smooth_stone",
+      0.108
+     ],
+     [
+      "spruce_log",
+      0.054
+     ],
+     [
+      "blue_terracotta",
+      0.054
+     ],
+     [
+      "stone_bricks",
+      0.054
+     ]
+    ],
+    "seen": 37,
+    "differs": 0.703
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.156
+     ],
+     [
+      "dark_oak_stairs",
+      0.094
+     ],
+     [
+      "acacia_slab",
+      0.094
+     ],
+     [
+      "jungle_stairs",
+      0.062
+     ],
+     [
+      "spruce_slab",
+      0.062
+     ],
+     [
+      "quartz_slab",
+      0.062
+     ]
+    ],
+    "seen": 32,
+    "differs": 1.0
+   }
+  },
+  "white_concrete": {
+   "n": 41,
+   "corner": {
+    "choices": [
+     [
+      "white_concrete",
+      0.727
+     ],
+     [
+      "nether_bricks",
+      0.03
+     ],
+     [
+      "black_concrete",
+      0.03
+     ],
+     [
+      "oak_log",
+      0.03
+     ],
+     [
+      "spruce_log",
+      0.03
+     ],
+     [
+      "quartz_block",
+      0.03
+     ]
+    ],
+    "seen": 33,
+    "differs": 0.273
+   },
+   "frame": {
+    "choices": [
+     [
+      "white_concrete",
+      0.737
+     ],
+     [
+      "quartz_block",
+      0.053
+     ],
+     [
+      "nether_bricks",
+      0.026
+     ],
+     [
+      "black_concrete",
+      0.026
+     ],
+     [
+      "dark_oak_planks",
+      0.026
+     ],
+     [
+      "oak_planks",
+      0.026
+     ]
+    ],
+    "seen": 38,
+    "differs": 0.263
+   },
+   "base": {
+    "choices": [
+     [
+      "white_concrete",
+      0.467
+     ],
+     [
+      "black_concrete",
+      0.067
+     ],
+     [
+      "red_concrete",
+      0.033
+     ],
+     [
+      "spruce_planks",
+      0.033
+     ],
+     [
+      "quartz_block",
+      0.033
+     ],
+     [
+      "glowstone",
+      0.033
+     ]
+    ],
+    "seen": 30,
+    "differs": 0.533
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.261
+     ],
+     [
+      "quartz_stairs",
+      0.174
+     ],
+     [
+      "quartz_slab",
+      0.174
+     ],
+     [
+      "spruce_slab",
+      0.087
+     ],
+     [
+      "stone_slab",
+      0.087
+     ],
+     [
+      "purpur_stairs",
+      0.043
+     ]
+    ],
+    "seen": 23,
+    "differs": 1.0
+   }
+  },
+  "jungle_log": {
+   "n": 40,
+   "corner": {
+    "choices": [
+     [
+      "jungle_log",
+      0.844
+     ],
+     [
+      "bricks",
+      0.031
+     ],
+     [
+      "spruce_planks",
+      0.031
+     ],
+     [
+      "jungle_planks",
+      0.031
+     ],
+     [
+      "dark_oak_log",
+      0.031
+     ],
+     [
+      "spruce_log",
+      0.031
+     ]
+    ],
+    "seen": 32,
+    "differs": 0.156
+   },
+   "frame": {
+    "choices": [
+     [
+      "jungle_log",
+      0.519
+     ],
+     [
+      "stone_bricks",
+      0.148
+     ],
+     [
+      "jungle_planks",
+      0.111
+     ],
+     [
+      "spruce_planks",
+      0.111
+     ],
+     [
+      "bricks",
+      0.037
+     ],
+     [
+      "sandstone",
+      0.037
+     ]
+    ],
+    "seen": 27,
+    "differs": 0.481
+   },
+   "base": {
+    "choices": [
+     [
+      "jungle_log",
+      0.667
+     ],
+     [
+      "jungle_planks",
+      0.125
+     ],
+     [
+      "diorite",
+      0.042
+     ],
+     [
+      "dark_oak_log",
+      0.042
+     ],
+     [
+      "glowstone",
+      0.042
+     ],
+     [
+      "note_block",
+      0.042
+     ]
+    ],
+    "seen": 24,
+    "differs": 0.333
+   },
+   "roof": {
+    "choices": [
+     [
+      "jungle_stairs",
+      0.286
+     ],
+     [
+      "oak_stairs",
+      0.179
+     ],
+     [
+      "cobblestone_stairs",
+      0.143
+     ],
+     [
+      "jungle_slab",
+      0.071
+     ],
+     [
+      "spruce_slab",
+      0.071
+     ],
+     [
+      "dark_oak_slab",
+      0.071
+     ]
+    ],
+    "seen": 28,
+    "differs": 1.0
+   }
+  },
+  "green_terracotta": {
+   "n": 38,
+   "corner": {
+    "choices": [
+     [
+      "green_terracotta",
+      0.591
+     ],
+     [
+      "white_terracotta",
+      0.091
+     ],
+     [
+      "brown_terracotta",
+      0.091
+     ],
+     [
+      "yellow_terracotta",
+      0.045
+     ],
+     [
+      "gray_terracotta",
+      0.045
+     ],
+     [
+      "oak_log",
+      0.045
+     ]
+    ],
+    "seen": 22,
+    "differs": 0.409
+   },
+   "frame": {
+    "choices": [
+     [
+      "green_terracotta",
+      0.75
+     ],
+     [
+      "blue_terracotta",
+      0.031
+     ],
+     [
+      "black_wool",
+      0.031
+     ],
+     [
+      "red_terracotta",
+      0.031
+     ],
+     [
+      "yellow_terracotta",
+      0.031
+     ],
+     [
+      "magenta_wool",
+      0.031
+     ]
+    ],
+    "seen": 32,
+    "differs": 0.25
+   },
+   "base": {
+    "choices": [
+     [
+      "green_terracotta",
+      0.516
+     ],
+     [
+      "black_wool",
+      0.097
+     ],
+     [
+      "bricks",
+      0.065
+     ],
+     [
+      "brown_terracotta",
+      0.065
+     ],
+     [
+      "blue_terracotta",
+      0.032
+     ],
+     [
+      "dark_oak_planks",
+      0.032
+     ]
+    ],
+    "seen": 31,
+    "differs": 0.484
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.276
+     ],
+     [
+      "stone_brick_slab",
+      0.172
+     ],
+     [
+      "stone_brick_stairs",
+      0.138
+     ],
+     [
+      "quartz_slab",
+      0.069
+     ],
+     [
+      "nether_brick_stairs",
+      0.069
+     ],
+     [
+      "birch_slab",
+      0.034
+     ]
+    ],
+    "seen": 29,
+    "differs": 1.0
+   }
+  },
+  "blue_wool": {
+   "n": 37,
+   "corner": {
+    "choices": [
+     [
+      "blue_wool",
+      0.542
+     ],
+     [
+      "white_wool",
+      0.125
+     ],
+     [
+      "smooth_stone",
+      0.083
+     ],
+     [
+      "red_wool",
+      0.083
+     ],
+     [
+      "cobblestone",
+      0.042
+     ],
+     [
+      "brown_terracotta",
+      0.042
+     ]
+    ],
+    "seen": 24,
+    "differs": 0.458
+   },
+   "frame": {
+    "choices": [
+     [
+      "blue_wool",
+      0.367
+     ],
+     [
+      "white_wool",
+      0.3
+     ],
+     [
+      "yellow_wool",
+      0.1
+     ],
+     [
+      "smooth_stone",
+      0.067
+     ],
+     [
+      "sandstone",
+      0.033
+     ],
+     [
+      "white_terracotta",
+      0.033
+     ]
+    ],
+    "seen": 30,
+    "differs": 0.633
+   },
+   "base": {
+    "choices": [
+     [
+      "blue_wool",
+      0.267
+     ],
+     [
+      "red_wool",
+      0.2
+     ],
+     [
+      "black_wool",
+      0.133
+     ],
+     [
+      "cobblestone",
+      0.1
+     ],
+     [
+      "stone_bricks",
+      0.067
+     ],
+     [
+      "sandstone",
+      0.033
+     ]
+    ],
+    "seen": 30,
+    "differs": 0.733
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.474
+     ],
+     [
+      "nether_brick_stairs",
+      0.105
+     ],
+     [
+      "quartz_stairs",
+      0.105
+     ],
+     [
+      "quartz_slab",
+      0.105
+     ],
+     [
+      "brick_slab",
+      0.053
+     ],
+     [
+      "stone_brick_slab",
+      0.053
+     ]
+    ],
+    "seen": 19,
+    "differs": 1.0
+   }
+  },
+  "white_terracotta": {
+   "n": 37,
+   "corner": {
+    "choices": [
+     [
+      "white_terracotta",
+      0.571
+     ],
+     [
+      "smooth_stone",
+      0.107
+     ],
+     [
+      "oak_log",
+      0.071
+     ],
+     [
+      "purple_terracotta",
+      0.036
+     ],
+     [
+      "magenta_terracotta",
+      0.036
+     ],
+     [
+      "birch_log",
+      0.036
+     ]
+    ],
+    "seen": 28,
+    "differs": 0.429
+   },
+   "frame": {
+    "choices": [
+     [
+      "white_terracotta",
+      0.727
+     ],
+     [
+      "spruce_planks",
+      0.121
+     ],
+     [
+      "white_concrete",
+      0.03
+     ],
+     [
+      "terracotta",
+      0.03
+     ],
+     [
+      "red_terracotta",
+      0.03
+     ],
+     [
+      "dark_oak_planks",
+      0.03
+     ]
+    ],
+    "seen": 33,
+    "differs": 0.273
+   },
+   "base": {
+    "choices": [
+     [
+      "white_terracotta",
+      0.258
+     ],
+     [
+      "cobblestone",
+      0.097
+     ],
+     [
+      "spruce_planks",
+      0.065
+     ],
+     [
+      "orange_terracotta",
+      0.065
+     ],
+     [
+      "smooth_stone",
+      0.065
+     ],
+     [
+      "sandstone",
+      0.065
+     ]
+    ],
+    "seen": 31,
+    "differs": 0.742
+   },
+   "roof": {
+    "choices": [
+     [
+      "brick_slab",
+      0.219
+     ],
+     [
+      "quartz_slab",
+      0.156
+     ],
+     [
+      "brick_stairs",
+      0.125
+     ],
+     [
+      "oak_stairs",
+      0.094
+     ],
+     [
+      "acacia_stairs",
+      0.062
+     ],
+     [
+      "dark_oak_stairs",
+      0.062
+     ]
+    ],
+    "seen": 32,
+    "differs": 1.0
+   }
+  },
+  "dark_prismarine": {
+   "n": 34,
+   "corner": {
+    "choices": [
+     [
+      "dark_prismarine",
+      0.419
+     ],
+     [
+      "brown_terracotta",
+      0.194
+     ],
+     [
+      "spruce_log",
+      0.129
+     ],
+     [
+      "acacia_log",
+      0.065
+     ],
+     [
+      "birch_planks",
+      0.065
+     ],
+     [
+      "cyan_terracotta",
+      0.032
+     ]
+    ],
+    "seen": 31,
+    "differs": 0.581
+   },
+   "frame": {
+    "choices": [
+     [
+      "gold_block",
+      0.242
+     ],
+     [
+      "dark_prismarine",
+      0.182
+     ],
+     [
+      "black_wool",
+      0.152
+     ],
+     [
+      "spruce_planks",
+      0.152
+     ],
+     [
+      "cyan_terracotta",
+      0.061
+     ],
+     [
+      "birch_planks",
+      0.061
+     ]
+    ],
+    "seen": 33,
+    "differs": 0.818
+   },
+   "base": {
+    "choices": [
+     [
+      "dark_prismarine",
+      0.143
+     ],
+     [
+      "spruce_log",
+      0.107
+     ],
+     [
+      "chiseled_stone_bricks",
+      0.071
+     ],
+     [
+      "acacia_log",
+      0.071
+     ],
+     [
+      "gray_terracotta",
+      0.071
+     ],
+     [
+      "brown_terracotta",
+      0.071
+     ]
+    ],
+    "seen": 28,
+    "differs": 0.857
+   },
+   "roof": {
+    "choices": [
+     [
+      "red_sandstone_stairs",
+      0.316
+     ],
+     [
+      "dark_oak_stairs",
+      0.263
+     ],
+     [
+      "spruce_stairs",
+      0.211
+     ],
+     [
+      "dark_oak_slab",
+      0.105
+     ],
+     [
+      "quartz_slab",
+      0.053
+     ],
+     [
+      "spruce_slab",
+      0.053
+     ]
+    ],
+    "seen": 19,
+    "differs": 1.0
+   }
+  },
+  "birch_log": {
+   "n": 29,
+   "corner": {
+    "choices": [
+     [
+      "birch_log",
+      0.769
+     ],
+     [
+      "jungle_log",
+      0.077
+     ],
+     [
+      "lapis_block",
+      0.038
+     ],
+     [
+      "oak_planks",
+      0.038
+     ],
+     [
+      "jungle_planks",
+      0.038
+     ],
+     [
+      "oak_log",
+      0.038
+     ]
+    ],
+    "seen": 26,
+    "differs": 0.231
+   },
+   "frame": {
+    "choices": [
+     [
+      "birch_log",
+      0.458
+     ],
+     [
+      "oak_planks",
+      0.167
+     ],
+     [
+      "birch_planks",
+      0.083
+     ],
+     [
+      "dark_oak_planks",
+      0.083
+     ],
+     [
+      "lapis_block",
+      0.042
+     ],
+     [
+      "jungle_planks",
+      0.042
+     ]
+    ],
+    "seen": 24,
+    "differs": 0.542
+   },
+   "base": {
+    "choices": [
+     [
+      "birch_log",
+      0.407
+     ],
+     [
+      "polished_diorite",
+      0.074
+     ],
+     [
+      "lapis_block",
+      0.037
+     ],
+     [
+      "stone_bricks",
+      0.037
+     ],
+     [
+      "quartz_pillar",
+      0.037
+     ],
+     [
+      "oak_log",
+      0.037
+     ]
+    ],
+    "seen": 27,
+    "differs": 0.593
+   },
+   "roof": {
+    "choices": [
+     [
+      "birch_stairs",
+      0.235
+     ],
+     [
+      "oak_stairs",
+      0.176
+     ],
+     [
+      "stone_brick_slab",
+      0.118
+     ],
+     [
+      "spruce_slab",
+      0.118
+     ],
+     [
+      "cobblestone_stairs",
+      0.059
+     ],
+     [
+      "birch_slab",
+      0.059
+     ]
+    ],
+    "seen": 17,
+    "differs": 1.0
+   }
+  },
+  "lapis_block": {
+   "n": 29,
+   "corner": {
+    "choices": [
+     [
+      "lapis_block",
+      0.737
+     ],
+     [
+      "polished_diorite",
+      0.053
+     ],
+     [
+      "diamond_block",
+      0.053
+     ],
+     [
+      "quartz_block",
+      0.053
+     ],
+     [
+      "stone_bricks",
+      0.053
+     ],
+     [
+      "redstone_block",
+      0.053
+     ]
+    ],
+    "seen": 19,
+    "differs": 0.263
+   },
+   "frame": {
+    "choices": [
+     [
+      "lapis_block",
+      0.667
+     ],
+     [
+      "polished_andesite",
+      0.095
+     ],
+     [
+      "iron_block",
+      0.048
+     ],
+     [
+      "oak_planks",
+      0.048
+     ],
+     [
+      "polished_diorite",
+      0.048
+     ],
+     [
+      "stone_bricks",
+      0.048
+     ]
+    ],
+    "seen": 21,
+    "differs": 0.333
+   },
+   "base": {
+    "choices": [
+     [
+      "lapis_block",
+      0.48
+     ],
+     [
+      "quartz_block",
+      0.16
+     ],
+     [
+      "diamond_block",
+      0.08
+     ],
+     [
+      "nether_bricks",
+      0.04
+     ],
+     [
+      "sandstone",
+      0.04
+     ],
+     [
+      "pink_wool",
+      0.04
+     ]
+    ],
+    "seen": 25,
+    "differs": 0.52
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.333
+     ],
+     [
+      "birch_slab",
+      0.167
+     ],
+     [
+      "nether_brick_stairs",
+      0.167
+     ],
+     [
+      "smooth_stone_slab",
+      0.167
+     ],
+     [
+      "quartz_stairs",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 1.0
+   }
+  },
+  "brown_terracotta": {
+   "n": 24,
+   "corner": {
+    "choices": [
+     [
+      "brown_terracotta",
+      0.353
+     ],
+     [
+      "spruce_log",
+      0.235
+     ],
+     [
+      "red_terracotta",
+      0.059
+     ],
+     [
+      "quartz_block",
+      0.059
+     ],
+     [
+      "gray_terracotta",
+      0.059
+     ],
+     [
+      "oak_log",
+      0.059
+     ]
+    ],
+    "seen": 17,
+    "differs": 0.647
+   },
+   "frame": {
+    "choices": [
+     [
+      "white_terracotta",
+      0.35
+     ],
+     [
+      "brown_terracotta",
+      0.2
+     ],
+     [
+      "quartz_block",
+      0.1
+     ],
+     [
+      "spruce_planks",
+      0.1
+     ],
+     [
+      "birch_planks",
+      0.05
+     ],
+     [
+      "oak_log",
+      0.05
+     ]
+    ],
+    "seen": 20,
+    "differs": 0.8
+   },
+   "base": {
+    "choices": [
+     [
+      "stone_bricks",
+      0.438
+     ],
+     [
+      "sandstone",
+      0.125
+     ],
+     [
+      "spruce_planks",
+      0.062
+     ],
+     [
+      "birch_planks",
+      0.062
+     ],
+     [
+      "red_terracotta",
+      0.062
+     ],
+     [
+      "polished_granite",
+      0.062
+     ]
+    ],
+    "seen": 16,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_stairs",
+      0.579
+     ],
+     [
+      "birch_stairs",
+      0.105
+     ],
+     [
+      "oak_slab",
+      0.053
+     ],
+     [
+      "quartz_stairs",
+      0.053
+     ],
+     [
+      "acacia_stairs",
+      0.053
+     ],
+     [
+      "dark_oak_slab",
+      0.053
+     ]
+    ],
+    "seen": 19,
+    "differs": 1.0
+   }
+  },
+  "obsidian": {
+   "n": 24,
+   "corner": {
+    "choices": [
+     [
+      "obsidian",
+      0.714
+     ],
+     [
+      "sandstone",
+      0.143
+     ],
+     [
+      "orange_terracotta",
+      0.071
+     ],
+     [
+      "glowstone",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 0.286
+   },
+   "frame": {
+    "choices": [
+     [
+      "obsidian",
+      0.684
+     ],
+     [
+      "sandstone",
+      0.105
+     ],
+     [
+      "nether_bricks",
+      0.053
+     ],
+     [
+      "lapis_block",
+      0.053
+     ],
+     [
+      "quartz_block",
+      0.053
+     ],
+     [
+      "orange_terracotta",
+      0.053
+     ]
+    ],
+    "seen": 19,
+    "differs": 0.316
+   },
+   "base": {
+    "choices": [
+     [
+      "obsidian",
+      0.444
+     ],
+     [
+      "nether_bricks",
+      0.056
+     ],
+     [
+      "lapis_block",
+      0.056
+     ],
+     [
+      "white_terracotta",
+      0.056
+     ],
+     [
+      "polished_diorite",
+      0.056
+     ],
+     [
+      "glowstone",
+      0.056
+     ]
+    ],
+    "seen": 18,
+    "differs": 0.556
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.2
+     ],
+     [
+      "purpur_stairs",
+      0.2
+     ],
+     [
+      "acacia_stairs",
+      0.2
+     ],
+     [
+      "stone_brick_slab",
+      0.2
+     ],
+     [
+      "deepslate_tile_stairs",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 1.0
+   }
+  },
+  "deepslate_bricks": {
+   "n": 24,
+   "corner": {
+    "choices": [
+     [
+      "deepslate_bricks",
+      0.706
+     ],
+     [
+      "spruce_log",
+      0.059
+     ],
+     [
+      "polished_deepslate",
+      0.059
+     ],
+     [
+      "white_concrete",
+      0.059
+     ],
+     [
+      "infested_mossy_stone_bricks",
+      0.059
+     ],
+     [
+      "stone_bricks",
+      0.059
+     ]
+    ],
+    "seen": 17,
+    "differs": 0.294
+   },
+   "frame": {
+    "choices": [
+     [
+      "deepslate_bricks",
+      0.5
+     ],
+     [
+      "white_concrete",
+      0.125
+     ],
+     [
+      "spruce_planks",
+      0.062
+     ],
+     [
+      "glowstone",
+      0.062
+     ],
+     [
+      "stripped_dark_oak_wood",
+      0.062
+     ],
+     [
+      "birch_planks",
+      0.062
+     ]
+    ],
+    "seen": 16,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "deepslate_tiles",
+      0.182
+     ],
+     [
+      "polished_tuff",
+      0.091
+     ],
+     [
+      "white_concrete",
+      0.091
+     ],
+     [
+      "granite",
+      0.091
+     ],
+     [
+      "diamond_block",
+      0.091
+     ],
+     [
+      "polished_deepslate",
+      0.091
+     ]
+    ],
+    "seen": 11,
+    "differs": 0.909
+   },
+   "roof": {
+    "choices": [
+     [
+      "deepslate_brick_slab",
+      0.143
+     ],
+     [
+      "spruce_stairs",
+      0.143
+     ],
+     [
+      "deepslate_brick_stairs",
+      0.143
+     ],
+     [
+      "deepslate_tile_stairs",
+      0.143
+     ],
+     [
+      "spruce_slab",
+      0.071
+     ],
+     [
+      "stone_brick_slab",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 1.0
+   }
+  },
+  "lime_terracotta": {
+   "n": 23,
+   "corner": {
+    "choices": [
+     [
+      "lime_terracotta",
+      0.316
+     ],
+     [
+      "birch_planks",
+      0.158
+     ],
+     [
+      "smooth_stone",
+      0.158
+     ],
+     [
+      "spruce_log",
+      0.105
+     ],
+     [
+      "green_terracotta",
+      0.105
+     ],
+     [
+      "yellow_terracotta",
+      0.053
+     ]
+    ],
+    "seen": 19,
+    "differs": 0.684
+   },
+   "frame": {
+    "choices": [
+     [
+      "lime_terracotta",
+      0.522
+     ],
+     [
+      "birch_planks",
+      0.13
+     ],
+     [
+      "spruce_log",
+      0.087
+     ],
+     [
+      "quartz_block",
+      0.087
+     ],
+     [
+      "yellow_terracotta",
+      0.043
+     ],
+     [
+      "magenta_wool",
+      0.043
+     ]
+    ],
+    "seen": 23,
+    "differs": 0.478
+   },
+   "base": {
+    "choices": [
+     [
+      "green_terracotta",
+      0.286
+     ],
+     [
+      "birch_planks",
+      0.214
+     ],
+     [
+      "smooth_stone",
+      0.214
+     ],
+     [
+      "mossy_cobblestone",
+      0.071
+     ],
+     [
+      "jungle_planks",
+      0.071
+     ],
+     [
+      "spruce_log",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "brick_slab",
+      0.4
+     ],
+     [
+      "spruce_stairs",
+      0.2
+     ],
+     [
+      "quartz_slab",
+      0.133
+     ],
+     [
+      "birch_stairs",
+      0.133
+     ],
+     [
+      "smooth_stone_slab",
+      0.067
+     ],
+     [
+      "quartz_stairs",
+      0.067
+     ]
+    ],
+    "seen": 15,
+    "differs": 1.0
+   }
+  },
+  "gray_concrete": {
+   "n": 22,
+   "corner": {
+    "choices": [
+     [
+      "gray_concrete",
+      0.8
+     ],
+     [
+      "cyan_concrete",
+      0.05
+     ],
+     [
+      "birch_planks",
+      0.05
+     ],
+     [
+      "white_concrete",
+      0.05
+     ],
+     [
+      "stripped_dark_oak_log",
+      0.05
+     ]
+    ],
+    "seen": 20,
+    "differs": 0.2
+   },
+   "frame": {
+    "choices": [
+     [
+      "gray_concrete",
+      0.556
+     ],
+     [
+      "white_concrete",
+      0.278
+     ],
+     [
+      "lime_terracotta",
+      0.056
+     ],
+     [
+      "birch_planks",
+      0.056
+     ],
+     [
+      "stripped_oak_log",
+      0.056
+     ]
+    ],
+    "seen": 18,
+    "differs": 0.444
+   },
+   "base": {
+    "choices": [
+     [
+      "gray_concrete",
+      0.25
+     ],
+     [
+      "quartz_block",
+      0.125
+     ],
+     [
+      "oak_planks",
+      0.062
+     ],
+     [
+      "lime_terracotta",
+      0.062
+     ],
+     [
+      "birch_planks",
+      0.062
+     ],
+     [
+      "black_concrete",
+      0.062
+     ]
+    ],
+    "seen": 16,
+    "differs": 0.75
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.176
+     ],
+     [
+      "stone_brick_stairs",
+      0.118
+     ],
+     [
+      "dark_oak_stairs",
+      0.118
+     ],
+     [
+      "smooth_stone_slab",
+      0.118
+     ],
+     [
+      "nether_brick_slab",
+      0.059
+     ],
+     [
+      "stone_brick_slab",
+      0.059
+     ]
+    ],
+    "seen": 17,
+    "differs": 1.0
+   }
+  },
+  "stripped_spruce_log": {
+   "n": 22,
+   "corner": {
+    "choices": [
+     [
+      "stripped_spruce_log",
+      0.882
+     ],
+     [
+      "stripped_dark_oak_log",
+      0.059
+     ],
+     [
+      "deepslate_bricks",
+      0.059
+     ]
+    ],
+    "seen": 17,
+    "differs": 0.118
+   },
+   "frame": {
+    "choices": [
+     [
+      "stripped_spruce_log",
+      0.474
+     ],
+     [
+      "spruce_planks",
+      0.158
+     ],
+     [
+      "diorite",
+      0.053
+     ],
+     [
+      "stripped_oak_wood",
+      0.053
+     ],
+     [
+      "stripped_oak_log",
+      0.053
+     ],
+     [
+      "oak_planks",
+      0.053
+     ]
+    ],
+    "seen": 19,
+    "differs": 0.526
+   },
+   "base": {
+    "choices": [
+     [
+      "stripped_spruce_log",
+      0.429
+     ],
+     [
+      "stone_bricks",
+      0.143
+     ],
+     [
+      "spruce_planks",
+      0.071
+     ],
+     [
+      "deepslate_tiles",
+      0.071
+     ],
+     [
+      "oak_planks",
+      0.071
+     ],
+     [
+      "mud_bricks",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 0.571
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_slab",
+      0.375
+     ],
+     [
+      "stone_brick_stairs",
+      0.125
+     ],
+     [
+      "spruce_stairs",
+      0.125
+     ],
+     [
+      "granite_stairs",
+      0.062
+     ],
+     [
+      "cobbled_deepslate_stairs",
+      0.062
+     ],
+     [
+      "polished_deepslate_stairs",
+      0.062
+     ]
+    ],
+    "seen": 16,
+    "differs": 1.0
+   }
+  },
+  "quartz_pillar": {
+   "n": 21,
+   "corner": {
+    "choices": [
+     [
+      "quartz_pillar",
+      0.737
+     ],
+     [
+      "stone_bricks",
+      0.105
+     ],
+     [
+      "white_concrete",
+      0.053
+     ],
+     [
+      "bricks",
+      0.053
+     ],
+     [
+      "diorite",
+      0.053
+     ]
+    ],
+    "seen": 19,
+    "differs": 0.263
+   },
+   "frame": {
+    "choices": [
+     [
+      "quartz_pillar",
+      0.733
+     ],
+     [
+      "gray_concrete",
+      0.067
+     ],
+     [
+      "quartz_block",
+      0.067
+     ],
+     [
+      "white_concrete",
+      0.067
+     ],
+     [
+      "stone_bricks",
+      0.067
+     ]
+    ],
+    "seen": 15,
+    "differs": 0.267
+   },
+   "base": {
+    "choices": [
+     [
+      "quartz_pillar",
+      0.211
+     ],
+     [
+      "birch_planks",
+      0.158
+     ],
+     [
+      "quartz_block",
+      0.105
+     ],
+     [
+      "stone_bricks",
+      0.105
+     ],
+     [
+      "spruce_planks",
+      0.053
+     ],
+     [
+      "chiseled_quartz_block",
+      0.053
+     ]
+    ],
+    "seen": 19,
+    "differs": 0.789
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.278
+     ],
+     [
+      "stone_brick_stairs",
+      0.167
+     ],
+     [
+      "quartz_stairs",
+      0.111
+     ],
+     [
+      "stone_brick_slab",
+      0.111
+     ],
+     [
+      "oak_slab",
+      0.111
+     ],
+     [
+      "acacia_slab",
+      0.056
+     ]
+    ],
+    "seen": 18,
+    "differs": 1.0
+   }
+  },
+  "yellow_wool": {
+   "n": 21,
+   "corner": {
+    "choices": [
+     [
+      "yellow_wool",
+      0.429
+     ],
+     [
+      "oak_planks",
+      0.357
+     ],
+     [
+      "white_wool",
+      0.071
+     ],
+     [
+      "sandstone",
+      0.071
+     ],
+     [
+      "birch_planks",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 0.571
+   },
+   "frame": {
+    "choices": [
+     [
+      "yellow_wool",
+      0.474
+     ],
+     [
+      "oak_planks",
+      0.158
+     ],
+     [
+      "purple_wool",
+      0.053
+     ],
+     [
+      "white_wool",
+      0.053
+     ],
+     [
+      "lime_wool",
+      0.053
+     ],
+     [
+      "sandstone",
+      0.053
+     ]
+    ],
+    "seen": 19,
+    "differs": 0.526
+   },
+   "base": {
+    "choices": [
+     [
+      "black_wool",
+      0.412
+     ],
+     [
+      "oak_planks",
+      0.235
+     ],
+     [
+      "yellow_wool",
+      0.118
+     ],
+     [
+      "red_wool",
+      0.059
+     ],
+     [
+      "bricks",
+      0.059
+     ],
+     [
+      "iron_block",
+      0.059
+     ]
+    ],
+    "seen": 17,
+    "differs": 0.882
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.692
+     ],
+     [
+      "quartz_stairs",
+      0.077
+     ],
+     [
+      "sandstone_slab",
+      0.077
+     ],
+     [
+      "oak_stairs",
+      0.077
+     ],
+     [
+      "quartz_slab",
+      0.077
+     ]
+    ],
+    "seen": 13,
+    "differs": 1.0
+   }
+  },
+  "acacia_log": {
+   "n": 21,
+   "corner": {
+    "choices": [
+     [
+      "acacia_log",
+      0.812
+     ],
+     [
+      "acacia_wood",
+      0.125
+     ],
+     [
+      "orange_terracotta",
+      0.062
+     ]
+    ],
+    "seen": 16,
+    "differs": 0.188
+   },
+   "frame": {
+    "choices": [
+     [
+      "acacia_log",
+      0.389
+     ],
+     [
+      "spruce_planks",
+      0.167
+     ],
+     [
+      "acacia_planks",
+      0.111
+     ],
+     [
+      "dark_oak_planks",
+      0.111
+     ],
+     [
+      "polished_andesite",
+      0.056
+     ],
+     [
+      "lime_terracotta",
+      0.056
+     ]
+    ],
+    "seen": 18,
+    "differs": 0.611
+   },
+   "base": {
+    "choices": [
+     [
+      "acacia_log",
+      0.286
+     ],
+     [
+      "acacia_planks",
+      0.143
+     ],
+     [
+      "jungle_planks",
+      0.143
+     ],
+     [
+      "cobblestone",
+      0.143
+     ],
+     [
+      "polished_andesite",
+      0.071
+     ],
+     [
+      "poppy",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 0.714
+   },
+   "roof": {
+    "choices": [
+     [
+      "acacia_stairs",
+      0.25
+     ],
+     [
+      "dark_oak_slab",
+      0.188
+     ],
+     [
+      "spruce_stairs",
+      0.125
+     ],
+     [
+      "acacia_slab",
+      0.062
+     ],
+     [
+      "stone_brick_stairs",
+      0.062
+     ],
+     [
+      "nether_brick_slab",
+      0.062
+     ]
+    ],
+    "seen": 16,
+    "differs": 1.0
+   }
+  },
+  "orange_wool": {
+   "n": 19,
+   "corner": {
+    "choices": [
+     [
+      "orange_wool",
+      0.667
+     ],
+     [
+      "spruce_log",
+      0.111
+     ],
+     [
+      "red_wool",
+      0.111
+     ],
+     [
+      "spruce_planks",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.333
+   },
+   "frame": {
+    "choices": [
+     [
+      "orange_wool",
+      0.647
+     ],
+     [
+      "yellow_wool",
+      0.118
+     ],
+     [
+      "obsidian",
+      0.059
+     ],
+     [
+      "red_wool",
+      0.059
+     ],
+     [
+      "white_wool",
+      0.059
+     ],
+     [
+      "spruce_planks",
+      0.059
+     ]
+    ],
+    "seen": 17,
+    "differs": 0.353
+   },
+   "base": {
+    "choices": [
+     [
+      "orange_wool",
+      0.25
+     ],
+     [
+      "black_wool",
+      0.167
+     ],
+     [
+      "red_wool",
+      0.167
+     ],
+     [
+      "smooth_stone",
+      0.083
+     ],
+     [
+      "yellow_wool",
+      0.083
+     ],
+     [
+      "iron_block",
+      0.083
+     ]
+    ],
+    "seen": 12,
+    "differs": 0.75
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.417
+     ],
+     [
+      "brick_stairs",
+      0.167
+     ],
+     [
+      "stone_brick_slab",
+      0.083
+     ],
+     [
+      "quartz_slab",
+      0.083
+     ],
+     [
+      "nether_brick_stairs",
+      0.083
+     ],
+     [
+      "brick_slab",
+      0.083
+     ]
+    ],
+    "seen": 12,
+    "differs": 1.0
+   }
+  },
+  "polished_diorite": {
+   "n": 19,
+   "corner": {
+    "choices": [
+     [
+      "polished_diorite",
+      0.5
+     ],
+     [
+      "stone_bricks",
+      0.083
+     ],
+     [
+      "diorite",
+      0.083
+     ],
+     [
+      "polished_granite",
+      0.083
+     ],
+     [
+      "dark_oak_planks",
+      0.083
+     ],
+     [
+      "bricks",
+      0.083
+     ]
+    ],
+    "seen": 12,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "polished_diorite",
+      0.571
+     ],
+     [
+      "diorite",
+      0.071
+     ],
+     [
+      "polished_granite",
+      0.071
+     ],
+     [
+      "dark_oak_planks",
+      0.071
+     ],
+     [
+      "bricks",
+      0.071
+     ],
+     [
+      "cobblestone",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 0.429
+   },
+   "base": {
+    "choices": [
+     [
+      "stone_bricks",
+      0.176
+     ],
+     [
+      "polished_diorite",
+      0.118
+     ],
+     [
+      "polished_granite",
+      0.118
+     ],
+     [
+      "polished_andesite",
+      0.118
+     ],
+     [
+      "acacia_planks",
+      0.059
+     ],
+     [
+      "obsidian",
+      0.059
+     ]
+    ],
+    "seen": 17,
+    "differs": 0.882
+   },
+   "roof": {
+    "choices": [
+     [
+      "stone_brick_slab",
+      0.25
+     ],
+     [
+      "cobblestone_stairs",
+      0.167
+     ],
+     [
+      "smooth_stone_slab",
+      0.167
+     ],
+     [
+      "quartz_slab",
+      0.167
+     ],
+     [
+      "stone_brick_stairs",
+      0.083
+     ],
+     [
+      "acacia_slab",
+      0.083
+     ]
+    ],
+    "seen": 12,
+    "differs": 1.0
+   }
+  },
+  "terracotta": {
+   "n": 19,
+   "corner": {
+    "choices": [
+     [
+      "terracotta",
+      0.778
+     ],
+     [
+      "acacia_log",
+      0.056
+     ],
+     [
+      "birch_planks",
+      0.056
+     ],
+     [
+      "jungle_planks",
+      0.056
+     ],
+     [
+      "spruce_log",
+      0.056
+     ]
+    ],
+    "seen": 18,
+    "differs": 0.222
+   },
+   "frame": {
+    "choices": [
+     [
+      "terracotta",
+      0.571
+     ],
+     [
+      "cobblestone",
+      0.143
+     ],
+     [
+      "diorite",
+      0.143
+     ],
+     [
+      "brewing_stand",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.429
+   },
+   "base": {
+    "choices": [
+     [
+      "sandstone",
+      0.625
+     ],
+     [
+      "acacia_log",
+      0.062
+     ],
+     [
+      "birch_planks",
+      0.062
+     ],
+     [
+      "polished_andesite",
+      0.062
+     ],
+     [
+      "cyan_terracotta",
+      0.062
+     ],
+     [
+      "white_terracotta",
+      0.062
+     ]
+    ],
+    "seen": 16,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "oak_slab",
+      0.5
+     ],
+     [
+      "acacia_stairs",
+      0.143
+     ],
+     [
+      "smooth_stone_slab",
+      0.143
+     ],
+     [
+      "quartz_stairs",
+      0.071
+     ],
+     [
+      "birch_stairs",
+      0.071
+     ],
+     [
+      "jungle_stairs",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 1.0
+   }
+  },
+  "blue_terracotta": {
+   "n": 18,
+   "corner": {
+    "choices": [
+     [
+      "blue_terracotta",
+      0.6
+     ],
+     [
+      "emerald_block",
+      0.067
+     ],
+     [
+      "quartz_pillar",
+      0.067
+     ],
+     [
+      "polished_andesite",
+      0.067
+     ],
+     [
+      "oak_log",
+      0.067
+     ],
+     [
+      "brown_terracotta",
+      0.067
+     ]
+    ],
+    "seen": 15,
+    "differs": 0.4
+   },
+   "frame": {
+    "choices": [
+     [
+      "blue_terracotta",
+      0.4
+     ],
+     [
+      "quartz_block",
+      0.133
+     ],
+     [
+      "emerald_block",
+      0.067
+     ],
+     [
+      "quartz_pillar",
+      0.067
+     ],
+     [
+      "polished_andesite",
+      0.067
+     ],
+     [
+      "oak_log",
+      0.067
+     ]
+    ],
+    "seen": 15,
+    "differs": 0.6
+   },
+   "base": {
+    "choices": [
+     [
+      "blue_terracotta",
+      0.231
+     ],
+     [
+      "emerald_block",
+      0.077
+     ],
+     [
+      "iron_block",
+      0.077
+     ],
+     [
+      "cobblestone",
+      0.077
+     ],
+     [
+      "purple_terracotta",
+      0.077
+     ],
+     [
+      "yellow_terracotta",
+      0.077
+     ]
+    ],
+    "seen": 13,
+    "differs": 0.769
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_stairs",
+      0.357
+     ],
+     [
+      "quartz_slab",
+      0.214
+     ],
+     [
+      "spruce_stairs",
+      0.143
+     ],
+     [
+      "dark_oak_slab",
+      0.071
+     ],
+     [
+      "brick_slab",
+      0.071
+     ],
+     [
+      "stone_brick_stairs",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 1.0
+   }
+  },
+  "gray_terracotta": {
+   "n": 18,
+   "corner": {
+    "choices": [
+     [
+      "gray_terracotta",
+      0.286
+     ],
+     [
+      "blue_terracotta",
+      0.143
+     ],
+     [
+      "quartz_block",
+      0.143
+     ],
+     [
+      "cracked_stone_bricks",
+      0.143
+     ],
+     [
+      "oak_planks",
+      0.143
+     ],
+     [
+      "lime_terracotta",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.714
+   },
+   "frame": {
+    "choices": [
+     [
+      "gray_terracotta",
+      0.333
+     ],
+     [
+      "oak_planks",
+      0.25
+     ],
+     [
+      "quartz_block",
+      0.083
+     ],
+     [
+      "oak_log",
+      0.083
+     ],
+     [
+      "ice",
+      0.083
+     ],
+     [
+      "cyan_terracotta",
+      0.083
+     ]
+    ],
+    "seen": 12,
+    "differs": 0.667
+   },
+   "base": {
+    "choices": [
+     [
+      "sandstone",
+      0.25
+     ],
+     [
+      "spruce_planks",
+      0.25
+     ],
+     [
+      "brown_wool",
+      0.125
+     ],
+     [
+      "quartz_block",
+      0.125
+     ],
+     [
+      "polished_granite",
+      0.125
+     ],
+     [
+      "gray_terracotta",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.875
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_stairs",
+      0.214
+     ],
+     [
+      "smooth_stone_slab",
+      0.214
+     ],
+     [
+      "quartz_slab",
+      0.143
+     ],
+     [
+      "dark_oak_slab",
+      0.143
+     ],
+     [
+      "birch_stairs",
+      0.071
+     ],
+     [
+      "oak_slab",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 1.0
+   }
+  },
+  "mossy_cobblestone": {
+   "n": 16,
+   "corner": {
+    "choices": [
+     [
+      "mossy_cobblestone",
+      0.857
+     ],
+     [
+      "diamond_block",
+      0.071
+     ],
+     [
+      "lime_terracotta",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 0.143
+   },
+   "frame": {
+    "choices": [
+     [
+      "mossy_cobblestone",
+      0.933
+     ],
+     [
+      "bricks",
+      0.067
+     ]
+    ],
+    "seen": 15,
+    "differs": 0.067
+   },
+   "base": {
+    "choices": [
+     [
+      "mossy_cobblestone",
+      0.6
+     ],
+     [
+      "oak_planks",
+      0.1
+     ],
+     [
+      "stone_bricks",
+      0.1
+     ],
+     [
+      "spruce_log",
+      0.1
+     ],
+     [
+      "polished_andesite",
+      0.1
+     ]
+    ],
+    "seen": 10,
+    "differs": 0.4
+   },
+   "roof": {
+    "choices": [
+     [
+      "birch_stairs",
+      0.182
+     ],
+     [
+      "cobblestone_stairs",
+      0.182
+     ],
+     [
+      "dark_oak_stairs",
+      0.091
+     ],
+     [
+      "quartz_stairs",
+      0.091
+     ],
+     [
+      "quartz_slab",
+      0.091
+     ],
+     [
+      "nether_brick_stairs",
+      0.091
+     ]
+    ],
+    "seen": 11,
+    "differs": 1.0
+   }
+  },
+  "tuff_bricks": {
+   "n": 16,
+   "corner": {
+    "choices": [
+     [
+      "tuff_bricks",
+      0.875
+     ],
+     [
+      "stripped_pale_oak_log",
+      0.062
+     ],
+     [
+      "obsidian",
+      0.062
+     ]
+    ],
+    "seen": 16,
+    "differs": 0.125
+   },
+   "frame": {
+    "choices": [
+     [
+      "tuff_bricks",
+      0.5
+     ],
+     [
+      "stripped_pale_oak_log",
+      0.125
+     ],
+     [
+      "oak_planks",
+      0.125
+     ],
+     [
+      "obsidian",
+      0.125
+     ],
+     [
+      "observer",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "tuff_bricks",
+      0.875
+     ],
+     [
+      "chiseled_tuff",
+      0.062
+     ],
+     [
+      "dispenser",
+      0.062
+     ]
+    ],
+    "seen": 16,
+    "differs": 0.125
+   },
+   "roof": {
+    "choices": [
+     [
+      "waxed_oxidized_cut_copper_stairs",
+      0.667
+     ],
+     [
+      "tuff_brick_slab",
+      0.333
+     ]
+    ],
+    "seen": 6,
+    "differs": 1.0
+   }
+  },
+  "glowstone": {
+   "n": 15,
+   "corner": {
+    "choices": [
+     [
+      "glowstone",
+      0.625
+     ],
+     [
+      "oak_planks",
+      0.125
+     ],
+     [
+      "bookshelf",
+      0.125
+     ],
+     [
+      "red_wool",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.375
+   },
+   "frame": {
+    "choices": [
+     [
+      "glowstone",
+      0.5
+     ],
+     [
+      "gray_wool",
+      0.1
+     ],
+     [
+      "smooth_stone",
+      0.1
+     ],
+     [
+      "white_wool",
+      0.1
+     ],
+     [
+      "bookshelf",
+      0.1
+     ],
+     [
+      "lapis_block",
+      0.1
+     ]
+    ],
+    "seen": 10,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "glowstone",
+      0.444
+     ],
+     [
+      "sandstone",
+      0.333
+     ],
+     [
+      "quartz_block",
+      0.111
+     ],
+     [
+      "bricks",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.556
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.5
+     ],
+     [
+      "quartz_stairs",
+      0.125
+     ],
+     [
+      "cobblestone_stairs",
+      0.125
+     ],
+     [
+      "spruce_slab",
+      0.125
+     ],
+     [
+      "oak_slab",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 1.0
+   }
+  },
+  "bone_block": {
+   "n": 15,
+   "corner": {
+    "choices": [
+     [
+      "dark_oak_log",
+      0.692
+     ],
+     [
+      "bone_block",
+      0.154
+     ],
+     [
+      "oak_log",
+      0.077
+     ],
+     [
+      "stripped_spruce_wood",
+      0.077
+     ]
+    ],
+    "seen": 13,
+    "differs": 0.846
+   },
+   "frame": {
+    "choices": [
+     [
+      "bone_block",
+      1.0
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.0
+   },
+   "base": {
+    "choices": [
+     [
+      "bone_block",
+      0.667
+     ],
+     [
+      "cobblestone",
+      0.111
+     ],
+     [
+      "spruce_planks",
+      0.111
+     ],
+     [
+      "bricks",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.333
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_slab",
+      0.929
+     ],
+     [
+      "deepslate_tile_stairs",
+      0.071
+     ]
+    ],
+    "seen": 14,
+    "differs": 1.0
+   }
+  },
+  "chiseled_stone_bricks": {
+   "n": 14,
+   "corner": {
+    "choices": [
+     [
+      "chiseled_stone_bricks",
+      0.7
+     ],
+     [
+      "bricks",
+      0.1
+     ],
+     [
+      "mossy_cobblestone",
+      0.1
+     ],
+     [
+      "cracked_stone_bricks",
+      0.1
+     ]
+    ],
+    "seen": 10,
+    "differs": 0.3
+   },
+   "frame": {
+    "choices": [
+     [
+      "chiseled_stone_bricks",
+      0.615
+     ],
+     [
+      "stone_bricks",
+      0.154
+     ],
+     [
+      "bricks",
+      0.077
+     ],
+     [
+      "cracked_stone_bricks",
+      0.077
+     ],
+     [
+      "chiseled_sandstone",
+      0.077
+     ]
+    ],
+    "seen": 13,
+    "differs": 0.385
+   },
+   "base": {
+    "choices": [
+     [
+      "chiseled_stone_bricks",
+      0.455
+     ],
+     [
+      "stone_bricks",
+      0.182
+     ],
+     [
+      "pink_wool",
+      0.091
+     ],
+     [
+      "dark_oak_planks",
+      0.091
+     ],
+     [
+      "chiseled_quartz_block",
+      0.091
+     ],
+     [
+      "mossy_stone_bricks",
+      0.091
+     ]
+    ],
+    "seen": 11,
+    "differs": 0.545
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.455
+     ],
+     [
+      "brick_slab",
+      0.091
+     ],
+     [
+      "purpur_stairs",
+      0.091
+     ],
+     [
+      "cobblestone_stairs",
+      0.091
+     ],
+     [
+      "nether_brick_slab",
+      0.091
+     ],
+     [
+      "stone_brick_stairs",
+      0.091
+     ]
+    ],
+    "seen": 11,
+    "differs": 1.0
+   }
+  },
+  "andesite": {
+   "n": 14,
+   "corner": {
+    "choices": [
+     [
+      "andesite",
+      0.5
+     ],
+     [
+      "birch_planks",
+      0.125
+     ],
+     [
+      "polished_diorite",
+      0.125
+     ],
+     [
+      "stripped_spruce_log",
+      0.125
+     ],
+     [
+      "stone_bricks",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "andesite",
+      0.222
+     ],
+     [
+      "birch_planks",
+      0.111
+     ],
+     [
+      "polished_diorite",
+      0.111
+     ],
+     [
+      "quartz_block",
+      0.111
+     ],
+     [
+      "spruce_planks",
+      0.111
+     ],
+     [
+      "obsidian",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.778
+   },
+   "base": {
+    "choices": [
+     [
+      "andesite",
+      0.25
+     ],
+     [
+      "birch_planks",
+      0.083
+     ],
+     [
+      "iron_ore",
+      0.083
+     ],
+     [
+      "quartz_block",
+      0.083
+     ],
+     [
+      "packed_ice",
+      0.083
+     ],
+     [
+      "granite",
+      0.083
+     ]
+    ],
+    "seen": 12,
+    "differs": 0.75
+   },
+   "roof": {
+    "choices": [
+     [
+      "deepslate_brick_stairs",
+      0.167
+     ],
+     [
+      "stone_brick_stairs",
+      0.083
+     ],
+     [
+      "sandstone_slab",
+      0.083
+     ],
+     [
+      "spruce_slab",
+      0.083
+     ],
+     [
+      "quartz_slab",
+      0.083
+     ],
+     [
+      "smooth_stone_slab",
+      0.083
+     ]
+    ],
+    "seen": 12,
+    "differs": 1.0
+   }
+  },
+  "green_wool": {
+   "n": 13,
+   "corner": {
+    "choices": [
+     [
+      "spruce_log",
+      0.333
+     ],
+     [
+      "green_wool",
+      0.333
+     ],
+     [
+      "purple_wool",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.667
+   },
+   "frame": {
+    "choices": [
+     [
+      "green_wool",
+      0.6
+     ],
+     [
+      "white_wool",
+      0.2
+     ],
+     [
+      "purple_wool",
+      0.1
+     ],
+     [
+      "quartz_block",
+      0.1
+     ]
+    ],
+    "seen": 10,
+    "differs": 0.4
+   },
+   "base": {
+    "choices": [
+     [
+      "green_wool",
+      0.5
+     ],
+     [
+      "spruce_log",
+      0.125
+     ],
+     [
+      "purple_wool",
+      0.125
+     ],
+     [
+      "yellow_terracotta",
+      0.125
+     ],
+     [
+      "black_wool",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.429
+     ],
+     [
+      "quartz_slab",
+      0.286
+     ],
+     [
+      "quartz_stairs",
+      0.286
+     ]
+    ],
+    "seen": 7,
+    "differs": 1.0
+   }
+  },
+  "end_stone_bricks": {
+   "n": 13,
+   "corner": {
+    "choices": [
+     [
+      "end_stone_bricks",
+      0.667
+     ],
+     [
+      "oak_log",
+      0.167
+     ],
+     [
+      "black_concrete",
+      0.083
+     ],
+     [
+      "birch_planks",
+      0.083
+     ]
+    ],
+    "seen": 12,
+    "differs": 0.333
+   },
+   "frame": {
+    "choices": [
+     [
+      "end_stone_bricks",
+      0.727
+     ],
+     [
+      "dark_prismarine",
+      0.091
+     ],
+     [
+      "bricks",
+      0.091
+     ],
+     [
+      "chiseled_stone_bricks",
+      0.091
+     ]
+    ],
+    "seen": 11,
+    "differs": 0.273
+   },
+   "base": {
+    "choices": [
+     [
+      "end_stone_bricks",
+      0.333
+     ],
+     [
+      "black_concrete",
+      0.167
+     ],
+     [
+      "birch_planks",
+      0.083
+     ],
+     [
+      "oak_planks",
+      0.083
+     ],
+     [
+      "white_concrete",
+      0.083
+     ],
+     [
+      "nether_bricks",
+      0.083
+     ]
+    ],
+    "seen": 12,
+    "differs": 0.667
+   },
+   "roof": {
+    "choices": [
+     [
+      "nether_brick_stairs",
+      0.25
+     ],
+     [
+      "red_sandstone_stairs",
+      0.125
+     ],
+     [
+      "oak_stairs",
+      0.125
+     ],
+     [
+      "stone_brick_stairs",
+      0.125
+     ],
+     [
+      "dark_oak_slab",
+      0.125
+     ],
+     [
+      "sandstone_stairs",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 1.0
+   }
+  },
+  "polished_granite": {
+   "n": 12,
+   "corner": {
+    "choices": [
+     [
+      "polished_granite",
+      0.75
+     ],
+     [
+      "dark_oak_planks",
+      0.125
+     ],
+     [
+      "spruce_planks",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.25
+   },
+   "frame": {
+    "choices": [
+     [
+      "polished_granite",
+      0.429
+     ],
+     [
+      "spruce_planks",
+      0.286
+     ],
+     [
+      "polished_diorite",
+      0.143
+     ],
+     [
+      "cobblestone",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.571
+   },
+   "base": {
+    "choices": [
+     [
+      "polished_granite",
+      0.455
+     ],
+     [
+      "birch_planks",
+      0.091
+     ],
+     [
+      "spruce_log",
+      0.091
+     ],
+     [
+      "jungle_log",
+      0.091
+     ],
+     [
+      "polished_diorite",
+      0.091
+     ],
+     [
+      "spruce_planks",
+      0.091
+     ]
+    ],
+    "seen": 11,
+    "differs": 0.545
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.2
+     ],
+     [
+      "smooth_stone_slab",
+      0.2
+     ],
+     [
+      "cobblestone_slab",
+      0.2
+     ],
+     [
+      "dark_oak_slab",
+      0.1
+     ],
+     [
+      "stone_brick_slab",
+      0.1
+     ],
+     [
+      "brick_slab",
+      0.1
+     ]
+    ],
+    "seen": 10,
+    "differs": 1.0
+   }
+  },
+  "cyan_wool": {
+   "n": 12,
+   "corner": {
+    "choices": [
+     [
+      "cyan_wool",
+      0.571
+     ],
+     [
+      "white_wool",
+      0.286
+     ],
+     [
+      "spruce_log",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.429
+   },
+   "frame": {
+    "choices": [
+     [
+      "cyan_wool",
+      0.6
+     ],
+     [
+      "quartz_pillar",
+      0.1
+     ],
+     [
+      "white_wool",
+      0.1
+     ],
+     [
+      "quartz_block",
+      0.1
+     ],
+     [
+      "blue_wool",
+      0.1
+     ]
+    ],
+    "seen": 10,
+    "differs": 0.4
+   },
+   "base": {
+    "choices": [
+     [
+      "black_wool",
+      0.286
+     ],
+     [
+      "blue_wool",
+      0.143
+     ],
+     [
+      "orange_wool",
+      0.143
+     ],
+     [
+      "cyan_wool",
+      0.143
+     ],
+     [
+      "smooth_stone",
+      0.143
+     ],
+     [
+      "quartz_pillar",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.857
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.286
+     ],
+     [
+      "cobblestone_stairs",
+      0.143
+     ],
+     [
+      "stone_brick_stairs",
+      0.143
+     ],
+     [
+      "oak_stairs",
+      0.143
+     ],
+     [
+      "spruce_slab",
+      0.143
+     ],
+     [
+      "quartz_slab",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 1.0
+   }
+  },
+  "ice": {
+   "n": 12,
+   "corner": {
+    "choices": [
+     [
+      "packed_ice",
+      0.429
+     ],
+     [
+      "ice",
+      0.429
+     ],
+     [
+      "gray_wool",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.571
+   },
+   "frame": {
+    "choices": [
+     [
+      "ice",
+      0.75
+     ],
+     [
+      "jungle_planks",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.25
+   },
+   "base": {
+    "choices": [
+     [
+      "packed_ice",
+      0.5
+     ],
+     [
+      "ice",
+      0.375
+     ],
+     [
+      "glowstone",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.625
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_slab",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   }
+  },
+  "pink_wool": {
+   "n": 12,
+   "corner": {
+    "choices": [
+     [
+      "cobblestone",
+      0.375
+     ],
+     [
+      "pink_wool",
+      0.25
+     ],
+     [
+      "stone_bricks",
+      0.125
+     ],
+     [
+      "oak_log",
+      0.125
+     ],
+     [
+      "lime_wool",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.75
+   },
+   "frame": {
+    "choices": [
+     [
+      "oak_planks",
+      0.625
+     ],
+     [
+      "yellow_wool",
+      0.125
+     ],
+     [
+      "stone_bricks",
+      0.125
+     ],
+     [
+      "spruce_log",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "cobblestone",
+      0.6
+     ],
+     [
+      "yellow_wool",
+      0.1
+     ],
+     [
+      "red_wool",
+      0.1
+     ],
+     [
+      "jungle_planks",
+      0.1
+     ],
+     [
+      "black_concrete",
+      0.1
+     ]
+    ],
+    "seen": 10,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "cobblestone_stairs",
+      0.571
+     ],
+     [
+      "quartz_stairs",
+      0.143
+     ],
+     [
+      "birch_stairs",
+      0.143
+     ],
+     [
+      "dark_oak_slab",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 1.0
+   }
+  },
+  "prismarine_bricks": {
+   "n": 11,
+   "corner": {
+    "choices": [
+     [
+      "prismarine_bricks",
+      0.6
+     ],
+     [
+      "dark_prismarine",
+      0.2
+     ],
+     [
+      "sandstone",
+      0.1
+     ],
+     [
+      "bricks",
+      0.1
+     ]
+    ],
+    "seen": 10,
+    "differs": 0.4
+   },
+   "frame": {
+    "choices": [
+     [
+      "prismarine_bricks",
+      0.364
+     ],
+     [
+      "spruce_planks",
+      0.182
+     ],
+     [
+      "birch_planks",
+      0.091
+     ],
+     [
+      "sandstone",
+      0.091
+     ],
+     [
+      "pink_terracotta",
+      0.091
+     ],
+     [
+      "dark_prismarine",
+      0.091
+     ]
+    ],
+    "seen": 11,
+    "differs": 0.636
+   },
+   "base": {
+    "choices": [
+     [
+      "prismarine_bricks",
+      0.571
+     ],
+     [
+      "stone_bricks",
+      0.143
+     ],
+     [
+      "dark_oak_planks",
+      0.143
+     ],
+     [
+      "prismarine",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.429
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_stairs",
+      0.143
+     ],
+     [
+      "dark_oak_slab",
+      0.143
+     ],
+     [
+      "brick_stairs",
+      0.143
+     ],
+     [
+      "nether_brick_stairs",
+      0.143
+     ],
+     [
+      "quartz_slab",
+      0.143
+     ],
+     [
+      "red_sandstone_stairs",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 1.0
+   }
+  },
+  "lime_wool": {
+   "n": 11,
+   "corner": {
+    "choices": [
+     [
+      "lime_wool",
+      0.875
+     ],
+     [
+      "green_terracotta",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.125
+   },
+   "frame": {
+    "choices": [
+     [
+      "lime_wool",
+      1.0
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.0
+   },
+   "base": {
+    "choices": [
+     [
+      "lime_wool",
+      0.556
+     ],
+     [
+      "melon",
+      0.111
+     ],
+     [
+      "black_terracotta",
+      0.111
+     ],
+     [
+      "jungle_log",
+      0.111
+     ],
+     [
+      "gray_terracotta",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.444
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_stairs",
+      0.5
+     ],
+     [
+      "smooth_stone_slab",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "packed_ice": {
+   "n": 11,
+   "corner": {
+    "choices": [
+     [
+      "packed_ice",
+      0.8
+     ],
+     [
+      "ice",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.2
+   },
+   "frame": {
+    "choices": [
+     [
+      "packed_ice",
+      0.667
+     ],
+     [
+      "spruce_planks",
+      0.111
+     ],
+     [
+      "dark_oak_planks",
+      0.111
+     ],
+     [
+      "white_concrete",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.333
+   },
+   "base": {
+    "choices": [
+     [
+      "ice",
+      0.286
+     ],
+     [
+      "packed_ice",
+      0.286
+     ],
+     [
+      "spruce_planks",
+      0.143
+     ],
+     [
+      "blue_wool",
+      0.143
+     ],
+     [
+      "cobblestone",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.714
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_slab",
+      0.5
+     ],
+     [
+      "polished_diorite_stairs",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "orange_terracotta": {
+   "n": 11,
+   "corner": {
+    "choices": [
+     [
+      "orange_terracotta",
+      0.667
+     ],
+     [
+      "red_sandstone",
+      0.111
+     ],
+     [
+      "acacia_log",
+      0.111
+     ],
+     [
+      "brown_terracotta",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.333
+   },
+   "frame": {
+    "choices": [
+     [
+      "orange_terracotta",
+      0.75
+     ],
+     [
+      "white_terracotta",
+      0.125
+     ],
+     [
+      "polished_blackstone",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.25
+   },
+   "base": {
+    "choices": [
+     [
+      "orange_terracotta",
+      0.25
+     ],
+     [
+      "spruce_planks",
+      0.125
+     ],
+     [
+      "gold_block",
+      0.125
+     ],
+     [
+      "red_sandstone",
+      0.125
+     ],
+     [
+      "sandstone",
+      0.125
+     ],
+     [
+      "smooth_sandstone",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.75
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      0.375
+     ],
+     [
+      "acacia_stairs",
+      0.25
+     ],
+     [
+      "dark_oak_slab",
+      0.125
+     ],
+     [
+      "red_sandstone_stairs",
+      0.125
+     ],
+     [
+      "stone_brick_slab",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 1.0
+   }
+  },
+  "black_concrete": {
+   "n": 11,
+   "corner": {
+    "choices": [
+     [
+      "black_concrete",
+      0.556
+     ],
+     [
+      "redstone_block",
+      0.111
+     ],
+     [
+      "bricks",
+      0.111
+     ],
+     [
+      "quartz_block",
+      0.111
+     ],
+     [
+      "birch_log",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.444
+   },
+   "frame": {
+    "choices": [
+     [
+      "quartz_block",
+      0.273
+     ],
+     [
+      "black_concrete",
+      0.273
+     ],
+     [
+      "redstone_block",
+      0.091
+     ],
+     [
+      "bricks",
+      0.091
+     ],
+     [
+      "blue_concrete",
+      0.091
+     ],
+     [
+      "iron_block",
+      0.091
+     ]
+    ],
+    "seen": 11,
+    "differs": 0.727
+   },
+   "base": {
+    "choices": [
+     [
+      "black_concrete",
+      0.4
+     ],
+     [
+      "iron_block",
+      0.1
+     ],
+     [
+      "gray_concrete",
+      0.1
+     ],
+     [
+      "gray_terracotta",
+      0.1
+     ],
+     [
+      "quartz_block",
+      0.1
+     ],
+     [
+      "white_concrete",
+      0.1
+     ]
+    ],
+    "seen": 10,
+    "differs": 0.6
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_stairs",
+      0.4
+     ],
+     [
+      "quartz_slab",
+      0.2
+     ],
+     [
+      "spruce_stairs",
+      0.2
+     ],
+     [
+      "deepslate_tile_slab",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 1.0
+   }
+  },
+  "purple_terracotta": {
+   "n": 11,
+   "corner": {
+    "choices": [
+     [
+      "dark_oak_log",
+      0.333
+     ],
+     [
+      "blue_terracotta",
+      0.167
+     ],
+     [
+      "magenta_terracotta",
+      0.167
+     ],
+     [
+      "spruce_log",
+      0.167
+     ],
+     [
+      "purple_terracotta",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.833
+   },
+   "frame": {
+    "choices": [
+     [
+      "purple_terracotta",
+      0.5
+     ],
+     [
+      "blue_terracotta",
+      0.125
+     ],
+     [
+      "cobblestone",
+      0.125
+     ],
+     [
+      "gray_wool",
+      0.125
+     ],
+     [
+      "white_terracotta",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "purple_terracotta",
+      0.375
+     ],
+     [
+      "white_terracotta",
+      0.125
+     ],
+     [
+      "sandstone",
+      0.125
+     ],
+     [
+      "magenta_terracotta",
+      0.125
+     ],
+     [
+      "stone_bricks",
+      0.125
+     ],
+     [
+      "dark_oak_log",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.625
+   },
+   "roof": {
+    "choices": [
+     [
+      "brick_slab",
+      0.429
+     ],
+     [
+      "quartz_slab",
+      0.286
+     ],
+     [
+      "quartz_stairs",
+      0.143
+     ],
+     [
+      "jungle_slab",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 1.0
+   }
+  },
+  "magenta_terracotta": {
+   "n": 11,
+   "corner": {
+    "choices": [
+     [
+      "magenta_terracotta",
+      0.333
+     ],
+     [
+      "quartz_block",
+      0.222
+     ],
+     [
+      "dark_oak_log",
+      0.222
+     ],
+     [
+      "quartz_pillar",
+      0.111
+     ],
+     [
+      "cobblestone",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.667
+   },
+   "frame": {
+    "choices": [
+     [
+      "quartz_block",
+      0.25
+     ],
+     [
+      "magenta_terracotta",
+      0.125
+     ],
+     [
+      "purple_terracotta",
+      0.125
+     ],
+     [
+      "stone_bricks",
+      0.125
+     ],
+     [
+      "gray_wool",
+      0.125
+     ],
+     [
+      "spruce_planks",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.875
+   },
+   "base": {
+    "choices": [
+     [
+      "stone_bricks",
+      0.333
+     ],
+     [
+      "sandstone",
+      0.111
+     ],
+     [
+      "magenta_terracotta",
+      0.111
+     ],
+     [
+      "dark_oak_log",
+      0.111
+     ],
+     [
+      "oak_log",
+      0.111
+     ],
+     [
+      "quartz_block",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.889
+   },
+   "roof": {
+    "choices": [
+     [
+      "brick_slab",
+      0.444
+     ],
+     [
+      "quartz_slab",
+      0.222
+     ],
+     [
+      "dark_oak_slab",
+      0.111
+     ],
+     [
+      "jungle_stairs",
+      0.111
+     ],
+     [
+      "crimson_stairs",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 1.0
+   }
+  },
+  "cracked_stone_bricks": {
+   "n": 10,
+   "corner": {
+    "choices": [
+     [
+      "cracked_stone_bricks",
+      0.75
+     ],
+     [
+      "spruce_log",
+      0.25
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.25
+   },
+   "frame": {
+    "choices": [
+     [
+      "cracked_stone_bricks",
+      0.5
+     ],
+     [
+      "quartz_block",
+      0.167
+     ],
+     [
+      "poppy",
+      0.167
+     ],
+     [
+      "spruce_log",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "cracked_stone_bricks",
+      0.444
+     ],
+     [
+      "chiseled_stone_bricks",
+      0.111
+     ],
+     [
+      "polished_diorite",
+      0.111
+     ],
+     [
+      "white_terracotta",
+      0.111
+     ],
+     [
+      "cobblestone",
+      0.111
+     ],
+     [
+      "cobbled_deepslate",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.556
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.125
+     ],
+     [
+      "quartz_stairs",
+      0.125
+     ],
+     [
+      "stone_brick_slab",
+      0.125
+     ],
+     [
+      "dark_oak_stairs",
+      0.125
+     ],
+     [
+      "nether_brick_stairs",
+      0.125
+     ],
+     [
+      "oak_stairs",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 1.0
+   }
+  },
+  "black_terracotta": {
+   "n": 10,
+   "corner": {
+    "choices": [
+     [
+      "black_terracotta",
+      0.375
+     ],
+     [
+      "oak_planks",
+      0.125
+     ],
+     [
+      "cobblestone",
+      0.125
+     ],
+     [
+      "brown_terracotta",
+      0.125
+     ],
+     [
+      "quartz_block",
+      0.125
+     ],
+     [
+      "purpur_block",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.625
+   },
+   "frame": {
+    "choices": [
+     [
+      "black_terracotta",
+      0.625
+     ],
+     [
+      "oak_planks",
+      0.125
+     ],
+     [
+      "quartz_block",
+      0.125
+     ],
+     [
+      "purpur_block",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.375
+   },
+   "base": {
+    "choices": [
+     [
+      "black_terracotta",
+      0.333
+     ],
+     [
+      "oak_planks",
+      0.111
+     ],
+     [
+      "nether_bricks",
+      0.111
+     ],
+     [
+      "cobblestone",
+      0.111
+     ],
+     [
+      "stone_bricks",
+      0.111
+     ],
+     [
+      "quartz_block",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.667
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.667
+     ],
+     [
+      "brick_slab",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "brown_wool": {
+   "n": 10,
+   "corner": {
+    "choices": [
+     [
+      "brown_wool",
+      0.857
+     ],
+     [
+      "spruce_log",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.143
+   },
+   "frame": {
+    "choices": [
+     [
+      "white_wool",
+      0.5
+     ],
+     [
+      "black_wool",
+      0.25
+     ],
+     [
+      "brown_wool",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.75
+   },
+   "base": {
+    "choices": [
+     [
+      "brown_wool",
+      0.25
+     ],
+     [
+      "oak_log",
+      0.25
+     ],
+     [
+      "gray_wool",
+      0.25
+     ],
+     [
+      "pink_wool",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.75
+   },
+   "roof": {
+    "choices": [
+     [
+      "oak_stairs",
+      0.75
+     ],
+     [
+      "sandstone_stairs",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   }
+  },
+  "chiseled_quartz_block": {
+   "n": 9,
+   "corner": {
+    "choices": [
+     [
+      "chiseled_quartz_block",
+      0.714
+     ],
+     [
+      "quartz_pillar",
+      0.143
+     ],
+     [
+      "red_terracotta",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.286
+   },
+   "frame": {
+    "choices": [
+     [
+      "chiseled_quartz_block",
+      0.625
+     ],
+     [
+      "quartz_pillar",
+      0.125
+     ],
+     [
+      "lapis_block",
+      0.125
+     ],
+     [
+      "quartz_block",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.375
+   },
+   "base": {
+    "choices": [
+     [
+      "chiseled_quartz_block",
+      0.286
+     ],
+     [
+      "lapis_block",
+      0.143
+     ],
+     [
+      "diorite",
+      0.143
+     ],
+     [
+      "brown_wool",
+      0.143
+     ],
+     [
+      "polished_andesite",
+      0.143
+     ],
+     [
+      "red_terracotta",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.714
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.4
+     ],
+     [
+      "quartz_stairs",
+      0.2
+     ],
+     [
+      "oak_stairs",
+      0.2
+     ],
+     [
+      "birch_stairs",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 1.0
+   }
+  },
+  "diamond_block": {
+   "n": 9,
+   "corner": {
+    "choices": [
+     [
+      "diamond_block",
+      0.5
+     ],
+     [
+      "polished_andesite",
+      0.25
+     ],
+     [
+      "smooth_stone",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "diamond_block",
+      0.625
+     ],
+     [
+      "cyan_concrete",
+      0.125
+     ],
+     [
+      "polished_andesite",
+      0.125
+     ],
+     [
+      "bricks",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.375
+   },
+   "base": {
+    "choices": [
+     [
+      "diamond_block",
+      0.286
+     ],
+     [
+      "smooth_stone",
+      0.286
+     ],
+     [
+      "polished_andesite",
+      0.143
+     ],
+     [
+      "white_wool",
+      0.143
+     ],
+     [
+      "bricks",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.714
+   },
+   "roof": {
+    "choices": [
+     [
+      "birch_stairs",
+      0.2
+     ],
+     [
+      "stone_brick_stairs",
+      0.2
+     ],
+     [
+      "oak_stairs",
+      0.2
+     ],
+     [
+      "brick_stairs",
+      0.2
+     ],
+     [
+      "smooth_stone_slab",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 1.0
+   }
+  },
+  "gold_block": {
+   "n": 9,
+   "corner": {
+    "choices": [
+     [
+      "gold_block",
+      0.714
+     ],
+     [
+      "diamond_block",
+      0.143
+     ],
+     [
+      "lapis_block",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.286
+   },
+   "frame": {
+    "choices": [
+     [
+      "gold_block",
+      0.667
+     ],
+     [
+      "diamond_block",
+      0.167
+     ],
+     [
+      "lapis_block",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.333
+   },
+   "base": {
+    "choices": [
+     [
+      "gold_block",
+      0.556
+     ],
+     [
+      "diamond_block",
+      0.111
+     ],
+     [
+      "lapis_block",
+      0.111
+     ],
+     [
+      "dark_oak_planks",
+      0.111
+     ],
+     [
+      "iron_block",
+      0.111
+     ]
+    ],
+    "seen": 9,
+    "differs": 0.444
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_stone_slab",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   }
+  },
+  "purpur_block": {
+   "n": 9,
+   "corner": {
+    "choices": [
+     [
+      "purpur_block",
+      0.714
+     ],
+     [
+      "purpur_pillar",
+      0.286
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.286
+   },
+   "frame": {
+    "choices": [
+     [
+      "purpur_block",
+      0.625
+     ],
+     [
+      "end_stone_bricks",
+      0.25
+     ],
+     [
+      "stripped_spruce_wood",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.375
+   },
+   "base": {
+    "choices": [
+     [
+      "purpur_block",
+      0.625
+     ],
+     [
+      "glowstone",
+      0.125
+     ],
+     [
+      "sandstone",
+      0.125
+     ],
+     [
+      "white_concrete",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.375
+   },
+   "roof": {
+    "choices": [
+     [
+      "purpur_stairs",
+      0.714
+     ],
+     [
+      "quartz_stairs",
+      0.143
+     ],
+     [
+      "spruce_stairs",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 1.0
+   }
+  },
+  "granite": {
+   "n": 9,
+   "corner": {
+    "choices": [
+     [
+      "granite",
+      0.857
+     ],
+     [
+      "mossy_stone_bricks",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.143
+   },
+   "frame": {
+    "choices": [
+     [
+      "granite",
+      0.6
+     ],
+     [
+      "mossy_stone_bricks",
+      0.2
+     ],
+     [
+      "tuff",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.4
+   },
+   "base": {
+    "choices": [
+     [
+      "granite",
+      0.8
+     ],
+     [
+      "birch_log",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.2
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_stairs",
+      0.25
+     ],
+     [
+      "quartz_slab",
+      0.25
+     ],
+     [
+      "stone_brick_stairs",
+      0.25
+     ],
+     [
+      "birch_stairs",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   }
+  },
+  "deepslate_tiles": {
+   "n": 9,
+   "corner": {
+    "choices": [
+     [
+      "spruce_log",
+      0.167
+     ],
+     [
+      "stripped_warped_stem",
+      0.167
+     ],
+     [
+      "bricks",
+      0.167
+     ],
+     [
+      "stripped_spruce_log",
+      0.167
+     ],
+     [
+      "oak_log",
+      0.167
+     ],
+     [
+      "deepslate_bricks",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 1.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "deepslate_tiles",
+      0.286
+     ],
+     [
+      "spruce_log",
+      0.143
+     ],
+     [
+      "spruce_planks",
+      0.143
+     ],
+     [
+      "deepslate_bricks",
+      0.143
+     ],
+     [
+      "mangrove_planks",
+      0.143
+     ],
+     [
+      "glowstone",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.714
+   },
+   "base": {
+    "choices": [
+     [
+      "stone_bricks",
+      0.333
+     ],
+     [
+      "spruce_planks",
+      0.167
+     ],
+     [
+      "deepslate_bricks",
+      0.167
+     ],
+     [
+      "stripped_spruce_log",
+      0.167
+     ],
+     [
+      "deepslate_tiles",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.833
+   },
+   "roof": {
+    "choices": [
+     [
+      "deepslate_tile_stairs",
+      0.6
+     ],
+     [
+      "spruce_slab",
+      0.2
+     ],
+     [
+      "deepslate_tile_slab",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 1.0
+   }
+  },
+  "red_sandstone": {
+   "n": 8,
+   "corner": {
+    "choices": [
+     [
+      "red_sandstone",
+      0.625
+     ],
+     [
+      "nether_bricks",
+      0.125
+     ],
+     [
+      "red_nether_bricks",
+      0.125
+     ],
+     [
+      "sandstone",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.375
+   },
+   "frame": {
+    "choices": [
+     [
+      "red_sandstone",
+      0.833
+     ],
+     [
+      "red_nether_bricks",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.167
+   },
+   "base": {
+    "choices": [
+     [
+      "red_sandstone",
+      0.286
+     ],
+     [
+      "acacia_planks",
+      0.286
+     ],
+     [
+      "white_concrete",
+      0.143
+     ],
+     [
+      "end_stone_bricks",
+      0.143
+     ],
+     [
+      "red_terracotta",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.714
+   },
+   "roof": {
+    "choices": [
+     [
+      "dark_oak_slab",
+      0.286
+     ],
+     [
+      "red_sandstone_stairs",
+      0.143
+     ],
+     [
+      "nether_brick_slab",
+      0.143
+     ],
+     [
+      "sandstone_slab",
+      0.143
+     ],
+     [
+      "nether_brick_stairs",
+      0.143
+     ],
+     [
+      "brick_stairs",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 1.0
+   }
+  },
+  "purple_wool": {
+   "n": 8,
+   "corner": {
+    "choices": [
+     [
+      "purple_wool",
+      0.333
+     ],
+     [
+      "white_terracotta",
+      0.333
+     ],
+     [
+      "sandstone",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.667
+   },
+   "frame": {
+    "choices": [
+     [
+      "purple_wool",
+      0.5
+     ],
+     [
+      "brown_terracotta",
+      0.25
+     ],
+     [
+      "bricks",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "white_wool",
+      0.4
+     ],
+     [
+      "blue_wool",
+      0.2
+     ],
+     [
+      "glowstone",
+      0.2
+     ],
+     [
+      "stone_bricks",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.333
+     ],
+     [
+      "smooth_stone_slab",
+      0.333
+     ],
+     [
+      "brick_stairs",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "blue_concrete": {
+   "n": 8,
+   "corner": {
+    "choices": [
+     [
+      "blue_concrete",
+      0.857
+     ],
+     [
+      "quartz_block",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.143
+   },
+   "frame": {
+    "choices": [
+     [
+      "blue_concrete",
+      0.75
+     ],
+     [
+      "red_concrete",
+      0.125
+     ],
+     [
+      "white_concrete",
+      0.125
+     ]
+    ],
+    "seen": 8,
+    "differs": 0.25
+   },
+   "base": {
+    "choices": [
+     [
+      "dark_oak_planks",
+      0.429
+     ],
+     [
+      "blue_concrete",
+      0.429
+     ],
+     [
+      "blue_terracotta",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.571
+   },
+   "roof": {
+    "choices": [
+     [
+      "stone_brick_stairs",
+      0.333
+     ],
+     [
+      "quartz_stairs",
+      0.333
+     ],
+     [
+      "quartz_slab",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "mossy_stone_bricks": {
+   "n": 8,
+   "corner": {
+    "choices": [
+     [
+      "mossy_stone_bricks",
+      0.5
+     ],
+     [
+      "dark_oak_planks",
+      0.25
+     ],
+     [
+      "stone_bricks",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "mossy_stone_bricks",
+      0.833
+     ],
+     [
+      "dark_oak_planks",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.167
+   },
+   "base": {
+    "choices": [
+     [
+      "mossy_stone_bricks",
+      0.4
+     ],
+     [
+      "oak_planks",
+      0.2
+     ],
+     [
+      "dark_oak_planks",
+      0.2
+     ],
+     [
+      "stone_bricks",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.6
+   },
+   "roof": {
+    "choices": [
+     [
+      "stone_brick_stairs",
+      0.333
+     ],
+     [
+      "stone_brick_slab",
+      0.167
+     ],
+     [
+      "smooth_stone_slab",
+      0.167
+     ],
+     [
+      "spruce_slab",
+      0.167
+     ],
+     [
+      "mossy_stone_brick_stairs",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 1.0
+   }
+  },
+  "diorite": {
+   "n": 8,
+   "corner": {
+    "choices": [
+     [
+      "diorite",
+      0.6
+     ],
+     [
+      "granite",
+      0.2
+     ],
+     [
+      "spruce_log",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.4
+   },
+   "frame": {
+    "choices": [
+     [
+      "diorite",
+      1.0
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.0
+   },
+   "base": {
+    "choices": [
+     [
+      "diorite",
+      0.286
+     ],
+     [
+      "polished_granite",
+      0.143
+     ],
+     [
+      "polished_diorite",
+      0.143
+     ],
+     [
+      "cobblestone",
+      0.143
+     ],
+     [
+      "mud_bricks",
+      0.143
+     ],
+     [
+      "andesite",
+      0.143
+     ]
+    ],
+    "seen": 7,
+    "differs": 0.714
+   },
+   "roof": {
+    "choices": [
+     [
+      "stone_brick_slab",
+      0.333
+     ],
+     [
+      "oak_slab",
+      0.167
+     ],
+     [
+      "mangrove_stairs",
+      0.167
+     ],
+     [
+      "polished_diorite_slab",
+      0.167
+     ],
+     [
+      "smooth_sandstone_stairs",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 1.0
+   }
+  },
+  "prismarine": {
+   "n": 8,
+   "corner": {
+    "choices": [
+     [
+      "birch_planks",
+      0.667
+     ],
+     [
+      "prismarine",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.667
+   },
+   "frame": {
+    "choices": [
+     [
+      "birch_planks",
+      0.6
+     ],
+     [
+      "prismarine",
+      0.4
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.6
+   },
+   "base": {
+    "choices": [
+     [
+      "andesite",
+      0.5
+     ],
+     [
+      "prismarine",
+      0.333
+     ],
+     [
+      "lapis_block",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.667
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_slab",
+      0.75
+     ],
+     [
+      "spruce_stairs",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   }
+  },
+  "hay_block": {
+   "n": 7,
+   "corner": {
+    "choices": [
+     [
+      "hay_block",
+      0.5
+     ],
+     [
+      "oak_log",
+      0.167
+     ],
+     [
+      "granite",
+      0.167
+     ],
+     [
+      "spruce_log",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "hay_block",
+      0.667
+     ],
+     [
+      "granite",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "base": {
+    "choices": [
+     [
+      "oak_log",
+      0.2
+     ],
+     [
+      "granite",
+      0.2
+     ],
+     [
+      "hay_block",
+      0.2
+     ],
+     [
+      "cobblestone",
+      0.2
+     ],
+     [
+      "polished_diorite",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.8
+   },
+   "roof": {
+    "choices": [
+     [
+      "stone_brick_stairs",
+      0.25
+     ],
+     [
+      "jungle_stairs",
+      0.25
+     ],
+     [
+      "spruce_stairs",
+      0.25
+     ],
+     [
+      "birch_stairs",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   }
+  },
+  "sponge": {
+   "n": 7,
+   "corner": {
+    "choices": [
+     [
+      "oak_planks",
+      0.5
+     ],
+     [
+      "oak_log",
+      0.25
+     ],
+     [
+      "polished_basalt",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "white_wool",
+      0.5
+     ],
+     [
+      "blackstone",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "cobblestone",
+      0.5
+     ],
+     [
+      "oak_planks",
+      0.167
+     ],
+     [
+      "mycelium",
+      0.167
+     ],
+     [
+      "warped_nylium",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "cobblestone_stairs",
+      0.6
+     ],
+     [
+      "brick_slab",
+      0.2
+     ],
+     [
+      "dark_oak_stairs",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 1.0
+   }
+  },
+  "cyan_concrete": {
+   "n": 6,
+   "corner": {
+    "choices": [
+     [
+      "cyan_concrete",
+      0.6
+     ],
+     [
+      "spruce_log",
+      0.2
+     ],
+     [
+      "black_concrete",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.4
+   },
+   "frame": {
+    "choices": [
+     [
+      "cyan_concrete",
+      0.833
+     ],
+     [
+      "black_concrete",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.167
+   },
+   "base": {
+    "choices": [
+     [
+      "andesite",
+      0.5
+     ],
+     [
+      "white_concrete",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "purpur_stairs",
+      0.5
+     ],
+     [
+      "spruce_slab",
+      0.25
+     ],
+     [
+      "stone_brick_stairs",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   }
+  },
+  "pink_terracotta": {
+   "n": 6,
+   "corner": {
+    "choices": [
+     [
+      "pink_terracotta",
+      0.75
+     ],
+     [
+      "quartz_block",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.25
+   },
+   "frame": {
+    "choices": [
+     [
+      "pink_terracotta",
+      0.5
+     ],
+     [
+      "quartz_block",
+      0.167
+     ],
+     [
+      "purple_terracotta",
+      0.167
+     ],
+     [
+      "white_terracotta",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "pink_concrete",
+      0.2
+     ],
+     [
+      "jungle_planks",
+      0.2
+     ],
+     [
+      "blue_terracotta",
+      0.2
+     ],
+     [
+      "glowstone",
+      0.2
+     ],
+     [
+      "magenta_terracotta",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "birch_stairs",
+      0.25
+     ],
+     [
+      "jungle_stairs",
+      0.25
+     ],
+     [
+      "smooth_stone_slab",
+      0.25
+     ],
+     [
+      "quartz_slab",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   }
+  },
+  "brown_concrete": {
+   "n": 6,
+   "corner": {
+    "choices": [
+     [
+      "brown_concrete",
+      0.75
+     ],
+     [
+      "brown_terracotta",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.25
+   },
+   "frame": {
+    "choices": [
+     [
+      "brown_concrete",
+      0.5
+     ],
+     [
+      "orange_concrete",
+      0.25
+     ],
+     [
+      "white_concrete",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "brown_concrete",
+      0.333
+     ],
+     [
+      "orange_concrete",
+      0.167
+     ],
+     [
+      "orange_wool",
+      0.167
+     ],
+     [
+      "blue_terracotta",
+      0.167
+     ],
+     [
+      "white_concrete",
+      0.167
+     ]
+    ],
+    "seen": 6,
+    "differs": 0.667
+   },
+   "roof": {
+    "choices": [
+     [
+      "jungle_slab",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   }
+  },
+  "red_concrete": {
+   "n": 6,
+   "corner": {
+    "choices": [
+     [
+      "red_concrete",
+      0.667
+     ],
+     [
+      "white_concrete",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "frame": {
+    "choices": [
+     [
+      "red_concrete",
+      0.5
+     ],
+     [
+      "white_concrete",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "red_concrete",
+      0.5
+     ],
+     [
+      "mossy_cobblestone",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "crimson_slab",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   }
+  },
+  "red_nether_bricks": {
+   "n": 6,
+   "corner": {
+    "choices": [
+     [
+      "red_nether_bricks",
+      0.8
+     ],
+     [
+      "iron_block",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.2
+   },
+   "frame": {
+    "choices": [
+     [
+      "red_nether_bricks",
+      0.6
+     ],
+     [
+      "iron_block",
+      0.2
+     ],
+     [
+      "warped_stem",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.4
+   },
+   "base": {
+    "choices": [
+     [
+      "red_nether_bricks",
+      0.4
+     ],
+     [
+      "oak_planks",
+      0.2
+     ],
+     [
+      "iron_block",
+      0.2
+     ],
+     [
+      "sandstone",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.6
+   },
+   "roof": {
+    "choices": [
+     [
+      "nether_brick_slab",
+      0.5
+     ],
+     [
+      "oak_stairs",
+      0.25
+     ],
+     [
+      "red_nether_brick_slab",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   }
+  },
+  "stripped_oak_log": {
+   "n": 6,
+   "corner": {
+    "choices": [
+     [
+      "stripped_oak_log",
+      0.333
+     ],
+     [
+      "stripped_spruce_log",
+      0.333
+     ],
+     [
+      "oak_log",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.667
+   },
+   "frame": {
+    "choices": [
+     [
+      "stripped_oak_log",
+      1.0
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.0
+   },
+   "base": {
+    "choices": [
+     [
+      "spruce_planks",
+      0.5
+     ],
+     [
+      "birch_planks",
+      0.25
+     ],
+     [
+      "cobblestone",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "spruce_stairs",
+      0.4
+     ],
+     [
+      "cobblestone_stairs",
+      0.2
+     ],
+     [
+      "oak_stairs",
+      0.2
+     ],
+     [
+      "petrified_oak_slab",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 1.0
+   }
+  },
+  "observer": {
+   "n": 6,
+   "corner": {
+    "choices": [
+     [
+      "observer",
+      0.5
+     ],
+     [
+      "stone_bricks",
+      0.25
+     ],
+     [
+      "piston",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "stone_bricks",
+      0.25
+     ],
+     [
+      "piston",
+      0.25
+     ],
+     [
+      "sandstone",
+      0.25
+     ],
+     [
+      "observer",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.75
+   },
+   "base": {
+    "choices": [
+     [
+      "stone_bricks",
+      0.25
+     ],
+     [
+      "smooth_stone",
+      0.25
+     ],
+     [
+      "sandstone",
+      0.25
+     ],
+     [
+      "iron_block",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   }
+  },
+  "polished_deepslate": {
+   "n": 6,
+   "corner": {
+    "choices": [
+     [
+      "stripped_spruce_log",
+      0.5
+     ],
+     [
+      "polished_deepslate",
+      0.5
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "polished_deepslate",
+      0.667
+     ],
+     [
+      "deepslate_bricks",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "base": {
+    "choices": [
+     [
+      "polished_deepslate",
+      0.4
+     ],
+     [
+      "mossy_stone_bricks",
+      0.2
+     ],
+     [
+      "granite",
+      0.2
+     ],
+     [
+      "spruce_planks",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.6
+   },
+   "roof": {
+    "choices": [
+     [
+      "polished_deepslate_slab",
+      0.667
+     ],
+     [
+      "brick_stairs",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "yellow_concrete": {
+   "n": 5,
+   "corner": {
+    "choices": [
+     [
+      "yellow_concrete",
+      0.667
+     ],
+     [
+      "lime_concrete",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "frame": {
+    "choices": [
+     [
+      "yellow_concrete",
+      0.6
+     ],
+     [
+      "lime_concrete",
+      0.2
+     ],
+     [
+      "magenta_concrete",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.4
+   },
+   "base": {
+    "choices": [
+     [
+      "yellow_concrete",
+      0.5
+     ],
+     [
+      "quartz_pillar",
+      0.25
+     ],
+     [
+      "cyan_wool",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.5
+     ],
+     [
+      "spruce_stairs",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "redstone_lamp": {
+   "n": 5,
+   "corner": {
+    "choices": [
+     [
+      "quartz_pillar",
+      0.333
+     ],
+     [
+      "oak_log",
+      0.333
+     ],
+     [
+      "redstone_lamp",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.667
+   },
+   "frame": {
+    "choices": [
+     [
+      "quartz_block",
+      0.25
+     ],
+     [
+      "oak_log",
+      0.25
+     ],
+     [
+      "spruce_planks",
+      0.25
+     ],
+     [
+      "obsidian",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "chiseled_quartz_block",
+      0.5
+     ],
+     [
+      "redstone_lamp",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_stairs",
+      0.5
+     ],
+     [
+      "oak_slab",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "purple_concrete": {
+   "n": 5,
+   "corner": {
+    "choices": [
+     [
+      "cyan_concrete",
+      0.333
+     ],
+     [
+      "magenta_concrete",
+      0.333
+     ],
+     [
+      "purple_concrete",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.667
+   },
+   "frame": {
+    "choices": [
+     [
+      "cyan_concrete",
+      0.5
+     ],
+     [
+      "magenta_concrete",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "purple_concrete",
+      0.5
+     ],
+     [
+      "magenta_concrete",
+      0.25
+     ],
+     [
+      "prismarine",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "purpur_stairs",
+      0.667
+     ],
+     [
+      "quartz_stairs",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "cut_sandstone": {
+   "n": 5,
+   "corner": {
+    "choices": [
+     [
+      "cut_sandstone",
+      0.6
+     ],
+     [
+      "smooth_sandstone",
+      0.4
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.4
+   },
+   "frame": {
+    "choices": [
+     [
+      "cut_sandstone",
+      0.5
+     ],
+     [
+      "red_terracotta",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "cut_sandstone",
+      0.667
+     ],
+     [
+      "sandstone",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "roof": {
+    "choices": [
+     [
+      "smooth_sandstone_stairs",
+      0.5
+     ],
+     [
+      "sandstone_slab",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "mud_bricks": {
+   "n": 5,
+   "corner": {
+    "choices": [
+     [
+      "mud_bricks",
+      0.5
+     ],
+     [
+      "stone_bricks",
+      0.25
+     ],
+     [
+      "stripped_cherry_log",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "bricks",
+      0.333
+     ],
+     [
+      "white_concrete",
+      0.333
+     ],
+     [
+      "blue_terracotta",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "bricks",
+      0.2
+     ],
+     [
+      "stone_bricks",
+      0.2
+     ],
+     [
+      "mud_bricks",
+      0.2
+     ],
+     [
+      "stripped_cherry_log",
+      0.2
+     ],
+     [
+      "cobblestone",
+      0.2
+     ]
+    ],
+    "seen": 5,
+    "differs": 0.8
+   },
+   "roof": {
+    "choices": [
+     [
+      "deepslate_brick_stairs",
+      0.333
+     ],
+     [
+      "andesite_slab",
+      0.333
+     ],
+     [
+      "mud_brick_stairs",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "poppy": {
+   "n": 4,
+   "corner": {
+    "choices": [
+     [
+      "oak_log",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "oak_planks",
+      0.667
+     ],
+     [
+      "spruce_planks",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "dark_oak_planks",
+      0.333
+     ],
+     [
+      "poppy",
+      0.333
+     ],
+     [
+      "polished_andesite",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.667
+   },
+   "roof": {
+    "choices": [
+     [
+      "dark_oak_slab",
+      0.333
+     ],
+     [
+      "stone_brick_stairs",
+      0.333
+     ],
+     [
+      "quartz_slab",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "magenta_wool": {
+   "n": 4,
+   "corner": {
+    "choices": [
+     [
+      "magenta_wool",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 0.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "magenta_wool",
+      0.667
+     ],
+     [
+      "yellow_wool",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "base": {
+    "choices": [
+     [
+      "mossy_cobblestone",
+      0.5
+     ],
+     [
+      "magenta_wool",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "red_sandstone_stairs",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   }
+  },
+  "gold_ore": {
+   "n": 4,
+   "corner": {
+    "choices": [
+     [
+      "gold_ore",
+      0.5
+     ],
+     [
+      "bricks",
+      0.25
+     ],
+     [
+      "gold_block",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "gold_ore",
+      0.5
+     ],
+     [
+      "bricks",
+      0.25
+     ],
+     [
+      "gold_block",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "gold_ore",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 0.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "stone_brick_stairs",
+      0.667
+     ],
+     [
+      "smooth_stone_slab",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "coal_block": {
+   "n": 4,
+   "corner": {
+    "choices": [
+     [
+      "coal_block",
+      1.0
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "coal_block",
+      0.333
+     ],
+     [
+      "obsidian",
+      0.333
+     ],
+     [
+      "iron_block",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.667
+   },
+   "base": {
+    "choices": [
+     [
+      "coal_block",
+      1.0
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_stairs",
+      0.5
+     ],
+     [
+      "dark_oak_slab",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "bookshelf": {
+   "n": 4,
+   "corner": {
+    "choices": [
+     [
+      "bookshelf",
+      1.0
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "spruce_log",
+      0.5
+     ],
+     [
+      "cobblestone",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "cobblestone",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "cobblestone_slab",
+      0.5
+     ],
+     [
+      "oak_stairs",
+      0.5
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   }
+  },
+  "lime_concrete": {
+   "n": 4,
+   "corner": {
+    "choices": [
+     [
+      "lime_concrete",
+      1.0
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "lime_concrete",
+      0.667
+     ],
+     [
+      "pink_concrete",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "base": {
+    "choices": [
+     [
+      "pink_concrete",
+      0.5
+     ],
+     [
+      "lime_concrete",
+      0.5
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   }
+  },
+  "slime_block": {
+   "n": 4,
+   "corner": {
+    "choices": [
+     [
+      "slime_block",
+      1.0
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "slime_block",
+      1.0
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.0
+   },
+   "base": {
+    "choices": [
+     [
+      "slime_block",
+      0.75
+     ],
+     [
+      "smooth_stone",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.25
+   }
+  },
+  "dispenser": {
+   "n": 4,
+   "corner": {
+    "choices": [
+     [
+      "dispenser",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 0.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "smooth_stone",
+      0.5
+     ],
+     [
+      "observer",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "stone_bricks",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "stone_brick_slab",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   }
+  },
+  "polished_blackstone_bricks": {
+   "n": 4,
+   "corner": {
+    "choices": [
+     [
+      "polished_blackstone_bricks",
+      1.0
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "polished_blackstone_bricks",
+      0.75
+     ],
+     [
+      "purple_wool",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.25
+   },
+   "base": {
+    "choices": [
+     [
+      "polished_blackstone_bricks",
+      0.667
+     ],
+     [
+      "obsidian",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "roof": {
+    "choices": [
+     [
+      "polished_blackstone_brick_slab",
+      0.5
+     ],
+     [
+      "polished_blackstone_brick_stairs",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "nether_portal": {
+   "n": 4,
+   "corner": {
+    "choices": [
+     [
+      "obsidian",
+      1.0
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "obsidian",
+      1.0
+     ]
+    ],
+    "seen": 4,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "nether_portal",
+      0.5
+     ],
+     [
+      "obsidian",
+      0.25
+     ],
+     [
+      "blue_ice",
+      0.25
+     ]
+    ],
+    "seen": 4,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "stone_brick_stairs",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   }
+  },
+  "cyan_concrete_powder": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "quartz_block",
+      0.5
+     ],
+     [
+      "stripped_spruce_log",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "diamond_block",
+      0.333
+     ],
+     [
+      "cyan_concrete_powder",
+      0.333
+     ],
+     [
+      "white_terracotta",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.667
+   },
+   "base": {
+    "choices": [
+     [
+      "cyan_concrete_powder",
+      0.5
+     ],
+     [
+      "stone_bricks",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      0.333
+     ],
+     [
+      "stone_brick_slab",
+      0.333
+     ],
+     [
+      "dark_oak_stairs",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "coal_ore": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "nether_bricks",
+      0.5
+     ],
+     [
+      "stone_bricks",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "nether_bricks",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "coal_ore",
+      0.5
+     ],
+     [
+      "black_wool",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "birch_slab",
+      0.5
+     ],
+     [
+      "stone_brick_slab",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "pink_concrete": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "pink_concrete",
+      1.0
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "pink_concrete",
+      1.0
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.0
+   },
+   "base": {
+    "choices": [
+     [
+      "quartz_block",
+      0.667
+     ],
+     [
+      "quartz_pillar",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_slab",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   }
+  },
+  "nether_wart_block": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "nether_wart_block",
+      0.667
+     ],
+     [
+      "glowstone",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "frame": {
+    "choices": [
+     [
+      "glowstone",
+      0.5
+     ],
+     [
+      "nether_wart_block",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "polished_diorite",
+      0.5
+     ],
+     [
+      "nether_wart_block",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "quartz_stairs",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   }
+  },
+  "chiseled_sandstone": {
+   "n": 3,
+   "frame": {
+    "choices": [
+     [
+      "red_wool",
+      0.5
+     ],
+     [
+      "smooth_sandstone",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "yellow_wool",
+      0.5
+     ],
+     [
+      "chiseled_sandstone",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "roof": {
+    "choices": [
+     [
+      "sandstone_stairs",
+      0.667
+     ],
+     [
+      "spruce_slab",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "stripped_cherry_log": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "stripped_dark_oak_log",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "chiseled_tuff_bricks",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "quartz_block",
+      0.5
+     ],
+     [
+      "tuff_bricks",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "cherry_stairs",
+      0.5
+     ],
+     [
+      "cherry_slab",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "stripped_spruce_wood": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "stripped_spruce_wood",
+      0.5
+     ],
+     [
+      "stone_bricks",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "stripped_spruce_wood",
+      0.667
+     ],
+     [
+      "calcite",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "roof": {
+    "choices": [
+     [
+      "deepslate_brick_slab",
+      0.5
+     ],
+     [
+      "brick_stairs",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "stripped_dark_oak_log": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "stripped_dark_oak_log",
+      0.5
+     ],
+     [
+      "dark_oak_log",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "frame": {
+    "choices": [
+     [
+      "stripped_dark_oak_log",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 0.0
+   },
+   "base": {
+    "choices": [
+     [
+      "tuff_bricks",
+      0.5
+     ],
+     [
+      "sandstone",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "cherry_planks": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "stripped_spruce_wood",
+      0.5
+     ],
+     [
+      "cherry_log",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "cherry_planks",
+      0.667
+     ],
+     [
+      "stripped_cherry_log",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "base": {
+    "choices": [
+     [
+      "smooth_quartz",
+      0.5
+     ],
+     [
+      "pink_petals",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "pale_oak_slab",
+      0.5
+     ],
+     [
+      "cherry_stairs",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "pale_oak_planks": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "pale_oak_planks",
+      0.667
+     ],
+     [
+      "spruce_log",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.333
+   },
+   "frame": {
+    "choices": [
+     [
+      "stripped_pale_oak_log",
+      0.5
+     ],
+     [
+      "pale_oak_planks",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 0.5
+   },
+   "base": {
+    "choices": [
+     [
+      "spruce_log",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "polished_deepslate_slab",
+      0.333
+     ],
+     [
+      "spruce_stairs",
+      0.333
+     ],
+     [
+      "deepslate_tile_stairs",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  },
+  "calcite": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "stone_bricks",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "polished_tuff",
+      0.5
+     ],
+     [
+      "stone_bricks",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "deepslate_bricks",
+      0.5
+     ],
+     [
+      "stone_bricks",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "warped_slab",
+      0.5
+     ],
+     [
+      "brick_slab",
+      0.5
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "cobbled_deepslate": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "honey_block",
+      0.333
+     ],
+     [
+      "cobbled_deepslate",
+      0.333
+     ],
+     [
+      "gold_block",
+      0.333
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.667
+   },
+   "frame": {
+    "choices": [
+     [
+      "gold_block",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 1.0
+   },
+   "base": {
+    "choices": [
+     [
+      "cobbled_deepslate",
+      1.0
+     ]
+    ],
+    "seen": 1,
+    "differs": 0.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "cobbled_deepslate_slab",
+      1.0
+     ]
+    ],
+    "seen": 2,
+    "differs": 1.0
+   }
+  },
+  "acacia_wood": {
+   "n": 3,
+   "corner": {
+    "choices": [
+     [
+      "acacia_wood",
+      1.0
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.0
+   },
+   "frame": {
+    "choices": [
+     [
+      "acacia_wood",
+      1.0
+     ]
+    ],
+    "seen": 3,
+    "differs": 0.0
+   },
+   "roof": {
+    "choices": [
+     [
+      "acacia_stairs",
+      1.0
+     ]
+    ],
+    "seen": 3,
+    "differs": 1.0
+   }
+  }
+ }
+}

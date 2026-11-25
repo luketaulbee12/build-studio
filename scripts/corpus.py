@@ -162,6 +162,56 @@ def load_craftassist(path):
 LOADERS = {".nbt": load_structure_nbt, ".litematic": load_litematic, ".schem": load_schem}
 
 
+def convert_grabcraft(log=print):
+    """The grabcraft parquet (one row per block) -> one build per structure."""
+    f = RAW / "mattismegevand__minecraft_builds" / "minecraft_structures.parquet"
+    if not f.exists():
+        return 0
+    import pyarrow.parquet as pq
+    from grabcraft_names import to_state
+    t = pq.read_table(f)
+    x, y, z = (t.column(c).to_numpy() for c in ("x", "y", "z"))
+    mat = t.column("mat").to_pylist()
+    struct = t.column("structure").to_pylist()
+    names = {m: to_state(m) for m in set(mat)}
+    order = np.argsort(np.array(struct, dtype=object), kind="stable")
+    done = 0
+    i = 0
+    n = len(order)
+    while i < n:
+        j = i
+        sname = struct[order[i]]
+        while j < n and struct[order[j]] == sname:
+            j += 1
+        idx = order[i:j]
+        i = j
+        dst = OUT / f"grabcraft__{sname[:120]}.npz"
+        if dst.exists():
+            done += 1
+            continue
+        pal, index, items = [], {}, []
+        for k in idx:
+            st = names[mat[k]]
+            if st is None:
+                continue
+            if st not in index:
+                index[st] = len(pal); pal.append(st)
+            items.append((int(x[k]), int(y[k]), int(z[k]), index[st]))
+        if len(items) < 20:
+            continue
+        a = np.array([it[:3] for it in items]); a -= a.min(0)
+        size = tuple(int(v) + 1 for v in a.max(0))
+        if max(size) > MAX_SIDE:
+            continue
+        r = _grid(size, pal, ((p[0], p[1], p[2], it[3]) for p, it in zip(a, items)))
+        if r is None:
+            continue
+        np.savez_compressed(dst, blocks=r[1], palette=np.array(r[0]), source="grabcraft/" + sname)
+        done += 1
+    log(f"grabcraft: {done} builds")
+    return done
+
+
 def convert_all(log=print):
     OUT.mkdir(parents=True, exist_ok=True)
     stats = {"ok": 0, "skipped": 0, "failed": 0}
@@ -194,6 +244,7 @@ def convert_all(log=print):
 
 if __name__ == "__main__":
     convert_all()
+    convert_grabcraft()
     sizes = []
     for f in OUT.glob("*.npz"):
         d = np.load(f)

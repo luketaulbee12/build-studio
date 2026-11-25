@@ -46,8 +46,14 @@ picture -> BiRefNet cut-out -> Hunyuan shape -> Hunyuan Paint -> `build_from_mod
 `scripts/corpus.py` loads vanilla structure .nbt, .litematic, .schem and CraftAssist (1.12 ids via
 `legacy_blocks.py`) into one format (`corpus/builds/*.npz`, not in git). Sources fetched into `corpus/raw/`:
 the game jar's 1,180 structures, Hack337/Minecraft-Schematics, CraftAssist houses (~2,500); more HF sets were
-rate-limited (retry needs an HF login/token). Result: 3,825 builds, 2.87M blocks. Next: mine local patterns
-(corners, roof edges, window frames, trims) to replace hand-written detailing rules.
+rate-limited (retry needs an HF login/token). Now also grabcraft (6,569 builds, names via `grabcraft_names.py`) and team109: 10,948 builds, 19M blocks.
+`mine_patterns.py` finds 5,945 real buildings and learns per wall block what builders use for corners, base,
+window frames and roofs (`data/learned_roles.json`). Clear habits: plank walls -> log corners (oak 33%),
+log walls -> cobblestone base (~30%), bricks -> stone-brick base (16%); window frames are mostly the wall itself.
+
+**PICK UP HERE:** `--learned 1` (corner/base trim from those habits) is wired in but OFF until tested. Run
+`python scripts/run_testset.py oldtrim "--learned 0"` and `... learned1 "--learned 1"`, then
+`python scripts/compare_sheet.py oldtrim learned1 out/testset/learned_cmp.jpg`; keep it if the set improves.
 
 ## Build Studio
 "Build from picture" button (Inspiration section): runs this whole pipeline in the background (~2.5 min),
