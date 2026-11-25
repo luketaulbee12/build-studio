@@ -89,6 +89,7 @@ def main():
     ap.add_argument("--width", type=int, default=16)
     ap.add_argument("--palette", type=int, default=8)
     ap.add_argument("--detail", type=int, default=1, help="1 = add windows on unseen walls, a door, corner/base trim")
+    ap.add_argument("--snap", type=int, default=-1, help="1 = face colours snap to the picture's own main colours, 0 = never, -1 = automatically for Minecraft screenshots")
     ap.add_argument("--photo-faces", type=int, default=0, help="1 = faces the photo shows take the photo's colour")
     ap.add_argument("--faces", type=int, default=1, help="1 = one material per wall/roof face (0 = older per-part rule)")
     ap.add_argument("--photo-colour", type=int, default=0, help="1 = shift colours toward the photo (experimental)")
@@ -230,7 +231,22 @@ def main():
         print(f"  {pt} looks like: " + ", ".join(f"{k} {v:.0%}" for k, v in sorted(score.items(), key=lambda t: -t[1])[:3]))
         return mf.allowed_blocks(fams, score)
 
-    mat, part = materials.assign(keys, lab, normal, shape_of, info, exclude=skip, family_of=family_of,
+    palette = None
+    if a.snap < 0:  # auto: a game screenshot's colours are the real block colours; a photo's include lighting
+        from PIL import Image as _Im2
+        mc = mf.is_minecraft(_Im2.open(a.picture).convert("RGB"))
+        a.snap = int(mc > 0.6)
+        print(f"  picture looks like a Minecraft screenshot: {mc:.2f} -> {'use' if a.snap else 'do not use'} its colours")
+    if a.snap:
+        # the photo's own main colours (by area, deep shade left out); Paint picks among them per face
+        px = to_lab(rgb_pic[mask])
+        px = px[px[:, 0] >= np.percentile(px[:, 0], 20)]
+        sub = px[np.random.default_rng(0).choice(len(px), min(20000, len(px)), replace=False)]
+        g, cent = kmeans(sub, 6, seed=2)
+        share = np.bincount(g, minlength=len(cent)) / len(g)
+        palette = [c for c, sh in zip(cent, share) if sh >= 0.04]
+        print("  photo palette: " + ", ".join(f"L{c[0]:.0f} a{c[1]:.0f} b{c[2]:.0f}" for c in palette))
+    mat, part = materials.assign(keys, lab, normal, shape_of, info, exclude=skip, family_of=family_of, palette=palette,
                                  faces=bool(a.faces), photo=photo_col if a.photo_faces else None)
     # dark wall areas -> windows / doorways (decided here so detailing can see them)
     ymin0 = min(q[1] for q in keys)

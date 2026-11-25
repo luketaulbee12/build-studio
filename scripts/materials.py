@@ -30,7 +30,7 @@ def _direction(n):
 
 
 def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_accents=3, log=print, family_of=None,
-           faces=True, photo=None):
+           faces=True, photo=None, palette=None):
     """family_of: optional callable(part, member blocks) -> list of block names the part's MAIN block may be."""
     names = [n for n in info if not any(w in n for w in exclude)]
     M = np.array([info[n][1] for n in names])
@@ -151,7 +151,7 @@ def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_ac
             ok = np.array([n in allowed for n in names]) if allowed else np.ones(len(names), bool)
             return float(np.where(ok, c, np.inf).min() - c.min())
         _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, log, shadow=shadow, fit_gap=fit_gap,
-                      photo=photo)
+                      photo=photo, palette=palette, raw=raw)
     # (old way) main block per part, then accents
     for pt in (() if faces else ("roof", "body")):
         members = [p for p in keys if part[p] == pt and p not in mat]
@@ -241,7 +241,7 @@ def _lighting_like(c_a, c_b):
 
 
 def _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, log, min_face=8, shadow=(), fit_gap=None,
-                  photo=None):
+                  photo=None, palette=None, raw=None):
     """One material per wall / roof face, the way a builder thinks ("this wall is cobblestone").
     A face is a connected run of blocks of the same part facing the same way. A second material is kept on
     a face only for a large, solid region that differs in colour (not just brightness): a timber frame, a
@@ -304,6 +304,17 @@ def _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, lo
             if p in shadow:
                 X[i] = med  # unknown colour under deep shadow: assume the wall's own
         allowed = allowed_of.get(pt)
+        if palette:
+            # Paint says roughly what colour this face is; the photo says which real colours exist: snap
+            rmed = np.median(np.array([raw[p] for p in lit]), 0)
+            j = int(np.argmin([np.sqrt(((rmed - c) ** 2).sum()) for c in palette]))
+            pal_main = block(palette[j], main=True, allowed=allowed)
+            if fit_gap and len(comp) >= 24 and fit_gap(palette[j], allowed) > 25:
+                pal_main = block(palette[j], main=True)
+            for p in comp:
+                mat[p] = pal_main
+            used[pal_main] = used.get(pal_main, 0) + len(comp)
+            continue
         if len(lit) < 0.5 * len(comp) or _lighting_like(med, part_med[pt])                 or np.sqrt(((med - part_med[pt]) ** 2).sum()) < 8:
             main = part_main[pt]  # same material as the building, just in shade (or practically the same)
         elif fit_gap and len(comp) >= 24 and fit_gap(med, allowed) > 25:

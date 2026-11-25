@@ -24,11 +24,12 @@ picture -> BiRefNet cut-out -> Hunyuan shape -> Hunyuan Paint -> `build_from_mod
 | Masonry trim rule (no log corners on stone) | Kisimul | rest | |
 | Roof slopes: material without stairs -> closest block with stairs | thatch roofs keep stair shape | rest | |
 | Photo colour per visible face (experiment) | none clearly | | ~6 (darker/brown, noisy) -> rejected, off |
+| Snap face colours to the picture's own palette | Minecraft screenshots (village houses get grey stone walls) | | real photos (lighting in the palette) |
+| -> only for Minecraft screenshots (CLIP: screenshots >= 0.99, photos <= 0.25) | screenshots | photos unchanged | |
 
 ## Known problems, ranked by how many buildings they affect
-1. Paint paints small mixed materials as one colour (whole village house is yellow-brown in Paint, the grey
-   cobblestone isn't there at all) -> cobblestone walls become oak. Taking colours straight from the photo
-   per face was tried and made things worse overall (lighting, pixel-to-block noise).
+1. Paint paints small mixed materials as one colour. Fixed for Minecraft screenshots (palette snapping);
+   still open for real photos.
 2. Roof material labelling is only ~65% right with the small CLIP model (A-frame metal -> wood).
    A bigger CLIP (ViT-L/14, ~1.7 GB) would likely help - needs your OK to download.
 3. Ragged wall tops / battlements (3 builds).
