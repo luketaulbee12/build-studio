@@ -42,9 +42,13 @@ def cell_occupancy(mesh, width):
     # models with an open underside (hidden by bushes etc.) don't fill: close small gaps, then fill each
     # horizontal layer's enclosed interior so walls come out solid
     from scipy import ndimage
+    orig = occ.copy()
     occ = ndimage.binary_closing(occ, structure=np.ones((3, 3, 3)), iterations=1) | occ
     for y in range(occ.shape[1]):
         occ[:, y, :] = ndimage.binary_fill_holes(occ[:, y, :])
+    # only enclosed space under a roof is "inside": open courtyards (sky above) stay empty
+    roofed = np.flip(np.cumsum(np.flip(orig, 1), 1), 1) > orig  # some model surface higher up this column
+    occ = orig | (occ & roofed)
     origin = vox.indices_to_points(np.array([[0, 0, 0]]))[0] - sub / 2
     dims = (np.array(occ.shape) + N - 1) // N
     pad = np.zeros(dims * N, bool)
@@ -60,6 +64,12 @@ def main():
     ap.add_argument("name")
     ap.add_argument("--width", type=int, default=16)
     ap.add_argument("--palette", type=int, default=8)
+    ap.add_argument("--detail", type=int, default=1, help="1 = add windows on unseen walls, a door, corner/base trim")
+    ap.add_argument("--faces", type=int, default=1, help="1 = one material per wall/roof face (0 = older per-part rule)")
+    ap.add_argument("--photo-colour", type=int, default=0, help="1 = shift colours toward the photo (experimental)")
+    ap.add_argument("--planes", type=int, default=1, help="1 = rebuild straight walls / exact roof planes")
+    ap.add_argument("--flat", type=int, default=1, help="1 = flatten walls / roof planes first (0 = raw model)")
+    ap.add_argument("--iso", default=None, help="also save an overview render of the build to this file")
     ap.add_argument("--variety", type=float, default=0.35, help="share of main blocks swapped for related blocks (0 = off)")
     ap.add_argument("--exclude", default="", help="comma-separated words: leave out blocks containing them")
     ap.add_argument("--at", type=int, nargs=2, default=None, metavar=("X", "Z"))
@@ -70,6 +80,10 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     mesh = trimesh.load(a.mesh, force="mesh")
+    mesh0, Rot = mesh, np.eye(3)
+    if a.flat:
+        import regularize
+        mesh, Rot = regularize.regularize(mesh, a.width)
     pic = np.asarray(matte(a.picture, pad_ratio=1.0)).astype(np.float64)
     rgb_pic, mask = pic[..., :3], pic[..., 3] > 127
 
@@ -86,6 +100,30 @@ def main():
                 continue
             n = "full"
         shape_of[tuple(int(v) for v in p)] = n
+    if a.planes:
+        import planes2blocks
+        occ = np.zeros(frac.shape, bool)
+        for p in shape_of:
+            occ[p] = True
+        occ2, fixed = planes2blocks.straighten(occ)
+        print(f"  walls: {fixed} blocks changed to straighten wall faces")
+        occ3, roof_shape = planes2blocks.fit_roofs(occ2)
+        new_shape = {}
+        for p in map(tuple, np.argwhere(occ3)):
+            p = tuple(int(v) for v in p)
+            if p in roof_shape:
+                new_shape[p] = roof_shape[p]
+            elif p in shape_of and not (occ3[p[0], p[1] + 1:, p[2]].any() is False and shape_of[p].startswith("stairs")):
+                new_shape[p] = shape_of[p]
+            else:
+                new_shape[p] = "full"
+        # a surface block the planes rebuilt as full keeps full (no stray stair from the soft model)
+        for p in list(new_shape):
+            if new_shape[p].startswith(("stairs", "slab")) and p not in roof_shape:
+                above = (p[0], p[1] + 1, p[2])
+                if above in new_shape:
+                    new_shape[p] = "full"
+        shape_of = new_shape
     full = {p for p, n in shape_of.items() if n == "full"}
     interior = {p for p in full if all((p[0] + d[0], p[1] + d[1], p[2] + d[2]) in full for d in NB6)}
     for p in interior:
@@ -99,7 +137,7 @@ def main():
     from skimage.color import lab2rgb
     pts, cols, nrm = surface_colours(mesh)
     pl, sl = to_lab(rgb_pic[mask]), to_lab(cols)
-    for ch in (1, 2):
+    for ch in (1, 2):  # Paint's colours are duller than the photo: match their spread (keeps greens green)
         sl[:, ch] = (sl[:, ch] - sl[:, ch].mean()) / max(1e-6, sl[:, ch].std()) * pl[:, ch].std() + pl[:, ch].mean()
     lab_pts = sl
     cell_idx = np.floor((pts - origin) / pitch).astype(int)
@@ -121,10 +159,32 @@ def main():
     info = texture_info()
     skip = [w for w in a.exclude.split(",") if w]
     # what each part is made of, from the picture (needs the camera to know which pixels are which part)
-    iou, elev, yaw, R, fit = fit_camera(mesh, mask)
+    iou, elev, yaw, R, fit = fit_camera(mesh0, mask)
+    R = R @ Rot.T  # same camera, expressed for the turned (flattened) model
     own, okeys, _ = render.owners({p: 1 for p in keys}, R, fit, mask.shape, origin, pitch)
     own[~mask] = -1
     oindex = {p: i for i, p in enumerate(okeys)}
+
+    # the photo is the colour reference: for blocks the photo shows, compare the model's paint with the photo
+    # and fit one colour correction per channel for the whole build (robust line fit); hidden sides follow it
+    pic_lab = to_lab(rgb_pic)
+    flat_own = own.ravel()
+    order = np.argsort(flat_own)
+    bounds = np.searchsorted(flat_own[order], np.arange(len(okeys) + 1))
+    pl_all = pic_lab.reshape(-1, 3)
+    pairs = []
+    for i, q in enumerate(okeys):
+        idx = order[bounds[i]:bounds[i + 1]]
+        if len(idx) >= 15:
+            pairs.append((lab[q], np.median(pl_all[idx], 0)))
+    if a.photo_colour and len(pairs) >= 30:
+        A = np.array([x for x, _ in pairs]); B = np.array([y for _, y in pairs])
+        # a plain shift per channel (median of photo - paint): robust to the noisy block-by-block pairing
+        cfit = [(1.0, float(np.median(B[:, ch] - A[:, ch]))) for ch in range(3)]
+        for q in keys:
+            lab[q] = np.array([cfit[ch][0] * lab[q][ch] + cfit[ch][1] for ch in range(3)])
+        print("  colour from the photo: " + ", ".join(f"{n} x{k:.2f}{c0:+.1f}" for n, (k, c0) in zip("Lab", cfit))
+              + f" (from {len(pairs)} visible blocks)")
     import material_family as mf
 
     def family_of(pt, members):
@@ -137,7 +197,23 @@ def main():
         print(f"  {pt} looks like: " + ", ".join(f"{k} {v:.0%}" for k, v in sorted(score.items(), key=lambda t: -t[1])[:3]))
         return mf.allowed_blocks(fams, score)
 
-    mat, part = materials.assign(keys, lab, normal, shape_of, info, exclude=skip, family_of=family_of)
+    mat, part = materials.assign(keys, lab, normal, shape_of, info, exclude=skip, family_of=family_of,
+                                 faces=bool(a.faces))
+    # dark wall areas -> windows / doorways (decided here so detailing can see them)
+    ymin0 = min(q[1] for q in keys)
+    body_main = Counter(v for v in mat.values() if not v.startswith("_") and "leaves" not in v).most_common(1)
+    body_main = body_main[0][0] if body_main else "cobblestone"
+    for q in keys:
+        if mat[q] == "_dark":
+            vertical = abs(normal[q][1]) < 0.5
+            if vertical and shape_of[q] in ("full", "plate_north", "plate_south", "plate_east", "plate_west",
+                                            "pane_x", "pane_z"):
+                mat[q] = "_door" if q[1] <= ymin0 + 2 else "_glass"
+            else:
+                mat[q] = body_main
+    if a.detail:
+        import detail
+        mat = detail.apply(shape_of, mat, part)
     base_mat = dict(mat)
     if a.variety > 0:
         import variety
@@ -149,6 +225,12 @@ def main():
     states, family = {}, {}
     for p in keys:
         n, shp = mat[p], shape_of[p]
+        if n == "_door":
+            states[p] = "minecraft:air"
+            continue
+        if n == "_glass":
+            states[p], family[p] = "minecraft:glass_pane", "pane"
+            continue
         if n == "_dark":
             vertical = abs(normal[p][1]) < 0.5
             if vertical and shp in ("full", "plate_north", "plate_south", "plate_east", "plate_west", "pane_x", "pane_z"):
@@ -185,6 +267,25 @@ def main():
     safe = a.name.replace(" ", "_")
     render.side_by_side(rgb_pic.astype(np.uint8), ren, out_dir / f"{safe}_compare.png")
     (out_dir / f"{safe}_score.json").write_text(json.dumps({"iou": s_iou, "colour_error": s_err}))
+    if a.iso:
+        from convert import fit_to_mask, rot
+        Ri = rot(28, 35)
+        corners = origin + np.array([[x + dx, y + dy, z + dz] for (x, y, z) in states for dx in (0, 1)
+                                     for dy in (0, 1) for dz in (0, 1)][::4]) * pitch
+        fi = fit_to_mask(corners, Ri, (20, 460, 20, 460))
+        import variety
+        from skimage.color import lab2rgb
+
+        def col(n):
+            if n in info_col:
+                return info_col[n]
+            lab_ = variety.tex_lab(n)
+            return (128, 128, 128) if lab_ is None else np.clip(lab2rgb(lab_[None])[0] * 255, 0, 255)
+        cells_s = {p: (mat[p], shape_of.get(p, "full")) for p in states if not mat[p].startswith("_door")}
+        img, _ = render.render_shapes(cells_s, col, Ri, fi, (480, 480), origin, pitch,
+                               bg=(170, 200, 235))
+        from PIL import Image as _I
+        _I.fromarray(img).save(a.iso)
     if a.at:
         export(states, a)
 

@@ -29,6 +29,7 @@ NOT_FULL = ("glass", "slab", "stairs", "wall", "fence", "door", "pane", "carpet"
             "barrier", "bookshelf", "target", "scaffold", "nylium", "mycelium", "podzol", "farmland",
             "path", "dirt", "clay", "soul", "bone", "hay", "dried_kelp", "pearlescent", "verdant", "ochre")
 WEATHER = ("mossy", "cracked")
+DECORATIVE = ("chiseled", "pillar", "carved", "glazed")  # placed on purpose by builders, never as random mix
 
 _tex_cache = {}
 
@@ -109,7 +110,7 @@ def variants(main, max_n=3, max_de=16.0):
     for b in SIBLINGS.get(main, []):
         cands[b] = max(cands.get(b, 0), 0.15 * single[main])
     for b, w in cands.items():
-        if not _full(b) or _woody(b) != _woody(main):
+        if not _full(b) or _woody(b) != _woody(main) or any(t in b for t in DECORATIVE):
             continue
         lab = tex_lab(b)
         if lab is None:

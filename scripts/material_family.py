@@ -85,9 +85,10 @@ def classify(rgb, mask, families):
 
 def allowed_blocks(families, score, min_share=0.2):
     """Blocks of the winning family, plus a runner-up family that is clearly present too (stone + timber)."""
+    """Returns (blocks for the part's main material = top family, blocks of a clearly present second family or None)."""
     ranked = sorted(score.items(), key=lambda t: -t[1])
-    out = list(families[ranked[0][0]][1])
-    mixed = len(ranked) > 1 and ranked[1][1] >= min_share
-    if mixed:
-        out += [b for b in families[ranked[1][0]][1] if b not in out]
-    return out, mixed
+    top = list(families[ranked[0][0]][1])
+    second = None
+    if len(ranked) > 1 and ranked[1][1] >= min_share:
+        second = [b for b in families[ranked[1][0]][1] if b not in top]
+    return top, second

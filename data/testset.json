@@ -1,0 +1,18 @@
+[
+  {"name": "cottage", "picture": "out/mattagua_cottage.webp", "width": 16},
+  {"name": "mc_small_house", "picture": "test_pictures/mc_small_house.png", "width": 12},
+  {"name": "mc_medium_house", "picture": "test_pictures/mc_medium_house.png", "width": 16},
+  {"name": "mc_big_house", "picture": "test_pictures/mc_big_house.png", "width": 14},
+  {"name": "mc_fletcher_house", "picture": "test_pictures/mc_fletcher_house.png", "width": 16},
+  {"name": "photo_red_barn", "picture": "test_pictures/photo_red_barn.jpg", "width": 32},
+  {"name": "Bodiam_Castle", "picture": "test_pictures/photo_bodiam.jpg", "width": 48},
+  {"name": "Kisimul_Castle", "picture": "test_pictures/user_pick1.jpg", "width": 32},
+  {"name": "photo_aframe", "picture": "test_pictures/photo_aframe.jpg", "width": 16},
+  {"name": "photo_brick_cottage", "picture": "test_pictures/photo_brick_cottage.jpg", "width": 20},
+  {"name": "photo_castle_keep", "picture": "test_pictures/photo_castle_keep.jpg", "width": 32},
+  {"name": "photo_castle_tower", "picture": "test_pictures/photo_castle_tower.jpg", "width": 16},
+  {"name": "photo_lighthouse", "picture": "test_pictures/photo_lighthouse.jpg", "width": 10},
+  {"name": "photo_stone_farmhouse", "picture": "test_pictures/photo_stone_farmhouse.jpg", "width": 20},
+  {"name": "photo_thatched_cottage", "picture": "test_pictures/photo_thatched_cottage.jpg", "width": 20},
+  {"name": "photo_thatched_white", "picture": "test_pictures/photo_thatched_white.jpg", "width": 16}
+]

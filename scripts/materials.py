@@ -18,7 +18,7 @@ from convert import kmeans
 
 
 ODD = ("terracotta", "dripstone", "end_stone", "packed_mud", "prismarine", "nether", "concrete", "hay", "moss",
-       "quartz", "mud_bricks", "polished_blackstone")
+       "quartz", "mud_bricks", "polished_blackstone", "cracked", "chiseled")
 
 
 def _direction(n):
@@ -29,7 +29,8 @@ def _direction(n):
     return ("east" if n[0] > 0 else "west") if abs(n[0]) > abs(n[2]) else ("south" if n[2] > 0 else "north")
 
 
-def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_accents=3, log=print, family_of=None):
+def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_accents=3, log=print, family_of=None,
+           faces=True):
     """family_of: optional callable(part, member blocks) -> list of block names the part's MAIN block may be."""
     names = [n for n in info if not any(w in n for w in exclude)]
     M = np.array([info[n][1] for n in names])
@@ -59,6 +60,31 @@ def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_ac
         elif m[1] < -8 and m[2] > 5 and np.hypot(m[1], m[2]) > 14:
             mat[p] = "_plant"
 
+    # openings are small: a big connected dark area is deep shadow, not windows -> it takes its wall's material
+    dark = {p for p in keys if mat.get(p) == "_dark"}
+    seen, shadow = set(), set()
+    for p0 in dark:
+        if p0 in seen:
+            continue
+        comp, stack = [], [p0]
+        seen.add(p0)
+        while stack:
+            p = stack.pop()
+            comp.append(p)
+            for q in ((p[0] + 1, p[1], p[2]), (p[0] - 1, p[1], p[2]), (p[0], p[1] + 1, p[2]),
+                      (p[0], p[1] - 1, p[2]), (p[0], p[1], p[2] + 1), (p[0], p[1], p[2] - 1)):
+                if q in dark and q not in seen:
+                    seen.add(q)
+                    stack.append(q)
+        xs = np.array(comp)
+        span = xs.max(0) - xs.min(0) + 1
+        if len(comp) > 16 or span[1] > 5 or max(span[0], span[2]) > 6:
+            shadow.update(comp)
+    for p in shadow:
+        del mat[p]
+    if shadow:
+        log(f"  {len(shadow)} dark blocks are shadow (too big for windows/doors) -> wall material")
+
     # parts: pitched roof vs everything else
     part = {}
     for p in keys:
@@ -73,7 +99,7 @@ def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_ac
     # even out light per surface direction, within each part
     norm = dict(raw)
     for pt in ("roof", "body"):
-        members = [p for p in keys if part[p] == pt and p not in mat]
+        members = [p for p in keys if part[p] == pt and p not in mat and p not in shadow]
         if len(members) < 10:
             continue
         target = np.median(np.array([raw[p] for p in members]), 0)
@@ -90,7 +116,7 @@ def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_ac
     # brightness shift + saturation gain for the whole build so its part colours line up with real blocks.
     meds = []
     for pt in ("roof", "body"):
-        members = [p for p in keys if part[p] == pt and p not in mat]
+        members = [p for p in keys if part[p] == pt and p not in mat and p not in shadow]
         if members:
             meds.append((len(members), np.median(np.array([norm[p] for p in members]), 0)))
     nl = ~leafy
@@ -104,7 +130,7 @@ def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_ac
         if members and family_of:
             res = family_of(pt, members)
             if res:
-                allowed_of[pt], mixed_of[pt] = res
+                allowed_of[pt], mixed_of[pt] = res  # main family, second family (or None)
     masks = []
     for pt in ("roof", "body"):
         al = allowed_of.get(pt)
@@ -118,8 +144,15 @@ def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_ac
         if p not in mat:
             norm[p] = adj(norm[p], *best)
 
-    # main block per part, then accents
-    for pt in ("roof", "body"):
+    if faces:
+        def fit_gap(m, allowed):
+            """How much worse the best allowed block fits than the best block of any family."""
+            c = np.where(~leafy, cost(m, main=True), np.inf)
+            ok = np.array([n in allowed for n in names]) if allowed else np.ones(len(names), bool)
+            return float(np.where(ok, c, np.inf).min() - c.min())
+        _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, log, shadow=shadow, fit_gap=fit_gap)
+    # (old way) main block per part, then accents
+    for pt in (() if faces else ("roof", "body")):
         members = [p for p in keys if part[p] == pt and p not in mat]
         if not members:
             continue
@@ -138,7 +171,10 @@ def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_ac
             g2, c2 = kmeans(X, 2, seed=1)
             sizes = [(g2 == g).mean() for g in range(2)]
             if min(sizes) >= 0.2 and np.sqrt(((c2[0] - c2[1]) ** 2).sum()) > 20:
-                picks = [block(c2[g], main=True, allowed=allowed) for g in range(2)]
+                # the bigger group keeps the main family; the other may use the second family
+                big = int(np.argmax(sizes))
+                both = list(allowed or []) + list(mixed_of[pt])
+                picks = [block(c2[g], main=True, allowed=allowed if g == big else both) for g in range(2)]
                 if picks[0] != picks[1]:
                     log(f"    two materials: {picks[0]} {sizes[0]:.0%} + {picks[1]} {sizes[1]:.0%}")
                     for p, g in zip(members, g2):
@@ -180,3 +216,130 @@ def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_ac
                 ch[p] = main_of[part[p]][0][0]
         mat.update(ch)
     return mat, part
+
+
+import os
+_DEBUG = bool(os.environ.get("MAT_DEBUG"))
+
+
+def _lighting_like(c_a, c_b):
+    """True if two colours differ mostly in brightness (shadow / sun), not in hue or saturation."""
+    a, b = np.asarray(c_a, float), np.asarray(c_b, float)
+    if a[0] > b[0]:
+        a, b = b, a  # a = the darker one
+    d = b - a
+    if abs(d[0]) > 2.0 * np.hypot(d[1], d[2]):
+        return True  # brightness only
+    ca, cb = np.hypot(a[1], a[2]), np.hypot(b[1], b[2])
+    if d[0] > 8 and ca <= cb * 1.1:  # shade: darker AND no more colourful
+        if ca < 8:
+            return True  # shaded to grey
+        hue = abs((np.degrees(np.arctan2(a[2], a[1]) - np.arctan2(b[2], b[1]) * 180 / np.pi) + 180) % 360 - 180)
+        return hue < 45
+    return False
+
+
+def _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, log, min_face=8, shadow=(), fit_gap=None):
+    """One material per wall / roof face, the way a builder thinks ("this wall is cobblestone").
+    A face is a connected run of blocks of the same part facing the same way. A second material is kept on
+    a face only for a large, solid region that differs in colour (not just brightness): a timber frame, a
+    stone base, a brick band. Shadows, stains and scattered patches take the face's material."""
+    from scipy import ndimage  # noqa: F401  (kept for clarity of dependencies)
+    label = {}
+    todo = [p for p in keys if p not in mat]
+    key_of = {p: (part[p], _direction(normal[p])) for p in todo}
+    faces = []
+    for p0 in todo:
+        if p0 in label:
+            continue
+        k = key_of[p0]
+        comp, stack = [], [p0]
+        label[p0] = len(faces)
+        while stack:
+            p = stack.pop()
+            comp.append(p)
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    for dz in (-1, 0, 1):
+                        q = (p[0] + dx, p[1] + dy, p[2] + dz)
+                        if q in key_of and q not in label and key_of[q] == k:
+                            label[q] = len(faces)
+                            stack.append(q)
+        faces.append((k, comp))
+    part_main, part_med = {}, {}
+    for pt in ("roof", "body"):
+        members = [p for p in todo if part[p] == pt and p not in shadow] or [p for p in todo if part[p] == pt]
+        if members:
+            part_med[pt] = np.median(np.array([norm[p] for p in members]), 0)
+            part_main[pt] = block(part_med[pt], main=True, allowed=allowed_of.get(pt))
+            log(f"  {pt}: {len(members)} blocks, overall -> {part_main[pt]}")
+    n_two, n_faces = 0, 0
+    used = {}
+    for (pt, d), comp in faces:
+        if len(comp) < min_face:
+            for p in comp:
+                mat[p] = part_main[pt]
+            continue
+        n_faces += 1
+        lit = [p for p in comp if p not in shadow] or comp
+        X = np.array([norm[p] for p in comp])
+        med = np.median(np.array([norm[p] for p in lit]), 0)
+        for i, p in enumerate(comp):
+            if p in shadow:
+                X[i] = med  # unknown colour under deep shadow: assume the wall's own
+        allowed = allowed_of.get(pt)
+        if len(lit) < 0.5 * len(comp) or _lighting_like(med, part_med[pt])                 or np.sqrt(((med - part_med[pt]) ** 2).sum()) < 8:
+            main = part_main[pt]  # same material as the building, just in shade (or practically the same)
+        elif fit_gap and len(comp) >= 24 and fit_gap(med, allowed) > 25:
+            main = block(med, main=True)  # colour clearly outside the labelled family (e.g. stone under "wood")
+        else:
+            main = block(med, main=True, allowed=allowed)
+        for p in comp:
+            mat[p] = main
+        used[main] = used.get(main, 0) + len(comp)
+        if _DEBUG:
+            log(f"    face {pt}/{d}: {len(comp)} blocks, median L{med[0]:.0f} a{med[1]:.0f} b{med[2]:.0f} -> {main}")
+        if len(comp) < 24 or X.std(0).max() < 1e-6:
+            continue
+        from convert import kmeans as _km
+        g2, c2 = _km(X, 2, seed=1)
+        sizes = [(g2 == g).sum() for g in range(2)]
+        big = int(np.argmax(sizes))
+        sm = 1 - big
+        if sizes[sm] < max(6, 0.15 * len(comp)):
+            continue
+        if _DEBUG:
+            log(f"      split {sizes} L{c2[big][0]:.0f}/{c2[sm][0]:.0f} b{c2[big][2]:.0f}/{c2[sm][2]:.0f}")
+        if np.sqrt(((c2[sm] - c2[big]) ** 2).sum()) < 20 or _lighting_like(c2[sm], c2[big]):
+            continue
+        sel = [p for p, g in zip(comp, g2) if g == sm]
+        # solid regions only: drop scattered bits (connected pieces smaller than 4 blocks)
+        sset, keep = set(sel), []
+        seen = set()
+        for p0 in sel:
+            if p0 in seen:
+                continue
+            piece, stack = [], [p0]
+            seen.add(p0)
+            while stack:
+                p = stack.pop()
+                piece.append(p)
+                for q in ((p[0] + 1, p[1], p[2]), (p[0] - 1, p[1], p[2]), (p[0], p[1] + 1, p[2]),
+                          (p[0], p[1] - 1, p[2]), (p[0], p[1], p[2] + 1), (p[0], p[1], p[2] - 1)):
+                    if q in sset and q not in seen:
+                        seen.add(q)
+                        stack.append(q)
+            if len(piece) >= 4:
+                keep += piece
+        if len(keep) < max(6, 0.1 * len(comp)):
+            continue
+        both = list(allowed or []) + list(mixed_of.get(pt) or [])
+        second = block(c2[sm], main=True, allowed=both if mixed_of.get(pt) else None)
+        if second == main:
+            continue
+        for p in keep:
+            mat[p] = second
+        n_two += 1
+        used[second] = used.get(second, 0) + len(keep)
+    log(f"  faces: {n_faces} wall/roof faces, {n_two} with a second material; "
+        + ", ".join(f"{k} {v}" for k, v in sorted(used.items(), key=lambda t: -t[1])[:5]))

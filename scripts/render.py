@@ -87,3 +87,65 @@ def side_by_side(pic_rgb, ren_rgb, path):
     out[:, :w] = pic_rgb
     out[:, w + 8:] = ren_rgb
     Image.fromarray(out).save(path)
+
+
+# ------------------------------------------------------------------------------- shaped blocks (stairs, slabs ...)
+
+def _boxes(shape):
+    """Unit-cell boxes (min, max) for a block shape name from shapes.py."""
+    if shape in (None, "full"):
+        return [((0, 0, 0), (1, 1, 1))]
+    if shape == "slab_bottom":
+        return [((0, 0, 0), (1, .5, 1))]
+    if shape == "slab_top":
+        return [((0, .5, 0), (1, 1, 1))]
+    if shape == "floor":
+        return [((0, 0, 0), (1, .19, 1))]
+    if shape == "post":
+        return [((.375, 0, .375), (.625, 1, .625))]
+    if shape == "pane_x":
+        return [((0, 0, .44), (1, 1, .56))]
+    if shape == "pane_z":
+        return [((.44, 0, 0), (.56, 1, 1))]
+    side = {"north": ((0, 0, 0), (1, 1, .19)), "south": ((0, 0, .81), (1, 1, 1)),
+            "west": ((0, 0, 0), (.19, 1, 1)), "east": ((.81, 0, 0), (1, 1, 1))}
+    if shape.startswith("plate"):
+        return [side[shape.split("_")[1]]]
+    if shape.startswith("stairs"):
+        _, f, half = shape.split("_")
+        lo_, hi_ = ((0, 0, 0), (1, .5, 1)) if half == "bottom" else ((0, .5, 0), (1, 1, 1))
+        back = {"north": ((0, 0, 0), (1, 1, .5)), "south": ((0, 0, .5), (1, 1, 1)),
+                "west": ((0, 0, 0), (.5, 1, 1)), "east": ((.5, 0, 0), (1, 1, 1))}[f]
+        y0, y1 = (.5, 1) if half == "bottom" else (0, .5)
+        b = ((back[0][0], y0, back[0][2]), (back[1][0], y1, back[1][2]))
+        return [(lo_, hi_), b]
+    return [((0, 0, 0), (1, 1, 1))]
+
+
+def render_shapes(cells, colour_of, R, fit, shape_hw, origin, pitch, bg=(0, 0, 0)):
+    """cells: {(x,y,z): (material, shape)}. Draws real block shapes; hidden faces of full blocks are skipped."""
+    h, w = shape_hw
+    full = {p for p, (_, s) in cells.items() if s in (None, "full")}
+    polys = []
+    for (x, y, z), (mat, shp) in cells.items():
+        col = np.asarray(colour_of(mat), float)
+        for lo, hi in _boxes(shp):
+            lo, hi = np.array(lo, float), np.array(hi, float)
+            for n, corners in FACES.items():
+                if shp in (None, "full") and (x + n[0], y + n[1], z + n[2]) in full:
+                    continue
+                if (R @ np.array(n, float))[2] <= 1e-6:
+                    continue
+                c = np.array(corners, float)
+                pts = origin + (np.array([x, y, z]) + lo + c * (hi - lo)) * pitch
+                uv, d = project(pts, R, fit)
+                shade = 0.55 + 0.45 * max(0.0, float(np.dot(n, LIGHT)))
+                polys.append((d.mean(), [tuple(p) for p in uv], tuple(int(v) for v in np.clip(col * shade, 0, 255))))
+    polys.sort(key=lambda p: p[0])
+    img = Image.new("RGB", (w, h), bg)
+    m = Image.new("L", (w, h), 0)
+    di, dm = ImageDraw.Draw(img), ImageDraw.Draw(m)
+    for _, pts, col in polys:
+        di.polygon(pts, fill=col, outline=tuple(max(0, c - 25) for c in col))
+        dm.polygon(pts, fill=255)
+    return np.asarray(img), np.asarray(m) > 127
