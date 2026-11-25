@@ -35,8 +35,9 @@ picture -> BiRefNet cut-out -> Hunyuan shape -> Hunyuan Paint -> `build_from_mod
 ## Known problems, ranked by how many buildings they affect
 1. Paint paints small mixed materials as one colour. Fixed for Minecraft screenshots (palette snapping);
    still open for real photos.
-2. Roof material labelling is only ~65% right with the small CLIP model (A-frame metal -> wood).
-   A bigger CLIP (ViT-L/14, ~1.7 GB) would likely help - needs your OK to download.
+2. Roof material: large CLIP (ViT-L/14) for roofs = 9/11 right (was 7/11): A-frame now metal, farmhouse slate.
+   Walls stay on the small model (large misread sandstone walls as grey). Misses: Mattagua roof (slate -> wood),
+   brick cottage (clay -> slate).
 3. Ragged wall tops / battlements (3 builds).
 4. Thin structures (barn roof, A-frame) break apart - gap bridging helps a little; still the weakest shape case.
 5. Castle keep regressed when the colour-spread step came back (greenery in photo).

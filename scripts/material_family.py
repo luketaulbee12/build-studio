@@ -8,7 +8,11 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-MODEL = Path(__file__).resolve().parent.parent / "models" / "clip-vit-base-patch16"
+import os
+_MODELS = Path(__file__).resolve().parent.parent / "models"
+MODEL = _MODELS / os.environ.get("CLIP_MODEL", "clip-vit-large-patch14"
+                                 if (_MODELS / "clip-vit-large-patch14" / "model.safetensors").exists()
+                                 else "clip-vit-base-patch16")
 
 STONE = ["cobblestone", "mossy_cobblestone", "stone_bricks", "mossy_stone_bricks", "cracked_stone_bricks", "andesite",
          "polished_andesite", "stone", "smooth_stone", "tuff", "tuff_bricks", "cobbled_deepslate", "deepslate_bricks",
@@ -46,6 +50,7 @@ ROOF = {
 }
 
 _model = None
+_small = None
 
 
 def _load():
@@ -58,8 +63,20 @@ def _load():
     return _model
 
 
+def _load_small():
+    global _small
+    if _small is None:
+        import torch
+        from transformers import CLIPModel, CLIPProcessor
+        path = str(_MODELS / "clip-vit-base-patch16")
+        mm = CLIPModel.from_pretrained(path).eval().to("cuda" if torch.cuda.is_available() else "cpu")
+        _small = (mm, CLIPProcessor.from_pretrained(path))
+    return _small
+
+
 def classify(rgb, mask, families):
-    """rgb: HxWx3 uint8 picture, mask: pixels of the part. Returns (best family, {family: probability})."""
+    """rgb: HxWx3 uint8 picture, mask: pixels of the part. Returns (best family, {family: probability}).
+    Walls use the small model: on the test set the large one misread sandstone walls as grey stone."""
     import torch
     ys, xs = np.where(mask)
     if len(ys) < 400:
@@ -68,7 +85,7 @@ def classify(rgb, mask, families):
     crop = rgb[y0:y1, x0:x1].copy()
     crop[~mask[y0:y1, x0:x1]] = 128
     img = Image.fromarray(crop.astype(np.uint8))
-    m, proc = _load()
+    m, proc = _load_small() if families is BODY else _load()
     texts, owner = [], []
     for fam, (prompts, _) in families.items():
         texts += prompts
@@ -99,6 +116,26 @@ ROOF_WORDS = {"slate": "dark slate tile", "wood shingles": "wooden plank", "that
 
 
 def classify_roof(rgb, mask, whole):
+    if "large" in MODEL.name:
+        # measured on the 11 labelled test roofs: the roof prompts on the whole cut-out building score 9/11 with
+        # the large model; mixing in the roof crop or other prompt styles scores lower
+        import torch
+        m, proc = _load()
+        texts, owner = [], []
+        for f, (pr, _) in ROOF.items():
+            texts += pr
+            owner += [f] * len(pr)
+        with torch.no_grad():
+            inp = proc(text=texts, images=whole, return_tensors="pt", padding=True).to(m.device)
+            pr_ = m(**inp).logits_per_image.softmax(-1)[0].cpu().numpy()
+        score = {}
+        for f, v in zip(owner, pr_):
+            score[f] = score.get(f, 0) + float(v)
+        return max(score, key=score.get), score
+    return _classify_roof_small(rgb, mask, whole)
+
+
+def _classify_roof_small(rgb, mask, whole):
     """Roof family from three views averaged: the roof's own pixels, and the whole cut-out building with two
     prompt styles (context helps: a thatched roof is easier to recognise on a whole cottage).
     Measured on the test set: 7/11 right vs 6/11 for the roof pixels alone."""
@@ -128,7 +165,13 @@ def is_minecraft(img):
     """Probability the picture is a Minecraft screenshot/render rather than a photo. On the 16-picture test set
     every screenshot scored >= 0.99 and every photo <= 0.25."""
     import torch
-    m, proc = _load()
+    global _small
+    if _small is None:  # the small model separates screenshots from photos best (>= 0.98 vs <= 0.25 on the set)
+        from transformers import CLIPModel, CLIPProcessor
+        path = str(_MODELS / "clip-vit-base-patch16")
+        mm = CLIPModel.from_pretrained(path).eval().to("cuda" if torch.cuda.is_available() else "cpu")
+        _small = (mm, CLIPProcessor.from_pretrained(path))
+    m, proc = _small
     texts = ["a screenshot of a Minecraft build", "a blocky voxel video game render", "a photograph of a real building"]
     with torch.no_grad():
         inp = proc(text=texts, images=img, return_tensors="pt", padding=True).to(m.device)

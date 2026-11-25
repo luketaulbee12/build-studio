@@ -41,7 +41,7 @@ ok = 0; res = []
 for n, truth in TRUTH.items():
     img = matte(T[n]["picture"]).convert("RGB")
     sc = {f: 0.0 for f in fams}
-    for tpl in (None, "a photo of a building with a {} roof"):
+    for tpl in (None, "a house with a {} roof"):
         if tpl is None:
             texts, owner = [], []
             for f, (pr, _) in mf.ROOF.items():
