@@ -92,6 +92,7 @@ def main():
     ap.add_argument("--game-dir", default=None, help="game folder to save the blueprint into (default: first in studio config)")
     ap.add_argument("--world-id", default=None, help="blueprint world folder id, e.g. sp_New_World")
     ap.add_argument("--tops", type=int, default=0, help="1 = even out ragged tops no roof plane explains")
+    ap.add_argument("--doors", type=int, default=1, help="1 = put real doors in doorways")
     ap.add_argument("--detail", type=int, default=1, help="1 = add windows on unseen walls, a door, corner/base trim")
     ap.add_argument("--snap", type=int, default=-1, help="1 = face colours snap to the picture's own main colours, 0 = never, -1 = automatically for Minecraft screenshots")
     ap.add_argument("--photo-faces", type=int, default=0, help="1 = faces the photo shows take the photo's colour")
@@ -312,6 +313,28 @@ def main():
         states[p] = s
         if fam:
             family[p] = fam
+    # doorways get real doors: bottom two blocks of each doorway column, facing out, in the building's wood
+    door_cells = sorted(p for p in states if mat.get(p) == "_door")
+    if door_cells and a.doors:
+        woods = Counter(shapes.wood_of(v) for v in mat.values() if shapes.wood_of(v))
+        wood = woods.most_common(1)[0][0] if woods else "spruce"
+        cols = {}
+        for p in door_cells:
+            cols.setdefault((p[0], p[2]), []).append(p[1])
+        cellset = set(states)
+        n_doors = 0
+        for (x, z), ys_ in cols.items():
+            ys_ = sorted(ys_)
+            if len(ys_) < 2 or ys_[1] != ys_[0] + 1:
+                continue
+            out_ = [d for d, (dx, dz) in (("north", (0, -1)), ("south", (0, 1)), ("west", (-1, 0)), ("east", (1, 0)))
+                    if (x + dx, ys_[0], z + dz) not in cellset or mat.get((x + dx, ys_[0], z + dz)) == "_door"
+                    and False]
+            facing = out_[0] if out_ else "south"
+            states[(x, ys_[0], z)] = f"minecraft:{wood}_door[facing={facing},half=lower,hinge=left,open=false,powered=false]"
+            states[(x, ys_[0] + 1, z)] = f"minecraft:{wood}_door[facing={facing},half=upper,hinge=left,open=false,powered=false]"
+            n_doors += 1
+        print(f"  doors: {n_doors} {wood} door(s)")
     solid_full = {p for p, s in states.items() if shape_of.get(p) == "full" and "leaves" not in s and s != "minecraft:air"}
     states = shapes.connect(states, family, solid_full)
     kinds = Counter(s.split("[")[0].replace("minecraft:", "") for s in states.values())

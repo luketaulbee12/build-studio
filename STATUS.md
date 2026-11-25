@@ -26,6 +26,7 @@ picture -> BiRefNet cut-out -> Hunyuan shape -> Hunyuan Paint -> `build_from_mod
 | Photo colour per visible face (experiment) | none clearly | | ~6 (darker/brown, noisy) -> rejected, off |
 | Snap face colours to the picture's own palette | Minecraft screenshots (village houses get grey stone walls) | | real photos (lighting in the palette) |
 | -> only for Minecraft screenshots (CLIP: screenshots >= 0.99, photos <= 0.25) | screenshots | photos unchanged | |
+| Walls face the real outside (flood fill) + real doors | big village house gets windows on its blank wall, medium house door + windows | most | Kisimul: back-wall windows read as dark speckles on a castle |
 | Even out ragged tops (option `--tops 1`) | farmhouse ridge, tower top a bit | most | cottage loses some plants -> off |
 
 ## Known problems, ranked by how many buildings they affect

@@ -22,9 +22,31 @@ PLASTER_LIKE = {"white_terracotta", "calcite", "white_concrete", "diorite", "pol
                 "smooth_sandstone", "light_gray_terracotta", "smooth_quartz"}
 
 
+_OUTSIDE = None
+
+
+def _outside(cells):
+    """Empty cells connected to the outside of the bounding box (flood fill), i.e. not the hollow inside."""
+    from collections import deque
+    pts = np.array(list(cells))
+    lo, hi = pts.min(0) - 1, pts.max(0) + 1
+    start = tuple(int(v) for v in lo)
+    seen = {start}
+    q = deque([start])
+    while q:
+        x, y, z = q.popleft()
+        for dx, dy, dz in ((1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)):
+            n = (x + dx, y + dy, z + dz)
+            if n in seen or n in cells or not all(lo[i] <= n[i] <= hi[i] for i in range(3)):
+                continue
+            seen.add(n)
+            q.append(n)
+    return seen
+
+
 def _wall_dir(p, cells):
-    """Horizontal direction a wall block faces (open air on that side), or None."""
-    out = [d for d, v in DIRS.items() if (p[0] + v[0], p[1] + v[1], p[2] + v[2]) not in cells]
+    """Horizontal direction a wall block faces: the side with outside air (the hollow inside doesn't count)."""
+    out = [d for d, v in DIRS.items() if (p[0] + v[0], p[1] + v[1], p[2] + v[2]) in _OUTSIDE]
     return out[0] if len(out) == 1 else None
 
 
@@ -52,6 +74,8 @@ def trim_block(main, contrast=(12.0, 40.0)):
 
 def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True, base=True):
     cells = set(shape_of)
+    global _OUTSIDE
+    _OUTSIDE = _outside(cells)
     ys = [p[1] for p in cells]
     y0 = min(ys)
     body = [p for p in cells if part.get(p) == "body"]
@@ -72,6 +96,10 @@ def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True,
             walls[d].append(p)
     out = dict(mat)
     notes = []
+    import os
+    if os.environ.get("DETAIL_DEBUG"):
+        log("  detail debug: plain wall blocks per side " + str({d: len(v) for d, v in walls.items()})
+            + f", main {main}, doors already {sum(1 for v in mat.values() if v == '_door')}")
 
     # 1. windows on walls without any
     glass = {d: [p for p in body if out.get(p) == "_glass" and _wall_dir(p, cells) == d] for d in DIRS}
@@ -107,17 +135,26 @@ def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True,
 
     # 2. a door if none
     if door and not any(v == "_door" for v in out.values()):
-        best = max(walls.items(), key=lambda t: len(t[1]))
+        # any solid wall block will do for a door (it doesn't have to be the plain main material)
+        any_walls = {d: [] for d in DIRS}
+        for p in body:
+            d = _wall_dir(p, cells)
+            if d and shape_of.get(p) == "full" and not out.get(p, "").startswith("_") and "leaves" not in out.get(p, ""):
+                any_walls[d].append(p)
+        best = max(any_walls.items(), key=lambda t: len(t[1]))
         d, ws = best
         if ws:
             ax = 0 if d in ("north", "south") else 2
             line = sorted({p[ax] for p in ws})
-            mid = line[len(line) // 2]
             placed = 0
-            for p in ws:
-                if p[ax] == mid and p[1] in (y0 + 1, y0 + 2):
-                    out[p] = "_door"
-                    placed += 1
+            for mid in sorted(line, key=lambda c: abs(c - line[len(line) // 2])):  # middle-most column that fits
+                col = sorted((p for p in ws if p[ax] == mid), key=lambda p: p[1])
+                run = [p for p in col if p[1] - col[0][1] in (1, 2)]  # 2 tall, one above the wall's own bottom
+                if len(run) == 2 and run[1][1] == run[0][1] + 1:
+                    for p in run:
+                        out[p] = "_door"
+                    placed = 2
+                    break
             if placed:
                 notes.append(f"doorway on the {d} wall")
 
@@ -128,7 +165,7 @@ def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True,
             for p in body:
                 if out.get(p) != main or shape_of.get(p) != "full":
                     continue
-                open_ = [d for d, v in DIRS.items() if (p[0] + v[0], p[1] + v[1], p[2] + v[2]) not in cells]
+                open_ = [d for d, v in DIRS.items() if (p[0] + v[0], p[1] + v[1], p[2] + v[2]) in _OUTSIDE]
                 if len(open_) == 2 and OPP[open_[0]] != open_[1]:  # two open sides at right angles = corner
                     out[p] = trim
                     n_c += 1
