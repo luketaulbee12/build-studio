@@ -30,7 +30,7 @@ def _direction(n):
 
 
 def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_accents=3, log=print, family_of=None,
-           faces=True):
+           faces=True, photo=None):
     """family_of: optional callable(part, member blocks) -> list of block names the part's MAIN block may be."""
     names = [n for n in info if not any(w in n for w in exclude)]
     M = np.array([info[n][1] for n in names])
@@ -150,7 +150,8 @@ def assign(keys, lab, normal, shape_of, info, exclude=(), accent_de=24.0, max_ac
             c = np.where(~leafy, cost(m, main=True), np.inf)
             ok = np.array([n in allowed for n in names]) if allowed else np.ones(len(names), bool)
             return float(np.where(ok, c, np.inf).min() - c.min())
-        _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, log, shadow=shadow, fit_gap=fit_gap)
+        _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, log, shadow=shadow, fit_gap=fit_gap,
+                      photo=photo)
     # (old way) main block per part, then accents
     for pt in (() if faces else ("roof", "body")):
         members = [p for p in keys if part[p] == pt and p not in mat]
@@ -239,7 +240,8 @@ def _lighting_like(c_a, c_b):
     return False
 
 
-def _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, log, min_face=8, shadow=(), fit_gap=None):
+def _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, log, min_face=8, shadow=(), fit_gap=None,
+                  photo=None):
     """One material per wall / roof face, the way a builder thinks ("this wall is cobblestone").
     A face is a connected run of blocks of the same part facing the same way. A second material is kept on
     a face only for a large, solid region that differs in colour (not just brightness): a timber frame, a
@@ -269,6 +271,16 @@ def _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, lo
     part_main, part_med = {}, {}
     for pt in ("roof", "body"):
         members = [p for p in todo if part[p] == pt and p not in shadow] or [p for p in todo if part[p] == pt]
+        seen = [p for p in members if photo and p in photo]
+        if photo and len(seen) >= 20:
+            members_c = np.array([photo[p] for p in seen])
+            # sunlit part of what the photo shows: the brighter half (shade only ever darkens)
+            members_c = members_c[members_c[:, 0] >= np.median(members_c[:, 0])]
+            part_med[pt] = np.median(members_c, 0)
+            part_main[pt] = block(part_med[pt], main=True, allowed=allowed_of.get(pt))
+            log(f"  {pt}: colour from the photo L{part_med[pt][0]:.0f} a{part_med[pt][1]:.0f} b{part_med[pt][2]:.0f}"
+                f" -> {part_main[pt]}")
+            continue
         if members:
             part_med[pt] = np.median(np.array([norm[p] for p in members]), 0)
             part_main[pt] = block(part_med[pt], main=True, allowed=allowed_of.get(pt))
@@ -284,6 +296,10 @@ def _assign_faces(keys, norm, normal, part, mat, allowed_of, mixed_of, block, lo
         lit = [p for p in comp if p not in shadow] or comp
         X = np.array([norm[p] for p in comp])
         med = np.median(np.array([norm[p] for p in lit]), 0)
+        seen = [p for p in comp if photo and p in photo]
+        if photo and len(seen) >= max(4, 0.3 * len(comp)):
+            med = np.median(np.array([photo[p] for p in seen]), 0)  # the photo shows this face: use it
+            X = np.array([photo.get(p, med) for p in comp])
         for i, p in enumerate(comp):
             if p in shadow:
                 X[i] = med  # unknown colour under deep shadow: assume the wall's own

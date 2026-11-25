@@ -18,6 +18,8 @@ import numpy as np
 
 DIRS = {"north": (0, 0, -1), "south": (0, 0, 1), "west": (-1, 0, 0), "east": (1, 0, 0)}
 OPP = {"north": "south", "south": "north", "west": "east", "east": "west"}
+PLASTER_LIKE = {"white_terracotta", "calcite", "white_concrete", "diorite", "polished_diorite", "quartz_block",
+                "smooth_sandstone", "light_gray_terracotta", "smooth_quartz"}
 
 
 def _wall_dir(p, cells):
@@ -37,6 +39,8 @@ def trim_block(main, contrast=(12.0, 40.0)):
     for (a, b), w in pair.items():
         if a != main or not variety._full(b) or any(t in b for t in variety.DECORATIVE):
             continue
+        if variety._woody(b) and not variety._woody(main) and main not in PLASTER_LIKE:
+            continue  # masonry buildings get masonry trim (log corners suit plaster and timber, not stone)
         lab = variety.tex_lab(b)
         if lab is None:
             continue

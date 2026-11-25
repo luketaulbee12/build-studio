@@ -1,0 +1,40 @@
+# Status (autonomous session, 2026-11-24)
+
+How changes are judged: every change runs on all 16 test pictures (`data/testset.json`), and is kept only if
+the set as a whole looks better. Sheets are in `out/testset/*_cmp.jpg` (picture | before | after).
+
+## Pipeline now
+picture -> BiRefNet cut-out -> Hunyuan shape -> Hunyuan Paint -> `build_from_model.py`:
+1. Line walls up with the block grid, flatten surfaces onto planes (`regularize.py`).
+2. Shapes per block (stairs/slabs/...), then **rebuild from planes** (`planes2blocks.py`): straight walls,
+   roofs as exact stair/slab rows.
+3. Materials (`materials.py`): CLIP names what walls/roof are made of; **one material per wall/roof face**;
+   a second material only for a large solid region that differs in colour (not shade); big dark areas are
+   shadow, not windows; shaded faces use the building's sunlit material.
+4. **Detailing** (`detail.py`): windows on walls the photo didn't see, a doorway, corner + base trim.
+5. Variety from 3000 blockpalettes.com palettes (`variety.py`); decorative blocks never random.
+
+## Results so far (16 buildings)
+| Change | Better | Same | Worse |
+|---|---|---|---|
+| Rebuild from planes | ~10 | 5 | 1 (barn's thin roof) |
+| One material per face | 9 | 4 | 3 (fixed 2 of 3 after) |
+| Detailing | most houses (stone base, log corners, windows) | | Kisimul got wood trim (fixing) |
+| Roof label (whole-photo + roof crop) | 7/11 roofs right vs 6/11; thatched roofs now brown not grey | | A-frame (metal) now reads as wood |
+| Masonry trim rule (no log corners on stone) | Kisimul | rest | |
+| Roof slopes: material without stairs -> closest block with stairs | thatch roofs keep stair shape | rest | |
+| Photo colour per visible face (experiment) | none clearly | | ~6 (darker/brown, noisy) -> rejected, off |
+
+## Known problems, ranked by how many buildings they affect
+1. Paint paints small mixed materials as one colour (whole village house is yellow-brown in Paint, the grey
+   cobblestone isn't there at all) -> cobblestone walls become oak. Taking colours straight from the photo
+   per face was tried and made things worse overall (lighting, pixel-to-block noise).
+2. Roof material labelling is only ~65% right with the small CLIP model (A-frame metal -> wood).
+   A bigger CLIP (ViT-L/14, ~1.7 GB) would likely help - needs your OK to download.
+3. Ragged wall tops / battlements (3 builds).
+4. Thin structures (barn roof, A-frame) break apart.
+5. Castle keep regressed when the colour-spread step came back (greenery in photo).
+
+## Not done / needs you
+- Nothing pushed; local commits only in `recon` (and freecam-ghost earlier).
+- Bigger CLIP download (item 2) waits for your OK.

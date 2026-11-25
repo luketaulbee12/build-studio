@@ -57,6 +57,30 @@ def cell_occupancy(mesh, width):
     return cells, origin, pitch
 
 
+_SUB = {}
+
+
+def _stair_sub(name):
+    """Closest-coloured block (by real texture) that has stairs and slabs, for materials without them."""
+    if name in _SUB:
+        return _SUB[name]
+    import variety
+    m = variety.tex_lab(name)
+    best = None
+    if m is not None:
+        for n, (_, st, sl) in BLOCKS.items():
+            if not st or not sl or "leaves" in n:
+                continue
+            lab_ = variety.tex_lab(n)
+            if lab_ is None:
+                continue
+            d = float(np.sqrt(((lab_ - m) ** 2).sum()))
+            if best is None or d < best[0]:
+                best = (d, n)
+    _SUB[name] = best[1] if best else None
+    return _SUB[name]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("mesh")
@@ -65,6 +89,7 @@ def main():
     ap.add_argument("--width", type=int, default=16)
     ap.add_argument("--palette", type=int, default=8)
     ap.add_argument("--detail", type=int, default=1, help="1 = add windows on unseen walls, a door, corner/base trim")
+    ap.add_argument("--photo-faces", type=int, default=0, help="1 = faces the photo shows take the photo's colour")
     ap.add_argument("--faces", type=int, default=1, help="1 = one material per wall/roof face (0 = older per-part rule)")
     ap.add_argument("--photo-colour", type=int, default=0, help="1 = shift colours toward the photo (experimental)")
     ap.add_argument("--planes", type=int, default=1, help="1 = rebuild straight walls / exact roof planes")
@@ -173,10 +198,12 @@ def main():
     bounds = np.searchsorted(flat_own[order], np.arange(len(okeys) + 1))
     pl_all = pic_lab.reshape(-1, 3)
     pairs = []
+    photo_col = {}
     for i, q in enumerate(okeys):
         idx = order[bounds[i]:bounds[i + 1]]
         if len(idx) >= 15:
-            pairs.append((lab[q], np.median(pl_all[idx], 0)))
+            photo_col[q] = np.median(pl_all[idx], 0)
+            pairs.append((lab[q], photo_col[q]))
     if a.photo_colour and len(pairs) >= 30:
         A = np.array([x for x, _ in pairs]); B = np.array([y for _, y in pairs])
         # a plain shift per channel (median of photo - paint): robust to the noisy block-by-block pairing
@@ -191,14 +218,20 @@ def main():
         ids = np.array([oindex[p] for p in members])
         pm = np.isin(own, ids)
         fams = mf.ROOF if pt == "roof" else mf.BODY
-        best, score = mf.classify(rgb_pic.astype(np.uint8), pm, fams)
+        if pt == "roof":
+            whole = rgb_pic.astype(np.uint8).copy()
+            whole[~mask] = 255
+            from PIL import Image as _Im
+            best, score = mf.classify_roof(rgb_pic.astype(np.uint8), pm, _Im.fromarray(whole))
+        else:
+            best, score = mf.classify(rgb_pic.astype(np.uint8), pm, fams)
         if best is None:
             return None
         print(f"  {pt} looks like: " + ", ".join(f"{k} {v:.0%}" for k, v in sorted(score.items(), key=lambda t: -t[1])[:3]))
         return mf.allowed_blocks(fams, score)
 
     mat, part = materials.assign(keys, lab, normal, shape_of, info, exclude=skip, family_of=family_of,
-                                 faces=bool(a.faces))
+                                 faces=bool(a.faces), photo=photo_col if a.photo_faces else None)
     # dark wall areas -> windows / doorways (decided here so detailing can see them)
     ymin0 = min(q[1] for q in keys)
     body_main = Counter(v for v in mat.values() if not v.startswith("_") and "leaves" not in v).most_common(1)
@@ -241,6 +274,10 @@ def main():
                 continue
             n = mat[p] = main
         s, fam = shapes.block_for(shp, n, BLOCKS)
+        if s is None and shp.startswith(("stairs", "slab")):
+            n2 = _stair_sub(n)  # slopes need stairs: closest-coloured block that has a stair / slab form
+            if n2:
+                s, fam = shapes.block_for(shp, n2, BLOCKS)
         if shp != "full" and n != base_mat.get(p, n) and (s is None or "stairs" in shp and "stairs" not in s):
             n = mat[p] = base_mat[p]  # variant has no stair/slab form: keep the main block for shaped pieces
             s, fam = shapes.block_for(shp, n, BLOCKS)
