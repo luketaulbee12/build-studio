@@ -1,0 +1,11 @@
+.venv/
+models/
+out/
+Hunyuan3D-2/
+TripoSR/
+test_pictures/
+test_pictures_more/
+test_candidates/
+__pycache__/
+*.glb
+*.ply
