@@ -10,3 +10,4 @@ __pycache__/
 *.glb
 *.ply
 data/blockpalettes_*.json
+corpus/

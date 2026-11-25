@@ -42,6 +42,13 @@ picture -> BiRefNet cut-out -> Hunyuan shape -> Hunyuan Paint -> `build_from_mod
 4. Thin structures (barn roof, A-frame) break apart - gap bridging helps a little; still the weakest shape case.
 5. Castle keep regressed when the colour-spread step came back (greenery in photo).
 
+## Real-build corpus (for learning how builders build)
+`scripts/corpus.py` loads vanilla structure .nbt, .litematic, .schem and CraftAssist (1.12 ids via
+`legacy_blocks.py`) into one format (`corpus/builds/*.npz`, not in git). Sources fetched into `corpus/raw/`:
+the game jar's 1,180 structures, Hack337/Minecraft-Schematics, CraftAssist houses (~2,500); more HF sets were
+rate-limited (retry needs an HF login/token). Result: 3,825 builds, 2.87M blocks. Next: mine local patterns
+(corners, roof edges, window frames, trims) to replace hand-written detailing rules.
+
 ## Build Studio
 "Build from picture" button (Inspiration section): runs this whole pipeline in the background (~2.5 min),
 then shows the blueprint (on the picked plot, or the Superflat preview) and it's in J in game.
