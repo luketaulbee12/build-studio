@@ -27,6 +27,9 @@ picture -> BiRefNet cut-out -> Hunyuan shape -> Hunyuan Paint -> `build_from_mod
 | Snap face colours to the picture's own palette | Minecraft screenshots (village houses get grey stone walls) | | real photos (lighting in the palette) |
 | -> only for Minecraft screenshots (CLIP: screenshots >= 0.99, photos <= 0.25) | screenshots | photos unchanged | |
 | Walls face the real outside (flood fill) + real doors | big village house gets windows on its blank wall, medium house door + windows | most | Kisimul: back-wall windows read as dark speckles on a castle |
+| Corner trim only where two real walls meet (each runs >= 3 blocks) | Kisimul (speckles gone), castle keep, round tower | houses | |
+| Bridge one-block gaps in thin sheets (on) | barn, tower slightly more complete | rest | |
+| Generated windows match the photo's window density (option `--windens 1`) | | all (no visible change) | -> off |
 | Even out ragged tops (option `--tops 1`) | farmhouse ridge, tower top a bit | most | cottage loses some plants -> off |
 
 ## Known problems, ranked by how many buildings they affect
@@ -35,7 +38,7 @@ picture -> BiRefNet cut-out -> Hunyuan shape -> Hunyuan Paint -> `build_from_mod
 2. Roof material labelling is only ~65% right with the small CLIP model (A-frame metal -> wood).
    A bigger CLIP (ViT-L/14, ~1.7 GB) would likely help - needs your OK to download.
 3. Ragged wall tops / battlements (3 builds).
-4. Thin structures (barn roof, A-frame) break apart.
+4. Thin structures (barn roof, A-frame) break apart - gap bridging helps a little; still the weakest shape case.
 5. Castle keep regressed when the colour-spread step came back (greenery in photo).
 
 ## Build Studio

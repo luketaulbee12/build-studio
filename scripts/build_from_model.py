@@ -92,6 +92,8 @@ def main():
     ap.add_argument("--game-dir", default=None, help="game folder to save the blueprint into (default: first in studio config)")
     ap.add_argument("--world-id", default=None, help="blueprint world folder id, e.g. sp_New_World")
     ap.add_argument("--tops", type=int, default=0, help="1 = even out ragged tops no roof plane explains")
+    ap.add_argument("--bridge", type=int, default=1, help="1 = fill one-block gaps in thin sheets")
+    ap.add_argument("--windens", type=int, default=0, help="1 = generated windows match the photo's window density")
     ap.add_argument("--doors", type=int, default=1, help="1 = put real doors in doorways")
     ap.add_argument("--detail", type=int, default=1, help="1 = add windows on unseen walls, a door, corner/base trim")
     ap.add_argument("--snap", type=int, default=-1, help="1 = face colours snap to the picture's own main colours, 0 = never, -1 = automatically for Minecraft screenshots")
@@ -131,6 +133,28 @@ def main():
                 continue
             n = "full"
         shape_of[tuple(int(v) for v in p)] = n
+    if a.bridge:
+        # thin sheets (tin roofs, boards, thin walls) only partly fill the blocks they cross, so some blocks
+        # drop out and the sheet falls apart. A weakly filled block with kept blocks on two opposite sides
+        # (straight or diagonal) is the missing piece of a sheet: keep it.
+        kept = set(shape_of)
+        bridged = 0
+        dirs_ = ((1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0), (1, -1, 0), (0, 1, 1), (0, 1, -1), (1, 0, 1), (1, 0, -1))
+        weak = [tuple(int(v) for v in q) for q in np.argwhere(frac >= 0.04)]
+        for _ in range(2):
+            new = []
+            for q in weak:
+                if q in kept:
+                    continue
+                for d in dirs_:
+                    if (q[0] + d[0], q[1] + d[1], q[2] + d[2]) in kept and (q[0] - d[0], q[1] - d[1], q[2] - d[2]) in kept:
+                        new.append(q)
+                        break
+            for q in new:
+                shape_of[q] = "full"
+                kept.add(q)
+            bridged += len(new)
+        print(f"  thin parts: {bridged} gap blocks bridged")
     if a.planes:
         import planes2blocks
         occ = np.zeros(frac.shape, bool)
@@ -269,7 +293,7 @@ def main():
                 mat[q] = body_main
     if a.detail:
         import detail
-        mat = detail.apply(shape_of, mat, part)
+        mat = detail.apply(shape_of, mat, part, match_density=bool(a.windens))
     base_mat = dict(mat)
     if a.variety > 0:
         import variety

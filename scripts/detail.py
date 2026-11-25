@@ -72,7 +72,7 @@ def trim_block(main, contrast=(12.0, 40.0)):
     return best[1] if best else None
 
 
-def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True, base=True):
+def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True, base=True, match_density=False):
     cells = set(shape_of)
     global _OUTSIDE
     _OUTSIDE = _outside(cells)
@@ -103,6 +103,9 @@ def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True,
 
     # 1. windows on walls without any
     glass = {d: [p for p in body if out.get(p) == "_glass" and _wall_dir(p, cells) == d] for d in DIRS}
+    seen_walls = [d for d in DIRS if glass[d]]
+    seen_density = (sum(len(glass[d]) for d in seen_walls)
+                    / max(1, sum(len(glass[d]) + len(walls[d]) for d in seen_walls))) if seen_walls else None
     added = 0
     for d, ws in walls.items():
         if glass[d] or len(ws) < 12:
@@ -124,7 +127,12 @@ def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True,
             if hi_ - lo_ < 4:
                 continue
             by_line = {(p[ax], p[1]): p for p in ws}
-            for c in range(lo_ + 2, hi_ - 1, 4):  # every 4 blocks, away from the corners
+            spacing = 4
+            if match_density and seen_density is not None:
+                # as many windows as the walls the photo shows have (castles: few; houses: many)
+                height = max(1, max(p[1] for p in ws) - min(p[1] for p in ws) + 1)
+                spacing = int(np.clip(round(2 / max(seen_density * height, 1e-3)), 4, 60))
+            for c in range(lo_ + 2, hi_ - 1, spacing):  # away from the corners
                 for y in (y0 + 2, y0 + 3):  # standard window height
                     q = by_line.get((c, y))
                     if q is not None:
@@ -162,11 +170,34 @@ def apply(shape_of, mat, part, log=print, windows=True, door=True, corners=True,
     if trim:
         n_c = n_b = 0
         if corners:
+            cand = set()
             for p in body:
                 if out.get(p) != main or shape_of.get(p) != "full":
                     continue
                 open_ = [d for d, v in DIRS.items() if (p[0] + v[0], p[1] + v[1], p[2] + v[2]) in _OUTSIDE]
                 if len(open_) == 2 and OPP[open_[0]] != open_[1]:  # two open sides at right angles = corner
+                    # ...where two real walls meet: each wall continues >= 3 blocks away from the corner
+                    ok = True
+                    for face, along in ((open_[0], open_[1]), (open_[1], open_[0])):
+                        fv, av = DIRS[face], DIRS[along]
+                        for k in (1, 2, 3):
+                            q = (p[0] - av[0] * k, p[1], p[2] - av[2] * k)
+                            if q not in cells or (q[0] + fv[0], q[1], q[2] + fv[2]) not in _OUTSIDE:
+                                ok = False
+                                break
+                        if not ok:
+                            break
+                    if ok:
+                        cand.add(p)
+            # a real corner is a vertical line: keep runs at least 3 tall (bumps on rough walls aren't corners)
+            for p in cand:
+                run = 1
+                for dy in (1, -1):
+                    q = (p[0], p[1] + dy, p[2])
+                    while q in cand:
+                        run += 1
+                        q = (q[0], q[1] + dy, q[2])
+                if run >= 3:
                     out[p] = trim
                     n_c += 1
         if base:
