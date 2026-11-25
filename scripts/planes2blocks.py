@@ -114,3 +114,35 @@ def fit_roofs(occ, min_cells=8, max_change=1.5, log=print):
     log(f"  roofs: {len(planes)} planes ({', '.join(f'{v} {k}' for k, v in kinds.items())}) explain {covered:.0%} "
         f"of the top surface; {changed} blocks changed")
     return new, shape
+
+
+def even_tops(occ, shape, log=print, max_step=2):
+    """Top surfaces no plane explained (wall tops, battlement noise) are evened out: a column whose top sits
+    1-2 blocks above/below the median of its neighbours' tops moves to that median. Bigger steps (towers,
+    chimneys, a lower wing) are real and stay."""
+    X, Y, Z = occ.shape
+    has = occ.any(1)
+    top = np.where(has, Y - 1 - np.argmax(occ[:, ::-1, :], 1), -1)
+    new = occ.copy()
+    changed = 0
+    for x in range(X):
+        for z in range(Z):
+            if not has[x, z] or any((x, y, z) in shape for y in range(Y)):
+                continue  # rebuilt by a roof plane already
+            nb = [top[i, k] for i in (x - 1, x, x + 1) for k in (z - 1, z, z + 1)
+                  if (i, k) != (x, z) and 0 <= i < X and 0 <= k < Z and has[i, k]]
+            if len(nb) < 4:
+                continue
+            med = int(np.median(nb))
+            t = top[x, z]
+            if t == med or abs(t - med) > max_step:
+                continue
+            col = new[x, :, z]
+            bottom = int(np.argmax(col))
+            if med > t:
+                new[x, t + 1:med + 1, z] = True
+            else:
+                new[x, max(bottom, med + 1):t + 1, z] = False
+            changed += abs(t - med)
+    log(f"  tops: {changed} blocks changed to even out ragged tops")
+    return new

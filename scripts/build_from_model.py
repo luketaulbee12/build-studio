@@ -88,6 +88,10 @@ def main():
     ap.add_argument("name")
     ap.add_argument("--width", type=int, default=16)
     ap.add_argument("--palette", type=int, default=8)
+    ap.add_argument("--ground", type=int, default=None, help="place on this height instead of reading the world's terrain")
+    ap.add_argument("--game-dir", default=None, help="game folder to save the blueprint into (default: first in studio config)")
+    ap.add_argument("--world-id", default=None, help="blueprint world folder id, e.g. sp_New_World")
+    ap.add_argument("--tops", type=int, default=0, help="1 = even out ragged tops no roof plane explains")
     ap.add_argument("--detail", type=int, default=1, help="1 = add windows on unseen walls, a door, corner/base trim")
     ap.add_argument("--snap", type=int, default=-1, help="1 = face colours snap to the picture's own main colours, 0 = never, -1 = automatically for Minecraft screenshots")
     ap.add_argument("--photo-faces", type=int, default=0, help="1 = faces the photo shows take the photo's colour")
@@ -134,6 +138,8 @@ def main():
         occ2, fixed = planes2blocks.straighten(occ)
         print(f"  walls: {fixed} blocks changed to straighten wall faces")
         occ3, roof_shape = planes2blocks.fit_roofs(occ2)
+        if a.tops:
+            occ3 = planes2blocks.even_tops(occ3, roof_shape)
         new_shape = {}
         for p in map(tuple, np.argwhere(occ3)):
             p = tuple(int(v) for v in p)

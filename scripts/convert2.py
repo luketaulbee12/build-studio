@@ -351,7 +351,8 @@ def export(states, a):
     sys.path.insert(0, str(STUDIO))
     import studio
     from region import RegionReader, region_dir
-    rr = RegionReader(region_dir(a.world, "minecraft_overworld"))
+    ground_y = getattr(a, "ground", None)
+    rr = None if ground_y is not None else RegionReader(region_dir(a.world, "minecraft_overworld"))
     not_ground = ("air", "leaves", "_log", "grass", "fern", "flower", "bush", "vine", "poppy", "dandelion",
                   "tulip", "daisy", "bluet", "orchid", "allium", "cornflower", "lily", "water", "snow")
 
@@ -366,20 +367,25 @@ def export(states, a):
     wx, wz = int(pts[:, 0].max() - mn[0] + 1), int(pts[:, 2].max() - mn[2] + 1)
     gx, gz = a.at
     x0, z0 = gx - wx // 2, gz - wz // 2
-    ground = min(ground_at(x0 + dx, z0 + dz) for dx in range(0, wx, 2) for dz in range(0, wz, 2))
+    if ground_y is not None:  # no terrain to read (superflat preview / any server): sit on this height
+        ground = int(ground_y)
+    else:
+        ground = min(ground_at(x0 + dx, z0 + dz) for dx in range(0, wx, 2) for dz in range(0, wz, 2))
     out, taken = [], set()
     for p, s in states.items():
         x, y, z = x0 + p[0] - int(mn[0]), ground + 1 + p[1] - int(mn[1]), z0 + p[2] - int(mn[2])
         out.append([x, y, z, s])
         taken.add((x, y, z))
     top = ground + 1 + int(pts[:, 1].max() - mn[1]) + 8
-    for x in range(x0 - 3, x0 + wx + 3):
+    for x in (range(x0 - 3, x0 + wx + 3) if rr else ()):
         for z in range(z0 - 3, z0 + wz + 3):
             for y in range(ground + 1, top):
                 if (x, y, z) not in taken and any(t in rr.block(x, y, z) for t in ("leaves", "_log", "grass", "fern", "bush")):
                     out.append([x, y, z, "minecraft:air"])
     cfg = studio.load_config()
-    res = studio.export_blueprint({"gameDir": cfg["gameDirs"][0], "worldId": "sp_" + studio.sanitize(Path(a.world).name),
+    game_dir = getattr(a, "game_dir", None) or cfg["gameDirs"][0]
+    world_id = getattr(a, "world_id", None) or "sp_" + studio.sanitize(Path(a.world).name)
+    res = studio.export_blueprint({"gameDir": game_dir, "worldId": world_id,
                                    "dimension": "minecraft_overworld", "name": a.name, "blocks": out}, cfg)
     print("blueprint:", res)
 

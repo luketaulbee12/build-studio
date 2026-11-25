@@ -27,7 +27,7 @@ def run(args):
     return r.stdout, time.time() - t
 
 
-def one(picture, name, width, at=None):
+def one(picture, name, width, at=None, extra=()):
     safe = name.replace(" ", "_")
     shape = OUT / f"{safe}_hunyuan.glb"
     painted = OUT / f"{safe}_painted.glb"
@@ -39,6 +39,7 @@ def one(picture, name, width, at=None):
     args = ["scripts/build_from_model.py", str(painted), str(picture), name, "--width", str(width)]
     if at:
         args += ["--at", str(at[0]), str(at[1])]
+    args += list(extra)
     log, times["blocks"] = run(args)
     print(log)
     return times
@@ -51,6 +52,10 @@ def main():
     ap.add_argument("--all", default=None)
     ap.add_argument("--width", type=int, default=16)
     ap.add_argument("--at", type=int, nargs=2, default=None)
+    ap.add_argument("--ground", default=None)
+    ap.add_argument("--world", default=None)
+    ap.add_argument("--game-dir", default=None)
+    ap.add_argument("--world-id", default=None)
     a = ap.parse_args()
     if a.all:
         rows = []
@@ -67,7 +72,12 @@ def main():
         for n, r, t in rows:
             print(f"{n:32s} {r:8s} {t.get('shape', 0):5.0f} {t.get('paint', 0):5.0f} {t.get('blocks', 0):5.0f}")
     else:
-        print(json.dumps(one(a.picture, a.name, a.width, a.at)))
+        extra = []
+        for k in ("ground", "world", "game_dir", "world_id"):
+            v = getattr(a, k)
+            if v is not None:
+                extra += ["--" + k.replace("_", "-"), str(v)]
+        print(json.dumps(one(a.picture, a.name, a.width, a.at, extra)))
 
 
 if __name__ == "__main__":

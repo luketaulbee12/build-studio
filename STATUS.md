@@ -26,6 +26,7 @@ picture -> BiRefNet cut-out -> Hunyuan shape -> Hunyuan Paint -> `build_from_mod
 | Photo colour per visible face (experiment) | none clearly | | ~6 (darker/brown, noisy) -> rejected, off |
 | Snap face colours to the picture's own palette | Minecraft screenshots (village houses get grey stone walls) | | real photos (lighting in the palette) |
 | -> only for Minecraft screenshots (CLIP: screenshots >= 0.99, photos <= 0.25) | screenshots | photos unchanged | |
+| Even out ragged tops (option `--tops 1`) | farmhouse ridge, tower top a bit | most | cottage loses some plants -> off |
 
 ## Known problems, ranked by how many buildings they affect
 1. Paint paints small mixed materials as one colour. Fixed for Minecraft screenshots (palette snapping);
@@ -35,6 +36,10 @@ picture -> BiRefNet cut-out -> Hunyuan shape -> Hunyuan Paint -> `build_from_mod
 3. Ragged wall tops / battlements (3 builds).
 4. Thin structures (barn roof, A-frame) break apart.
 5. Castle keep regressed when the colour-spread step came back (greenery in photo).
+
+## Build Studio
+"Build from picture" button (Inspiration section): runs this whole pipeline in the background (~2.5 min),
+then shows the blueprint (on the picked plot, or the Superflat preview) and it's in J in game.
 
 ## Not done / needs you
 - Nothing pushed; local commits only in `recon` (and freecam-ghost earlier).
