@@ -47,7 +47,7 @@ def main():
     ap.add_argument("--width", type=int, default=32)
     ap.add_argument("--palette", type=int, default=8)
     ap.add_argument("--at", type=int, nargs=2, default=None, metavar=("X", "Z"))
-    ap.add_argument("--world", default=r"C:\Users\Luke\Desktop\Projects\freecam-ghost\neoforge\run\saves\New World")
+    ap.add_argument("--world", default=None, help="world folder to read the ground from (with --at); without it the build sits on --ground")
     ap.add_argument("--out", default="out/dbg")
     a = ap.parse_args()
     out_dir = Path(a.out)

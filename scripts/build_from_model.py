@@ -106,7 +106,7 @@ def main():
     ap.add_argument("--variety", type=float, default=0.35, help="share of main blocks swapped for related blocks (0 = off)")
     ap.add_argument("--exclude", default="", help="comma-separated words: leave out blocks containing them")
     ap.add_argument("--at", type=int, nargs=2, default=None, metavar=("X", "Z"))
-    ap.add_argument("--world", default=r"C:\Users\Luke\Desktop\Projects\freecam-ghost\neoforge\run\saves\New World")
+    ap.add_argument("--world", default=None, help="world folder to read the ground from (with --at); without it the build sits on --ground")
     ap.add_argument("--out", default="out/dbg")
     a = ap.parse_args()
     out_dir = Path(a.out)

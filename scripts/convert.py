@@ -23,7 +23,7 @@ from scipy.spatial import cKDTree
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from matte import matte  # noqa: E402
 
-STUDIO = Path(r"C:\Users\Luke\Desktop\Projects\freecam-ghost\studio")
+STUDIO = Path(__file__).resolve().parent.parent / "studio"  # Build Studio lives next to scripts/
 TEX = STUDIO / "data" / "mc" / "textures" / "block"
 SUB = 3  # sub-samples per block edge
 
@@ -198,7 +198,7 @@ def main():
     ap.add_argument("--width", type=int, default=16, help="blocks across the front")
     ap.add_argument("--materials", type=int, default=7)
     ap.add_argument("--at", type=int, nargs=2, required=True, metavar=("X", "Z"))
-    ap.add_argument("--world", default=r"C:\Users\Luke\Desktop\Projects\freecam-ghost\neoforge\run\saves\New World")
+    ap.add_argument("--world", default=None, help="world folder to read the ground from (with --at); without it the build sits on --ground")
     ap.add_argument("--debug", default=None, help="folder for debug images")
     a = ap.parse_args()
     dbg = Path(a.debug) if a.debug else None

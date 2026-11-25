@@ -19,7 +19,7 @@ import trimesh
 from PIL import Image
 from scipy.spatial import cKDTree
 
-STUDIO = Path(r"C:\Users\Luke\Desktop\Projects\freecam-ghost\studio")
+STUDIO = Path(__file__).resolve().parent.parent / "studio"  # Build Studio lives next to scripts/
 TEX = STUDIO / "data" / "mc" / "textures" / "block"
 
 # Full-cube blocks a builder would plausibly use (texture file -> block id).
@@ -99,7 +99,7 @@ def main():
     ap.add_argument("name")
     ap.add_argument("--width", type=int, default=13)
     ap.add_argument("--at", type=int, nargs=2, required=True, metavar=("X", "Z"))
-    ap.add_argument("--world", default=r"C:\Users\Luke\Desktop\Projects\freecam-ghost\neoforge\run\saves\New World")
+    ap.add_argument("--world", default=None, help="world folder to read the ground from (with --at); without it the build sits on --ground")
     a = ap.parse_args()
 
     scene = trimesh.load(a.mesh)

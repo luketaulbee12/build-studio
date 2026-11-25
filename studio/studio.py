@@ -26,10 +26,9 @@ CONFIG = HERE / "config.json"
 
 DEFAULT_CONFIG = {
     "port": 8765,
-    "clientJar": r"C:\Users\Luke\Desktop\curseforge\minecraft\Install\versions\1.21.1\1.21.1.jar",
+    "clientJar": os.path.expandvars(r"%APPDATA%\.minecraft\versions\1.21.1\1.21.1.jar"),
     "gameDirs": [
-        str((HERE.parent / "neoforge" / "run").resolve()),
-        r"C:\Users\Luke\Desktop\curseforge\minecraft\Instances\test",
+        os.path.expandvars(r"%APPDATA%\.minecraft"),
     ],
     "worlds": [],  # extra world folders (e.g. your server's world) for reading region files
 }
@@ -457,7 +456,7 @@ RECON_JOBS = {}
 
 
 def recon_dir(cfg):
-    return Path(cfg.get("reconDir", r"C:\Users\Luke\Desktop\Projects\recon"))
+    return Path(cfg.get("reconDir", Path(__file__).resolve().parent.parent))
 
 
 def start_recon(req, cfg):

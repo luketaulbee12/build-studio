@@ -164,7 +164,7 @@ def main():
     ap.add_argument("--width", type=int, default=16)
     ap.add_argument("--materials", type=int, default=8)
     ap.add_argument("--at", type=int, nargs=2, default=None, metavar=("X", "Z"))
-    ap.add_argument("--world", default=r"C:\Users\Luke\Desktop\Projects\freecam-ghost\neoforge\run\saves\New World")
+    ap.add_argument("--world", default=None, help="world folder to read the ground from (with --at); without it the build sits on --ground")
     ap.add_argument("--out", default="out/dbg")
     a = ap.parse_args()
     out_dir = Path(a.out)
@@ -352,6 +352,8 @@ def export(states, a):
     import studio
     from region import RegionReader, region_dir
     ground_y = getattr(a, "ground", None)
+    if ground_y is None and not a.world:
+        ground_y = 64  # no world to read the ground from
     rr = None if ground_y is not None else RegionReader(region_dir(a.world, "minecraft_overworld"))
     not_ground = ("air", "leaves", "_log", "grass", "fern", "flower", "bush", "vine", "poppy", "dandelion",
                   "tulip", "daisy", "bluet", "orchid", "allium", "cornflower", "lily", "water", "snow")
@@ -384,7 +386,7 @@ def export(states, a):
                     out.append([x, y, z, "minecraft:air"])
     cfg = studio.load_config()
     game_dir = getattr(a, "game_dir", None) or cfg["gameDirs"][0]
-    world_id = getattr(a, "world_id", None) or "sp_" + studio.sanitize(Path(a.world).name)
+    world_id = getattr(a, "world_id", None) or ("sp_" + studio.sanitize(Path(a.world).name) if a.world else "studio_designs")
     res = studio.export_blueprint({"gameDir": game_dir, "worldId": world_id,
                                    "dimension": "minecraft_overworld", "name": a.name, "blocks": out}, cfg)
     print("blueprint:", res)
