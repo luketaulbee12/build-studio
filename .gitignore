@@ -9,3 +9,4 @@ test_candidates/
 __pycache__/
 *.glb
 *.ply
+data/blockpalettes_*.json

@@ -61,6 +61,10 @@ _pairs = None
 def _cooccurrence():
     global _pairs
     if _pairs is None:
+        if not DATA.exists():  # not shipped with the repo: fetch builders' palettes on first use
+            import fetch_palettes
+            print("  downloading builder palettes from blockpalettes.com (first run only)...")
+            fetch_palettes.fetch(3000, DATA)
         pal = json.load(open(DATA))
         single, pair = Counter(), Counter()
         for p in pal:
